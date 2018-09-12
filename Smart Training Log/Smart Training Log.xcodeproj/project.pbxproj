@@ -69,8 +69,6 @@
 		A75C513E214955F0000461E8 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50B7214955EF000461E8 /* ServiceEndpoint.swift */; };
 		A75C513F214955F0000461E8 /* ServiceEndpointPathTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50B8214955EF000461E8 /* ServiceEndpointPathTransformer.swift */; };
 		A75C5140214955F0000461E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75C50BA214955EF000461E8 /* Info.plist */; };
-		A75C5141214955F0000461E8 /* HoratioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50BC214955EF000461E8 /* HoratioTests.swift */; };
-		A75C5142214955F0000461E8 /* JSONParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50BE214955EF000461E8 /* JSONParsingTests.swift */; };
 		A75C5143214955F0000461E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75C50BF214955EF000461E8 /* Info.plist */; };
 		A75C5144214955F0000461E8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A75C50C0214955EF000461E8 /* .gitignore */; };
 		A79B127E2149515D00B4D39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B127D2149515D00B4D39F /* AppDelegate.swift */; };
@@ -596,7 +594,6 @@
 				A75C5136214955F0000461E8 /* Service.swift in Sources */,
 				A75C510C214955F0000461E8 /* RemoteNotificationCondition.swift in Sources */,
 				A75C5108214955F0000461E8 /* FeatureManager.swift in Sources */,
-				A75C5142214955F0000461E8 /* JSONParsingTests.swift in Sources */,
 				A79B127E2149515D00B4D39F /* AppDelegate.swift in Sources */,
 				A75C510B214955F0000461E8 /* TaskScheduler.swift in Sources */,
 				A75C512D214955F0000461E8 /* CalendarCondition.swift in Sources */,
@@ -621,7 +618,6 @@
 				A75C5117214955F0000461E8 /* UserNotificationCondition.swift in Sources */,
 				A75C513C214955F0000461E8 /* ServiceRequestDecorator.swift in Sources */,
 				A75C5107214955F0000461E8 /* VendorIDFeatureSubject.swift in Sources */,
-				A75C5141214955F0000461E8 /* HoratioTests.swift in Sources */,
 				A75C5120214955F0000461E8 /* OperationCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
