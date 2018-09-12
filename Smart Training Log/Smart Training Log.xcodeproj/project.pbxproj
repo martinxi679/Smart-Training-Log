@@ -31,7 +31,6 @@
 		A72FDAE121495E03000311B0 /* PassbookCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9F21495E03000311B0 /* PassbookCondition.swift */; };
 		A72FDAE221495E03000311B0 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA021495E03000311B0 /* NoCancelledDependencies.swift */; };
 		A72FDAE321495E03000311B0 /* CKContainer+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA121495E03000311B0 /* CKContainer+Operations.swift */; };
-		A72FDAE421495E03000311B0 /* UserNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA221495E03000311B0 /* UserNotificationCondition.swift */; };
 		A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA321495E03000311B0 /* ExclusivityController.swift */; };
 		A72FDAE621495E03000311B0 /* CloudCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA421495E03000311B0 /* CloudCondition.swift */; };
 		A72FDAE721495E03000311B0 /* SilentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA521495E03000311B0 /* SilentCondition.swift */; };
@@ -46,11 +45,9 @@
 		A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAE21495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m */; };
 		A72FDAF121495E03000311B0 /* NSOperation+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAF21495E03000311B0 /* NSOperation+Operations.swift */; };
 		A72FDAF221495E03000311B0 /* DependencySuccessCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB021495E03000311B0 /* DependencySuccessCondition.swift */; };
-		A72FDAF321495E03000311B0 /* UIUserNotifications+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB121495E03000311B0 /* UIUserNotifications+Operations.swift */; };
 		A72FDAF421495E03000311B0 /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB221495E03000311B0 /* AlertOperation.swift */; };
 		A72FDAF521495E03000311B0 /* NSURL+CacheFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB321495E03000311B0 /* NSURL+CacheFiles.swift */; };
 		A72FDAF621495E03000311B0 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB421495E03000311B0 /* NetworkObserver.swift */; };
-		A72FDAF721495E03000311B0 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A72FDAB521495E03000311B0 /* LICENSE.txt */; };
 		A72FDAF821495E03000311B0 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB621495E03000311B0 /* DelayOperation.swift */; };
 		A72FDAF921495E03000311B0 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB721495E03000311B0 /* BlockObserver.swift */; };
 		A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB821495E03000311B0 /* CalendarCondition.swift */; };
@@ -436,7 +433,6 @@
 				A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */,
 				A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
-				A72FDAF721495E03000311B0 /* LICENSE.txt in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
 				A72FDB0D21495E03000311B0 /* Info.plist in Resources */,
 			);
@@ -485,7 +481,6 @@
 				A72FDAD721495E03000311B0 /* FeatureCondition.swift in Sources */,
 				A72FDAEF21495E03000311B0 /* OperationQueue.swift in Sources */,
 				A72FDAE121495E03000311B0 /* PassbookCondition.swift in Sources */,
-				A72FDAE421495E03000311B0 /* UserNotificationCondition.swift in Sources */,
 				A72FDAD621495E03000311B0 /* FeatureSelector.swift in Sources */,
 				A72FDB0421495E03000311B0 /* ServiceRequest.swift in Sources */,
 				A72FDB0021495E03000311B0 /* JSONParsing.swift in Sources */,
@@ -494,7 +489,6 @@
 				A72FDAE721495E03000311B0 /* SilentCondition.swift in Sources */,
 				A72FDADD21495E03000311B0 /* Dictionary+Operations.swift in Sources */,
 				A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */,
-				A72FDAF321495E03000311B0 /* UIUserNotifications+Operations.swift in Sources */,
 				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
 				A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */,
 				A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */,
@@ -607,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -661,7 +655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -677,6 +671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XK7JHWX2X;
 				INFOPLIST_FILE = "Smart Training Log/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -695,6 +690,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XK7JHWX2X;
 				INFOPLIST_FILE = "Smart Training Log/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
