@@ -14,9 +14,6 @@
 		A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA6321495D8C000311B0 /* Assets.xcassets */; };
 		A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA6521495D8C000311B0 /* LaunchScreen.storyboard */; };
 		A72FDA7221495D8C000311B0 /* Smart_Training_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */; };
-		A72FDAD021495E03000311B0 /* HoratioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8721495E02000311B0 /* HoratioTests.swift */; };
-		A72FDAD121495E03000311B0 /* JSONParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8921495E02000311B0 /* JSONParsingTests.swift */; };
-		A72FDAD221495E03000311B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA8A21495E02000311B0 /* Info.plist */; };
 		A72FDAD321495E03000311B0 /* FeatureSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8E21495E03000311B0 /* FeatureSubject.swift */; };
 		A72FDAD421495E03000311B0 /* VendorIDFeatureSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */; };
 		A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9021495E03000311B0 /* FeatureManager.swift */; };
@@ -86,20 +83,6 @@
 			remoteGlobalIDString = A72FDA5521495D8B000311B0;
 			remoteInfo = "Smart Training Log";
 		};
-		A72FDA8221495E02000311B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EDB7F41D1EC211DD0037CCB3;
-			remoteInfo = Horatio;
-		};
-		A72FDA8421495E02000311B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EDB7F4261EC211DD0037CCB3;
-			remoteInfo = HoratioTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -114,10 +97,6 @@
 		A72FDA6D21495D8C000311B0 /* Smart Training LogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Training LogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Training_LogTests.swift; sourceTree = "<group>"; };
 		A72FDA7321495D8C000311B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Horatio.xcodeproj; path = "../../../../../../../Downloads/MPA-Horatio-master/Horatio/Horatio.xcodeproj"; sourceTree = "<group>"; };
-		A72FDA8721495E02000311B0 /* HoratioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoratioTests.swift; sourceTree = "<group>"; };
-		A72FDA8921495E02000311B0 /* JSONParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingTests.swift; sourceTree = "<group>"; };
-		A72FDA8A21495E02000311B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72FDA8E21495E03000311B0 /* FeatureSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureSubject.swift; sourceTree = "<group>"; };
 		A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorIDFeatureSubject.swift; sourceTree = "<group>"; };
 		A72FDA9021495E03000311B0 /* FeatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureManager.swift; sourceTree = "<group>"; };
@@ -245,37 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				A72FDA8B21495E02000311B0 /* Horatio */,
-				A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */,
-				A72FDA8621495E02000311B0 /* HoratioTests */,
 			);
 			path = "Third Party";
-			sourceTree = "<group>";
-		};
-		A72FDA7E21495E02000311B0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A72FDA8321495E02000311B0 /* Horatio.framework */,
-				A72FDA8521495E02000311B0 /* HoratioTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A72FDA8621495E02000311B0 /* HoratioTests */ = {
-			isa = PBXGroup;
-			children = (
-				A72FDA8721495E02000311B0 /* HoratioTests.swift */,
-				A72FDA8821495E02000311B0 /* JSON */,
-				A72FDA8A21495E02000311B0 /* Info.plist */,
-			);
-			path = HoratioTests;
-			sourceTree = "<group>";
-		};
-		A72FDA8821495E02000311B0 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				A72FDA8921495E02000311B0 /* JSONParsingTests.swift */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 		A72FDA8B21495E02000311B0 /* Horatio */ = {
@@ -470,12 +420,6 @@
 			mainGroup = A72FDA4D21495D8B000311B0;
 			productRefGroup = A72FDA5721495D8B000311B0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A72FDA7E21495E02000311B0 /* Products */;
-					ProjectRef = A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A72FDA5521495D8B000311B0 /* Smart Training Log */,
@@ -484,30 +428,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		A72FDA8321495E02000311B0 /* Horatio.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Horatio.framework;
-			remoteRef = A72FDA8221495E02000311B0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A72FDA8521495E02000311B0 /* HoratioTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = HoratioTests.xctest;
-			remoteRef = A72FDA8421495E02000311B0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		A72FDA5421495D8B000311B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */,
-				A72FDAD221495E03000311B0 /* Info.plist in Resources */,
 				A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
 				A72FDAF721495E03000311B0 /* LICENSE.txt in Resources */,
@@ -543,7 +469,6 @@
 				A72FDAD921495E03000311B0 /* RemoteNotificationCondition.swift in Sources */,
 				A72FDAD821495E03000311B0 /* TaskScheduler.swift in Sources */,
 				A72FDADA21495E03000311B0 /* ReachabilityCondition.swift in Sources */,
-				A72FDAD121495E03000311B0 /* JSONParsingTests.swift in Sources */,
 				A72FDADB21495E03000311B0 /* PhotosCondition.swift in Sources */,
 				A72FDAF921495E03000311B0 /* BlockObserver.swift in Sources */,
 				A72FDAFE21495E03000311B0 /* Container.swift in Sources */,
@@ -570,7 +495,6 @@
 				A72FDADD21495E03000311B0 /* Dictionary+Operations.swift in Sources */,
 				A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */,
 				A72FDAF321495E03000311B0 /* UIUserNotifications+Operations.swift in Sources */,
-				A72FDAD021495E03000311B0 /* HoratioTests.swift in Sources */,
 				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
 				A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */,
 				A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */,
