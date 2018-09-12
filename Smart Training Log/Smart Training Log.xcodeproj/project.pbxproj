@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923DCE6D72FE3234359D0A9F /* Pods_Smart_Training_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB75A8C06BC5C9EF66D30A21 /* Pods_Smart_Training_Log.framework */; };
+		9D3D9557B397B2E88E2EEC34 /* Pods_Smart_Training_LogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C94BD7CAA4E1459B5E2A3F /* Pods_Smart_Training_LogTests.framework */; };
 		A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA5921495D8B000311B0 /* AppDelegate.swift */; };
 		A72FDA5C21495D8C000311B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA5B21495D8C000311B0 /* ViewController.swift */; };
 		A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA5D21495D8C000311B0 /* Main.storyboard */; };
@@ -70,6 +72,7 @@
 		A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */; };
 		A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */; };
 		A72FDB0D21495E03000311B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDACF21495E03000311B0 /* Info.plist */; };
+		A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02E39533D8FC2E2A4AEBF221 /* Pods-Smart Training LogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.release.xcconfig"; sourceTree = "<group>"; };
+		41DE3F70BEA81F4FC826B539 /* Pods-Smart Training Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.release.xcconfig"; sourceTree = "<group>"; };
+		A2C94BD7CAA4E1459B5E2A3F /* Pods_Smart_Training_LogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_LogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72FDA5621495D8B000311B0 /* Smart Training Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Training Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72FDA5921495D8B000311B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A72FDA5B21495D8C000311B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +161,10 @@
 		A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpointPathTransformer.swift; sourceTree = "<group>"; };
 		A72FDACE21495E03000311B0 /* Horatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horatio.h; sourceTree = "<group>"; };
 		A72FDACF21495E03000311B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B71D4146F39DBF47B662C95D /* Pods-Smart Training Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.debug.xcconfig"; sourceTree = "<group>"; };
+		EB75A8C06BC5C9EF66D30A21 /* Pods_Smart_Training_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BE528DCF6B530E73DC4353 /* Pods-Smart Training LogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923DCE6D72FE3234359D0A9F /* Pods_Smart_Training_Log.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,19 +180,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3D9557B397B2E88E2EEC34 /* Pods_Smart_Training_LogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BA2AC68F68A9B3E30C67634 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB75A8C06BC5C9EF66D30A21 /* Pods_Smart_Training_Log.framework */,
+				A2C94BD7CAA4E1459B5E2A3F /* Pods_Smart_Training_LogTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A72FDA4D21495D8B000311B0 = {
 			isa = PBXGroup;
 			children = (
+				A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */,
 				A72FDA7C21495DB5000311B0 /* Third Party */,
 				A72FDA5821495D8B000311B0 /* Smart Training Log */,
 				A72FDA7021495D8C000311B0 /* Smart Training LogTests */,
 				A72FDA5721495D8B000311B0 /* Products */,
+				D8E250BFD43E4D8100CC5174 /* Pods */,
+				2BA2AC68F68A9B3E30C67634 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,6 +373,17 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D8E250BFD43E4D8100CC5174 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B71D4146F39DBF47B662C95D /* Pods-Smart Training Log.debug.xcconfig */,
+				41DE3F70BEA81F4FC826B539 /* Pods-Smart Training Log.release.xcconfig */,
+				F3BE528DCF6B530E73DC4353 /* Pods-Smart Training LogTests.debug.xcconfig */,
+				02E39533D8FC2E2A4AEBF221 /* Pods-Smart Training LogTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,9 +391,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A72FDA7621495D8C000311B0 /* Build configuration list for PBXNativeTarget "Smart Training Log" */;
 			buildPhases = (
+				B3172FC979523BE505751D09 /* [CP] Check Pods Manifest.lock */,
 				A72FDA5221495D8B000311B0 /* Sources */,
 				A72FDA5321495D8B000311B0 /* Frameworks */,
 				A72FDA5421495D8B000311B0 /* Resources */,
+				0FA62DAE932DEC65EC8319E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -373,6 +410,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A72FDA7921495D8C000311B0 /* Build configuration list for PBXNativeTarget "Smart Training LogTests" */;
 			buildPhases = (
+				B8638A98EF41988F2215A65B /* [CP] Check Pods Manifest.lock */,
 				A72FDA6921495D8C000311B0 /* Sources */,
 				A72FDA6A21495D8C000311B0 /* Frameworks */,
 				A72FDA6B21495D8C000311B0 /* Resources */,
@@ -432,6 +470,7 @@
 			files = (
 				A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */,
 				A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */,
+				A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
 				A72FDB0D21495E03000311B0 /* Info.plist in Resources */,
@@ -446,6 +485,77 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FA62DAE932DEC65EC8319E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3172FC979523BE505751D09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart Training Log-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8638A98EF41988F2215A65B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart Training LogTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A72FDA5221495D8B000311B0 /* Sources */ = {
@@ -666,6 +776,7 @@
 		};
 		A72FDA7721495D8C000311B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B71D4146F39DBF47B662C95D /* Pods-Smart Training Log.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -685,6 +796,7 @@
 		};
 		A72FDA7821495D8C000311B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41DE3F70BEA81F4FC826B539 /* Pods-Smart Training Log.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,6 +816,7 @@
 		};
 		A72FDA7A21495D8C000311B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3BE528DCF6B530E73DC4353 /* Pods-Smart Training LogTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -725,6 +838,7 @@
 		};
 		A72FDA7B21495D8C000311B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02E39533D8FC2E2A4AEBF221 /* Pods-Smart Training LogTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
