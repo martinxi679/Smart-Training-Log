@@ -1,0 +1,3 @@
+[submodule "Smart Training Log/Third Party/Horatio"]
+	path = Smart Training Log/Third Party/Horatio
+	url = https://github.com/ktatroe/MPA-Horatio
