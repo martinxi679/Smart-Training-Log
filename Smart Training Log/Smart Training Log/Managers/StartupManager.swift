@@ -2,7 +2,6 @@
 //  StartupManager.swift
 //  Smart Training Log
 //
-//
 
 import Foundation
 import Firebase
@@ -35,8 +34,13 @@ class StartupManager {
     }
     
     private func configureNavBar() {
-        UINavigationBar.appearance().backgroundColor = Palette.navBarBlue
-        UINavigationBar.appearance().tintColor = Palette.pureWhite
+        
+        let navBarAppearence = UINavigationBar.appearance()
+        
+        navBarAppearence.backgroundColor = Palette.navBarBlue
+        navBarAppearence.tintColor = Palette.pureWhite
+        navBarAppearence.barTintColor = Palette.navBarBlue
+        navBarAppearence.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Palette.pureWhite]
     }
     
 }

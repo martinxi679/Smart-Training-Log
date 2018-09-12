@@ -2,9 +2,6 @@
 //  AppDelegate.swift
 //  Smart Training Log
 //
-//  Created by Kasper Gammeltoft on 9/12/18.
-//  Copyright © 2018 CS4261. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -15,11 +12,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // MARK: - UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FirebaseApp.configure()
+        setup()
         
         return true
     }
@@ -49,6 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
         
         persistenceManager.saveContext()
+    }
+    
+    // MARK: - Private
+    
+    private func setup() {
+        
+        // Setup startup manager
+        Container.register(StartupManager.self) {_ in StartupManager() }
+        
+        guard let startupManager = try? Container.resolve(StartupManager.self) else { return }
+        startupManager.setup()
     }
 
 }

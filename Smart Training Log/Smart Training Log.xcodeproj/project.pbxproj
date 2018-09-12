@@ -77,6 +77,8 @@
 		A7595D7721497C90007EDE67 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D7621497C90007EDE67 /* Login.storyboard */; };
 		A7595D7D21498100007EDE67 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D7C21498100007EDE67 /* Palette.swift */; };
 		A7595D7F214985E7007EDE67 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D7E214985E7007EDE67 /* UIColorExtensions.swift */; };
+		A7595D8421499B27007EDE67 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D8321499B27007EDE67 /* UnderlineTextField.swift */; };
+		A7595D8621499C91007EDE67 /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D8521499C91007EDE67 /* RoundRectButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		A7595D7621497C90007EDE67 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A7595D7C21498100007EDE67 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		A7595D7E214985E7007EDE67 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		A7595D8321499B27007EDE67 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		A7595D8521499C91007EDE67 /* RoundRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
 		B71D4146F39DBF47B662C95D /* Pods-Smart Training Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.debug.xcconfig"; sourceTree = "<group>"; };
 		EB75A8C06BC5C9EF66D30A21 /* Pods_Smart_Training_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BE528DCF6B530E73DC4353 /* Pods-Smart Training LogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -459,6 +463,7 @@
 		A7595D79214980B3007EDE67 /* STLKit */ = {
 			isa = PBXGroup;
 			children = (
+				A7595D8221499B08007EDE67 /* Views */,
 				A7595D7B214980D3007EDE67 /* Palette */,
 				A7595D7A214980C5007EDE67 /* Extensions */,
 			);
@@ -479,6 +484,15 @@
 				A7595D7C21498100007EDE67 /* Palette.swift */,
 			);
 			path = Palette;
+			sourceTree = "<group>";
+		};
+		A7595D8221499B08007EDE67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7595D8321499B27007EDE67 /* UnderlineTextField.swift */,
+				A7595D8521499C91007EDE67 /* RoundRectButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D8E250BFD43E4D8100CC5174 /* Pods */ = {
@@ -679,6 +693,7 @@
 				A72FDAFE21495E03000311B0 /* Container.swift in Sources */,
 				A72FDAED21495E03000311B0 /* OperationCondition.swift in Sources */,
 				A7595D6D214978E3007EDE67 /* StartupManager.swift in Sources */,
+				A7595D8421499B27007EDE67 /* UnderlineTextField.swift in Sources */,
 				A72FDB0121495E03000311B0 /* JSONServiceResponseProcessor.swift in Sources */,
 				A72FDAE821495E03000311B0 /* HealthCondition.swift in Sources */,
 				A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */,
@@ -686,6 +701,7 @@
 				A7595D7D21498100007EDE67 /* Palette.swift in Sources */,
 				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
 				A72FDAFD21495E03000311B0 /* TimeoutObserver.swift in Sources */,
+				A7595D8621499C91007EDE67 /* RoundRectButton.swift in Sources */,
 				A72FDAE621495E03000311B0 /* CloudCondition.swift in Sources */,
 				A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */,
 				A72FDAD321495E03000311B0 /* FeatureSubject.swift in Sources */,
