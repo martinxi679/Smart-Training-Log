@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A79B127E2149515D00B4D39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B127D2149515D00B4D39F /* AppDelegate.swift */; };
+		A79B12802149515D00B4D39F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B127F2149515D00B4D39F /* ViewController.swift */; };
+		A79B12832149515D00B4D39F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79B12812149515D00B4D39F /* Main.storyboard */; };
+		A79B12862149515D00B4D39F /* Smart_Training_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A79B12842149515D00B4D39F /* Smart_Training_Log.xcdatamodeld */; };
+		A79B12882149515E00B4D39F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79B12872149515E00B4D39F /* Assets.xcassets */; };
+		A79B128B2149515E00B4D39F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79B12892149515E00B4D39F /* LaunchScreen.storyboard */; };
+		A79B12962149515E00B4D39F /* Smart_Training_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B12952149515E00B4D39F /* Smart_Training_LogTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A79B12922149515E00B4D39F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79B12722149515D00B4D39F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A79B12792149515D00B4D39F;
+			remoteInfo = "Smart Training Log";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A79B127A2149515D00B4D39F /* Smart Training Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Training Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79B127D2149515D00B4D39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A79B127F2149515D00B4D39F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A79B12822149515D00B4D39F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A79B12852149515D00B4D39F /* Smart_Training_Log.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smart_Training_Log.xcdatamodel; sourceTree = "<group>"; };
+		A79B12872149515E00B4D39F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A79B128A2149515E00B4D39F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A79B128C2149515E00B4D39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A79B12912149515E00B4D39F /* Smart Training LogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Training LogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79B12952149515E00B4D39F /* Smart_Training_LogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Training_LogTests.swift; sourceTree = "<group>"; };
+		A79B12972149515E00B4D39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A79B12772149515D00B4D39F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A79B128E2149515E00B4D39F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A79B12712149515D00B4D39F = {
+			isa = PBXGroup;
+			children = (
+				A79B12A02149523600B4D39F /* Third Party */,
+				A79B127C2149515D00B4D39F /* Smart Training Log */,
+				A79B12942149515E00B4D39F /* Smart Training LogTests */,
+				A79B127B2149515D00B4D39F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A79B127B2149515D00B4D39F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A79B127A2149515D00B4D39F /* Smart Training Log.app */,
+				A79B12912149515E00B4D39F /* Smart Training LogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A79B127C2149515D00B4D39F /* Smart Training Log */ = {
+			isa = PBXGroup;
+			children = (
+				A79B127D2149515D00B4D39F /* AppDelegate.swift */,
+				A79B127F2149515D00B4D39F /* ViewController.swift */,
+				A79B12812149515D00B4D39F /* Main.storyboard */,
+				A79B12872149515E00B4D39F /* Assets.xcassets */,
+				A79B12892149515E00B4D39F /* LaunchScreen.storyboard */,
+				A79B128C2149515E00B4D39F /* Info.plist */,
+				A79B12842149515D00B4D39F /* Smart_Training_Log.xcdatamodeld */,
+			);
+			path = "Smart Training Log";
+			sourceTree = "<group>";
+		};
+		A79B12942149515E00B4D39F /* Smart Training LogTests */ = {
+			isa = PBXGroup;
+			children = (
+				A79B12952149515E00B4D39F /* Smart_Training_LogTests.swift */,
+				A79B12972149515E00B4D39F /* Info.plist */,
+			);
+			path = "Smart Training LogTests";
+			sourceTree = "<group>";
+		};
+		A79B12A02149523600B4D39F /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A79B12792149515D00B4D39F /* Smart Training Log */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A79B129A2149515E00B4D39F /* Build configuration list for PBXNativeTarget "Smart Training Log" */;
+			buildPhases = (
+				A79B12762149515D00B4D39F /* Sources */,
+				A79B12772149515D00B4D39F /* Frameworks */,
+				A79B12782149515D00B4D39F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smart Training Log";
+			productName = "Smart Training Log";
+			productReference = A79B127A2149515D00B4D39F /* Smart Training Log.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A79B12902149515E00B4D39F /* Smart Training LogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A79B129D2149515E00B4D39F /* Build configuration list for PBXNativeTarget "Smart Training LogTests" */;
+			buildPhases = (
+				A79B128D2149515E00B4D39F /* Sources */,
+				A79B128E2149515E00B4D39F /* Frameworks */,
+				A79B128F2149515E00B4D39F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A79B12932149515E00B4D39F /* PBXTargetDependency */,
+			);
+			name = "Smart Training LogTests";
+			productName = "Smart Training LogTests";
+			productReference = A79B12912149515E00B4D39F /* Smart Training LogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A79B12722149515D00B4D39F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = CS4261;
+				TargetAttributes = {
+					A79B12792149515D00B4D39F = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					A79B12902149515E00B4D39F = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = A79B12792149515D00B4D39F;
+					};
+				};
+			};
+			buildConfigurationList = A79B12752149515D00B4D39F /* Build configuration list for PBXProject "Smart Training Log" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A79B12712149515D00B4D39F;
+			productRefGroup = A79B127B2149515D00B4D39F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A79B12792149515D00B4D39F /* Smart Training Log */,
+				A79B12902149515E00B4D39F /* Smart Training LogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A79B12782149515D00B4D39F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79B128B2149515E00B4D39F /* LaunchScreen.storyboard in Resources */,
+				A79B12882149515E00B4D39F /* Assets.xcassets in Resources */,
+				A79B12832149515D00B4D39F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A79B128F2149515E00B4D39F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A79B12762149515D00B4D39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79B12862149515D00B4D39F /* Smart_Training_Log.xcdatamodeld in Sources */,
+				A79B12802149515D00B4D39F /* ViewController.swift in Sources */,
+				A79B127E2149515D00B4D39F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A79B128D2149515E00B4D39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79B12962149515E00B4D39F /* Smart_Training_LogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A79B12932149515E00B4D39F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A79B12792149515D00B4D39F /* Smart Training Log */;
+			targetProxy = A79B12922149515E00B4D39F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A79B12812149515D00B4D39F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A79B12822149515D00B4D39F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A79B12892149515E00B4D39F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A79B128A2149515E00B4D39F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A79B12982149515E00B4D39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A79B12992149515E00B4D39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A79B129B2149515E00B4D39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XK7JHWX2X;
+				INFOPLIST_FILE = "Smart Training Log/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-Log";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A79B129C2149515E00B4D39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XK7JHWX2X;
+				INFOPLIST_FILE = "Smart Training Log/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-Log";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A79B129E2149515E00B4D39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XK7JHWX2X;
+				INFOPLIST_FILE = "Smart Training LogTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-LogTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Training Log.app/Smart Training Log";
+			};
+			name = Debug;
+		};
+		A79B129F2149515E00B4D39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XK7JHWX2X;
+				INFOPLIST_FILE = "Smart Training LogTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-LogTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Training Log.app/Smart Training Log";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A79B12752149515D00B4D39F /* Build configuration list for PBXProject "Smart Training Log" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A79B12982149515E00B4D39F /* Debug */,
+				A79B12992149515E00B4D39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A79B129A2149515E00B4D39F /* Build configuration list for PBXNativeTarget "Smart Training Log" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A79B129B2149515E00B4D39F /* Debug */,
+				A79B129C2149515E00B4D39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A79B129D2149515E00B4D39F /* Build configuration list for PBXNativeTarget "Smart Training LogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A79B129E2149515E00B4D39F /* Debug */,
+				A79B129F2149515E00B4D39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A79B12842149515D00B4D39F /* Smart_Training_Log.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A79B12852149515D00B4D39F /* Smart_Training_Log.xcdatamodel */,
+			);
+			currentVersion = A79B12852149515D00B4D39F /* Smart_Training_Log.xcdatamodel */;
+			path = Smart_Training_Log.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A79B12722149515D00B4D39F /* Project object */;
+}
