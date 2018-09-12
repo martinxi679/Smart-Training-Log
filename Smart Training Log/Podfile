@@ -8,6 +8,7 @@ target 'Smart Training Log' do
   # Pods for Smart Training Log
  
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   target 'Smart Training LogTests' do
     inherit! :search_paths
