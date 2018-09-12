@@ -14,6 +14,68 @@
 		A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA6321495D8C000311B0 /* Assets.xcassets */; };
 		A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA6521495D8C000311B0 /* LaunchScreen.storyboard */; };
 		A72FDA7221495D8C000311B0 /* Smart_Training_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */; };
+		A72FDAD021495E03000311B0 /* HoratioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8721495E02000311B0 /* HoratioTests.swift */; };
+		A72FDAD121495E03000311B0 /* JSONParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8921495E02000311B0 /* JSONParsingTests.swift */; };
+		A72FDAD221495E03000311B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA8A21495E02000311B0 /* Info.plist */; };
+		A72FDAD321495E03000311B0 /* FeatureSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8E21495E03000311B0 /* FeatureSubject.swift */; };
+		A72FDAD421495E03000311B0 /* VendorIDFeatureSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */; };
+		A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9021495E03000311B0 /* FeatureManager.swift */; };
+		A72FDAD621495E03000311B0 /* FeatureSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9121495E03000311B0 /* FeatureSelector.swift */; };
+		A72FDAD721495E03000311B0 /* FeatureCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9221495E03000311B0 /* FeatureCondition.swift */; };
+		A72FDAD821495E03000311B0 /* TaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9421495E03000311B0 /* TaskScheduler.swift */; };
+		A72FDAD921495E03000311B0 /* RemoteNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9621495E03000311B0 /* RemoteNotificationCondition.swift */; };
+		A72FDADA21495E03000311B0 /* ReachabilityCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9721495E03000311B0 /* ReachabilityCondition.swift */; };
+		A72FDADB21495E03000311B0 /* PhotosCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9821495E03000311B0 /* PhotosCondition.swift */; };
+		A72FDADC21495E03000311B0 /* NSLock+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9921495E03000311B0 /* NSLock+Operations.swift */; };
+		A72FDADD21495E03000311B0 /* Dictionary+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9A21495E03000311B0 /* Dictionary+Operations.swift */; };
+		A72FDADE21495E03000311B0 /* LocationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9B21495E03000311B0 /* LocationOperation.swift */; };
+		A72FDADF21495E03000311B0 /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9C21495E03000311B0 /* OperationObserver.swift */; };
+		A72FDAE021495E03000311B0 /* NegatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9E21495E03000311B0 /* NegatedCondition.swift */; };
+		A72FDAE121495E03000311B0 /* PassbookCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9F21495E03000311B0 /* PassbookCondition.swift */; };
+		A72FDAE221495E03000311B0 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA021495E03000311B0 /* NoCancelledDependencies.swift */; };
+		A72FDAE321495E03000311B0 /* CKContainer+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA121495E03000311B0 /* CKContainer+Operations.swift */; };
+		A72FDAE421495E03000311B0 /* UserNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA221495E03000311B0 /* UserNotificationCondition.swift */; };
+		A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA321495E03000311B0 /* ExclusivityController.swift */; };
+		A72FDAE621495E03000311B0 /* CloudCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA421495E03000311B0 /* CloudCondition.swift */; };
+		A72FDAE721495E03000311B0 /* SilentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA521495E03000311B0 /* SilentCondition.swift */; };
+		A72FDAE821495E03000311B0 /* HealthCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA621495E03000311B0 /* HealthCondition.swift */; };
+		A72FDAE921495E03000311B0 /* GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA721495E03000311B0 /* GroupOperation.swift */; };
+		A72FDAEA21495E03000311B0 /* BlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA821495E03000311B0 /* BlockOperation.swift */; };
+		A72FDAEB21495E03000311B0 /* LocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAA921495E03000311B0 /* LocationCondition.swift */; };
+		A72FDAEC21495E03000311B0 /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAA21495E03000311B0 /* MutuallyExclusive.swift */; };
+		A72FDAED21495E03000311B0 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAB21495E03000311B0 /* OperationCondition.swift */; };
+		A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAC21495E03000311B0 /* URLSessionTaskOperation.swift */; };
+		A72FDAEF21495E03000311B0 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAD21495E03000311B0 /* OperationQueue.swift */; };
+		A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAE21495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m */; };
+		A72FDAF121495E03000311B0 /* NSOperation+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAAF21495E03000311B0 /* NSOperation+Operations.swift */; };
+		A72FDAF221495E03000311B0 /* DependencySuccessCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB021495E03000311B0 /* DependencySuccessCondition.swift */; };
+		A72FDAF321495E03000311B0 /* UIUserNotifications+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB121495E03000311B0 /* UIUserNotifications+Operations.swift */; };
+		A72FDAF421495E03000311B0 /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB221495E03000311B0 /* AlertOperation.swift */; };
+		A72FDAF521495E03000311B0 /* NSURL+CacheFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB321495E03000311B0 /* NSURL+CacheFiles.swift */; };
+		A72FDAF621495E03000311B0 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB421495E03000311B0 /* NetworkObserver.swift */; };
+		A72FDAF721495E03000311B0 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A72FDAB521495E03000311B0 /* LICENSE.txt */; };
+		A72FDAF821495E03000311B0 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB621495E03000311B0 /* DelayOperation.swift */; };
+		A72FDAF921495E03000311B0 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB721495E03000311B0 /* BlockObserver.swift */; };
+		A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB821495E03000311B0 /* CalendarCondition.swift */; };
+		A72FDAFB21495E03000311B0 /* OperationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAB921495E03000311B0 /* OperationErrors.swift */; };
+		A72FDAFC21495E03000311B0 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDABA21495E03000311B0 /* Operation.swift */; };
+		A72FDAFD21495E03000311B0 /* TimeoutObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDABB21495E03000311B0 /* TimeoutObserver.swift */; };
+		A72FDAFE21495E03000311B0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDABD21495E03000311B0 /* Container.swift */; };
+		A72FDAFF21495E03000311B0 /* JSONServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDABF21495E03000311B0 /* JSONServiceRequest.swift */; };
+		A72FDB0021495E03000311B0 /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC021495E03000311B0 /* JSONParsing.swift */; };
+		A72FDB0121495E03000311B0 /* JSONServiceResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC121495E03000311B0 /* JSONServiceResponseProcessor.swift */; };
+		A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A72FDAC221495E03000311B0 /* LICENSE.txt */; };
+		A72FDB0321495E03000311B0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC421495E03000311B0 /* Service.swift */; };
+		A72FDB0421495E03000311B0 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC521495E03000311B0 /* ServiceRequest.swift */; };
+		A72FDB0521495E03000311B0 /* ServiceRequestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC621495E03000311B0 /* ServiceRequestConfigurator.swift */; };
+		A72FDB0621495E03000311B0 /* ServiceEndpoint+JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC721495E03000311B0 /* ServiceEndpoint+JSONParsing.swift */; };
+		A72FDB0721495E03000311B0 /* ServiceRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC821495E03000311B0 /* ServiceRequestStatus.swift */; };
+		A72FDB0821495E03000311B0 /* ServiceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDAC921495E03000311B0 /* ServiceSession.swift */; };
+		A72FDB0921495E03000311B0 /* ServiceRequestDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACA21495E03000311B0 /* ServiceRequestDecorator.swift */; };
+		A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACB21495E03000311B0 /* ServiceRequestOperation.swift */; };
+		A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */; };
+		A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */; };
+		A72FDB0D21495E03000311B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDACF21495E03000311B0 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +85,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = A72FDA5521495D8B000311B0;
 			remoteInfo = "Smart Training Log";
+		};
+		A72FDA8221495E02000311B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDB7F41D1EC211DD0037CCB3;
+			remoteInfo = Horatio;
+		};
+		A72FDA8421495E02000311B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDB7F4261EC211DD0037CCB3;
+			remoteInfo = HoratioTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +114,71 @@
 		A72FDA6D21495D8C000311B0 /* Smart Training LogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Training LogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Training_LogTests.swift; sourceTree = "<group>"; };
 		A72FDA7321495D8C000311B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Horatio.xcodeproj; path = "../../../../../../../Downloads/MPA-Horatio-master/Horatio/Horatio.xcodeproj"; sourceTree = "<group>"; };
+		A72FDA8721495E02000311B0 /* HoratioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoratioTests.swift; sourceTree = "<group>"; };
+		A72FDA8921495E02000311B0 /* JSONParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingTests.swift; sourceTree = "<group>"; };
+		A72FDA8A21495E02000311B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72FDA8E21495E03000311B0 /* FeatureSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureSubject.swift; sourceTree = "<group>"; };
+		A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorIDFeatureSubject.swift; sourceTree = "<group>"; };
+		A72FDA9021495E03000311B0 /* FeatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureManager.swift; sourceTree = "<group>"; };
+		A72FDA9121495E03000311B0 /* FeatureSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureSelector.swift; sourceTree = "<group>"; };
+		A72FDA9221495E03000311B0 /* FeatureCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCondition.swift; sourceTree = "<group>"; };
+		A72FDA9421495E03000311B0 /* TaskScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskScheduler.swift; sourceTree = "<group>"; };
+		A72FDA9621495E03000311B0 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
+		A72FDA9721495E03000311B0 /* ReachabilityCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityCondition.swift; sourceTree = "<group>"; };
+		A72FDA9821495E03000311B0 /* PhotosCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCondition.swift; sourceTree = "<group>"; };
+		A72FDA9921495E03000311B0 /* NSLock+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLock+Operations.swift"; sourceTree = "<group>"; };
+		A72FDA9A21495E03000311B0 /* Dictionary+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operations.swift"; sourceTree = "<group>"; };
+		A72FDA9B21495E03000311B0 /* LocationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationOperation.swift; sourceTree = "<group>"; };
+		A72FDA9C21495E03000311B0 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
+		A72FDA9D21495E03000311B0 /* NSObject+ThrowingKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ThrowingKeyValueObserving.h"; sourceTree = "<group>"; };
+		A72FDA9E21495E03000311B0 /* NegatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegatedCondition.swift; sourceTree = "<group>"; };
+		A72FDA9F21495E03000311B0 /* PassbookCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassbookCondition.swift; sourceTree = "<group>"; };
+		A72FDAA021495E03000311B0 /* NoCancelledDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCancelledDependencies.swift; sourceTree = "<group>"; };
+		A72FDAA121495E03000311B0 /* CKContainer+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CKContainer+Operations.swift"; sourceTree = "<group>"; };
+		A72FDAA221495E03000311B0 /* UserNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCondition.swift; sourceTree = "<group>"; };
+		A72FDAA321495E03000311B0 /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
+		A72FDAA421495E03000311B0 /* CloudCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCondition.swift; sourceTree = "<group>"; };
+		A72FDAA521495E03000311B0 /* SilentCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentCondition.swift; sourceTree = "<group>"; };
+		A72FDAA621495E03000311B0 /* HealthCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthCondition.swift; sourceTree = "<group>"; };
+		A72FDAA721495E03000311B0 /* GroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOperation.swift; sourceTree = "<group>"; };
+		A72FDAA821495E03000311B0 /* BlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockOperation.swift; sourceTree = "<group>"; };
+		A72FDAA921495E03000311B0 /* LocationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCondition.swift; sourceTree = "<group>"; };
+		A72FDAAA21495E03000311B0 /* MutuallyExclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
+		A72FDAAB21495E03000311B0 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
+		A72FDAAC21495E03000311B0 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
+		A72FDAAD21495E03000311B0 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		A72FDAAE21495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ThrowingKeyValueObserving.m"; sourceTree = "<group>"; };
+		A72FDAAF21495E03000311B0 /* NSOperation+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSOperation+Operations.swift"; sourceTree = "<group>"; };
+		A72FDAB021495E03000311B0 /* DependencySuccessCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencySuccessCondition.swift; sourceTree = "<group>"; };
+		A72FDAB121495E03000311B0 /* UIUserNotifications+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIUserNotifications+Operations.swift"; sourceTree = "<group>"; };
+		A72FDAB221495E03000311B0 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
+		A72FDAB321495E03000311B0 /* NSURL+CacheFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+CacheFiles.swift"; sourceTree = "<group>"; };
+		A72FDAB421495E03000311B0 /* NetworkObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
+		A72FDAB521495E03000311B0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		A72FDAB621495E03000311B0 /* DelayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
+		A72FDAB721495E03000311B0 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
+		A72FDAB821495E03000311B0 /* CalendarCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCondition.swift; sourceTree = "<group>"; };
+		A72FDAB921495E03000311B0 /* OperationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrors.swift; sourceTree = "<group>"; };
+		A72FDABA21495E03000311B0 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		A72FDABB21495E03000311B0 /* TimeoutObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeoutObserver.swift; sourceTree = "<group>"; };
+		A72FDABD21495E03000311B0 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		A72FDABF21495E03000311B0 /* JSONServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONServiceRequest.swift; sourceTree = "<group>"; };
+		A72FDAC021495E03000311B0 /* JSONParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
+		A72FDAC121495E03000311B0 /* JSONServiceResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONServiceResponseProcessor.swift; sourceTree = "<group>"; };
+		A72FDAC221495E03000311B0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		A72FDAC421495E03000311B0 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A72FDAC521495E03000311B0 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		A72FDAC621495E03000311B0 /* ServiceRequestConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestConfigurator.swift; sourceTree = "<group>"; };
+		A72FDAC721495E03000311B0 /* ServiceEndpoint+JSONParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceEndpoint+JSONParsing.swift"; sourceTree = "<group>"; };
+		A72FDAC821495E03000311B0 /* ServiceRequestStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestStatus.swift; sourceTree = "<group>"; };
+		A72FDAC921495E03000311B0 /* ServiceSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSession.swift; sourceTree = "<group>"; };
+		A72FDACA21495E03000311B0 /* ServiceRequestDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestDecorator.swift; sourceTree = "<group>"; };
+		A72FDACB21495E03000311B0 /* ServiceRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequestOperation.swift; sourceTree = "<group>"; };
+		A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
+		A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpointPathTransformer.swift; sourceTree = "<group>"; };
+		A72FDACE21495E03000311B0 /* Horatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horatio.h; sourceTree = "<group>"; };
+		A72FDACF21495E03000311B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +202,7 @@
 		A72FDA4D21495D8B000311B0 = {
 			isa = PBXGroup;
 			children = (
+				A72FDA7C21495DB5000311B0 /* Third Party */,
 				A72FDA5821495D8B000311B0 /* Smart Training Log */,
 				A72FDA7021495D8C000311B0 /* Smart Training LogTests */,
 				A72FDA5721495D8B000311B0 /* Products */,
@@ -97,6 +239,167 @@
 				A72FDA7321495D8C000311B0 /* Info.plist */,
 			);
 			path = "Smart Training LogTests";
+			sourceTree = "<group>";
+		};
+		A72FDA7C21495DB5000311B0 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8B21495E02000311B0 /* Horatio */,
+				A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */,
+				A72FDA8621495E02000311B0 /* HoratioTests */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		A72FDA7E21495E02000311B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8321495E02000311B0 /* Horatio.framework */,
+				A72FDA8521495E02000311B0 /* HoratioTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A72FDA8621495E02000311B0 /* HoratioTests */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8721495E02000311B0 /* HoratioTests.swift */,
+				A72FDA8821495E02000311B0 /* JSON */,
+				A72FDA8A21495E02000311B0 /* Info.plist */,
+			);
+			path = HoratioTests;
+			sourceTree = "<group>";
+		};
+		A72FDA8821495E02000311B0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8921495E02000311B0 /* JSONParsingTests.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		A72FDA8B21495E02000311B0 /* Horatio */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8C21495E02000311B0 /* Classes */,
+				A72FDACE21495E03000311B0 /* Horatio.h */,
+				A72FDACF21495E03000311B0 /* Info.plist */,
+			);
+			path = Horatio;
+			sourceTree = "<group>";
+		};
+		A72FDA8C21495E02000311B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8D21495E03000311B0 /* Features */,
+				A72FDA9321495E03000311B0 /* Scheduler */,
+				A72FDA9521495E03000311B0 /* Operations */,
+				A72FDABC21495E03000311B0 /* Container */,
+				A72FDABE21495E03000311B0 /* JSON */,
+				A72FDAC221495E03000311B0 /* LICENSE.txt */,
+				A72FDAC321495E03000311B0 /* Services */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A72FDA8D21495E03000311B0 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA8E21495E03000311B0 /* FeatureSubject.swift */,
+				A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */,
+				A72FDA9021495E03000311B0 /* FeatureManager.swift */,
+				A72FDA9121495E03000311B0 /* FeatureSelector.swift */,
+				A72FDA9221495E03000311B0 /* FeatureCondition.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A72FDA9321495E03000311B0 /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA9421495E03000311B0 /* TaskScheduler.swift */,
+			);
+			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		A72FDA9521495E03000311B0 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA9621495E03000311B0 /* RemoteNotificationCondition.swift */,
+				A72FDA9721495E03000311B0 /* ReachabilityCondition.swift */,
+				A72FDA9821495E03000311B0 /* PhotosCondition.swift */,
+				A72FDA9921495E03000311B0 /* NSLock+Operations.swift */,
+				A72FDA9A21495E03000311B0 /* Dictionary+Operations.swift */,
+				A72FDA9B21495E03000311B0 /* LocationOperation.swift */,
+				A72FDA9C21495E03000311B0 /* OperationObserver.swift */,
+				A72FDA9D21495E03000311B0 /* NSObject+ThrowingKeyValueObserving.h */,
+				A72FDA9E21495E03000311B0 /* NegatedCondition.swift */,
+				A72FDA9F21495E03000311B0 /* PassbookCondition.swift */,
+				A72FDAA021495E03000311B0 /* NoCancelledDependencies.swift */,
+				A72FDAA121495E03000311B0 /* CKContainer+Operations.swift */,
+				A72FDAA221495E03000311B0 /* UserNotificationCondition.swift */,
+				A72FDAA321495E03000311B0 /* ExclusivityController.swift */,
+				A72FDAA421495E03000311B0 /* CloudCondition.swift */,
+				A72FDAA521495E03000311B0 /* SilentCondition.swift */,
+				A72FDAA621495E03000311B0 /* HealthCondition.swift */,
+				A72FDAA721495E03000311B0 /* GroupOperation.swift */,
+				A72FDAA821495E03000311B0 /* BlockOperation.swift */,
+				A72FDAA921495E03000311B0 /* LocationCondition.swift */,
+				A72FDAAA21495E03000311B0 /* MutuallyExclusive.swift */,
+				A72FDAAB21495E03000311B0 /* OperationCondition.swift */,
+				A72FDAAC21495E03000311B0 /* URLSessionTaskOperation.swift */,
+				A72FDAAD21495E03000311B0 /* OperationQueue.swift */,
+				A72FDAAE21495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m */,
+				A72FDAAF21495E03000311B0 /* NSOperation+Operations.swift */,
+				A72FDAB021495E03000311B0 /* DependencySuccessCondition.swift */,
+				A72FDAB121495E03000311B0 /* UIUserNotifications+Operations.swift */,
+				A72FDAB221495E03000311B0 /* AlertOperation.swift */,
+				A72FDAB321495E03000311B0 /* NSURL+CacheFiles.swift */,
+				A72FDAB421495E03000311B0 /* NetworkObserver.swift */,
+				A72FDAB521495E03000311B0 /* LICENSE.txt */,
+				A72FDAB621495E03000311B0 /* DelayOperation.swift */,
+				A72FDAB721495E03000311B0 /* BlockObserver.swift */,
+				A72FDAB821495E03000311B0 /* CalendarCondition.swift */,
+				A72FDAB921495E03000311B0 /* OperationErrors.swift */,
+				A72FDABA21495E03000311B0 /* Operation.swift */,
+				A72FDABB21495E03000311B0 /* TimeoutObserver.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		A72FDABC21495E03000311B0 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDABD21495E03000311B0 /* Container.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		A72FDABE21495E03000311B0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDABF21495E03000311B0 /* JSONServiceRequest.swift */,
+				A72FDAC021495E03000311B0 /* JSONParsing.swift */,
+				A72FDAC121495E03000311B0 /* JSONServiceResponseProcessor.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		A72FDAC321495E03000311B0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDAC421495E03000311B0 /* Service.swift */,
+				A72FDAC521495E03000311B0 /* ServiceRequest.swift */,
+				A72FDAC621495E03000311B0 /* ServiceRequestConfigurator.swift */,
+				A72FDAC721495E03000311B0 /* ServiceEndpoint+JSONParsing.swift */,
+				A72FDAC821495E03000311B0 /* ServiceRequestStatus.swift */,
+				A72FDAC921495E03000311B0 /* ServiceSession.swift */,
+				A72FDACA21495E03000311B0 /* ServiceRequestDecorator.swift */,
+				A72FDACB21495E03000311B0 /* ServiceRequestOperation.swift */,
+				A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */,
+				A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +470,12 @@
 			mainGroup = A72FDA4D21495D8B000311B0;
 			productRefGroup = A72FDA5721495D8B000311B0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A72FDA7E21495E02000311B0 /* Products */;
+					ProjectRef = A72FDA7D21495E02000311B0 /* Horatio.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A72FDA5521495D8B000311B0 /* Smart Training Log */,
@@ -175,14 +484,35 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		A72FDA8321495E02000311B0 /* Horatio.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Horatio.framework;
+			remoteRef = A72FDA8221495E02000311B0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A72FDA8521495E02000311B0 /* HoratioTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HoratioTests.xctest;
+			remoteRef = A72FDA8421495E02000311B0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		A72FDA5421495D8B000311B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */,
+				A72FDAD221495E03000311B0 /* Info.plist in Resources */,
 				A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
+				A72FDAF721495E03000311B0 /* LICENSE.txt in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
+				A72FDB0D21495E03000311B0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +530,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72FDAF121495E03000311B0 /* NSOperation+Operations.swift in Sources */,
+				A72FDB0321495E03000311B0 /* Service.swift in Sources */,
+				A72FDAE021495E03000311B0 /* NegatedCondition.swift in Sources */,
+				A72FDADC21495E03000311B0 /* NSLock+Operations.swift in Sources */,
+				A72FDB0621495E03000311B0 /* ServiceEndpoint+JSONParsing.swift in Sources */,
+				A72FDB0921495E03000311B0 /* ServiceRequestDecorator.swift in Sources */,
+				A72FDAEA21495E03000311B0 /* BlockOperation.swift in Sources */,
 				A72FDA6221495D8C000311B0 /* Smart_Training_Log.xcdatamodeld in Sources */,
+				A72FDAEC21495E03000311B0 /* MutuallyExclusive.swift in Sources */,
 				A72FDA5C21495D8C000311B0 /* ViewController.swift in Sources */,
+				A72FDAD921495E03000311B0 /* RemoteNotificationCondition.swift in Sources */,
+				A72FDAD821495E03000311B0 /* TaskScheduler.swift in Sources */,
+				A72FDADA21495E03000311B0 /* ReachabilityCondition.swift in Sources */,
+				A72FDAD121495E03000311B0 /* JSONParsingTests.swift in Sources */,
+				A72FDADB21495E03000311B0 /* PhotosCondition.swift in Sources */,
+				A72FDAF921495E03000311B0 /* BlockObserver.swift in Sources */,
+				A72FDAFE21495E03000311B0 /* Container.swift in Sources */,
+				A72FDAED21495E03000311B0 /* OperationCondition.swift in Sources */,
+				A72FDB0121495E03000311B0 /* JSONServiceResponseProcessor.swift in Sources */,
+				A72FDAE821495E03000311B0 /* HealthCondition.swift in Sources */,
+				A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */,
+				A72FDAE221495E03000311B0 /* NoCancelledDependencies.swift in Sources */,
+				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
+				A72FDAFD21495E03000311B0 /* TimeoutObserver.swift in Sources */,
+				A72FDAE621495E03000311B0 /* CloudCondition.swift in Sources */,
+				A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */,
+				A72FDAD321495E03000311B0 /* FeatureSubject.swift in Sources */,
+				A72FDAD721495E03000311B0 /* FeatureCondition.swift in Sources */,
+				A72FDAEF21495E03000311B0 /* OperationQueue.swift in Sources */,
+				A72FDAE121495E03000311B0 /* PassbookCondition.swift in Sources */,
+				A72FDAE421495E03000311B0 /* UserNotificationCondition.swift in Sources */,
+				A72FDAD621495E03000311B0 /* FeatureSelector.swift in Sources */,
+				A72FDB0421495E03000311B0 /* ServiceRequest.swift in Sources */,
+				A72FDB0021495E03000311B0 /* JSONParsing.swift in Sources */,
+				A72FDADF21495E03000311B0 /* OperationObserver.swift in Sources */,
+				A72FDAE321495E03000311B0 /* CKContainer+Operations.swift in Sources */,
+				A72FDAE721495E03000311B0 /* SilentCondition.swift in Sources */,
+				A72FDADD21495E03000311B0 /* Dictionary+Operations.swift in Sources */,
+				A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */,
+				A72FDAF321495E03000311B0 /* UIUserNotifications+Operations.swift in Sources */,
+				A72FDAD021495E03000311B0 /* HoratioTests.swift in Sources */,
+				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
+				A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */,
+				A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */,
+				A72FDAF521495E03000311B0 /* NSURL+CacheFiles.swift in Sources */,
 				A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */,
+				A72FDB0721495E03000311B0 /* ServiceRequestStatus.swift in Sources */,
+				A72FDAF221495E03000311B0 /* DependencySuccessCondition.swift in Sources */,
+				A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */,
+				A72FDB0521495E03000311B0 /* ServiceRequestConfigurator.swift in Sources */,
+				A72FDAEB21495E03000311B0 /* LocationCondition.swift in Sources */,
+				A72FDAF621495E03000311B0 /* NetworkObserver.swift in Sources */,
+				A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */,
+				A72FDAF421495E03000311B0 /* AlertOperation.swift in Sources */,
+				A72FDAFF21495E03000311B0 /* JSONServiceRequest.swift in Sources */,
+				A72FDAE921495E03000311B0 /* GroupOperation.swift in Sources */,
+				A72FDAD421495E03000311B0 /* VendorIDFeatureSubject.swift in Sources */,
+				A72FDB0821495E03000311B0 /* ServiceSession.swift in Sources */,
+				A72FDADE21495E03000311B0 /* LocationOperation.swift in Sources */,
+				A72FDAFB21495E03000311B0 /* OperationErrors.swift in Sources */,
+				A72FDAF821495E03000311B0 /* DelayOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
