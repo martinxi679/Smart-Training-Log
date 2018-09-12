@@ -73,41 +73,6 @@
 		A75C5142214955F0000461E8 /* JSONParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50BE214955EF000461E8 /* JSONParsingTests.swift */; };
 		A75C5143214955F0000461E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75C50BF214955EF000461E8 /* Info.plist */; };
 		A75C5144214955F0000461E8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A75C50C0214955EF000461E8 /* .gitignore */; };
-		A75C5145214955F0000461E8 /* HoratioDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A75C50C7214955EF000461E8 /* HoratioDemo.xcdatamodeld */; };
-		A75C5146214955F0000461E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50C9214955EF000461E8 /* ViewController.swift */; };
-		A75C5147214955F0000461E8 /* UpgradeAlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50CC214955EF000461E8 /* UpgradeAlertOperation.swift */; };
-		A75C5148214955F0000461E8 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50CD214955EF000461E8 /* AppConfiguration.swift */; };
-		A75C5149214955F0000461E8 /* StartupGateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50CE214955EF000461E8 /* StartupGateOperation.swift */; };
-		A75C514A214955F0000461E8 /* EnvironmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D0214955EF000461E8 /* EnvironmentController.swift */; };
-		A75C514B214955F0000461E8 /* EnvironmentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D1214955EF000461E8 /* EnvironmentPickerViewController.swift */; };
-		A75C514C214955F0000461E8 /* DownloadEnvironmentsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D2214955EF000461E8 /* DownloadEnvironmentsOperation.swift */; };
-		A75C514D214955F0000461E8 /* ParseEnvironmentsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D3214955EF000461E8 /* ParseEnvironmentsOperation.swift */; };
-		A75C514E214955F0000461E8 /* LoadLocalAppConfigOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D4214955EF000461E8 /* LoadLocalAppConfigOperation.swift */; };
-		A75C514F214955F0000461E8 /* DownloadAppConfigOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D5214955EF000461E8 /* DownloadAppConfigOperation.swift */; };
-		A75C5150214955F0000461E8 /* RefreshAppConfigOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D6214955EF000461E8 /* RefreshAppConfigOperation.swift */; };
-		A75C5151214955F0000461E8 /* ParseAppConfigOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D7214955EF000461E8 /* ParseAppConfigOperation.swift */; };
-		A75C5152214955F0000461E8 /* LoadLocalEnvironmentsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D8214955EF000461E8 /* LoadLocalEnvironmentsOperation.swift */; };
-		A75C5153214955F0000461E8 /* AppEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50D9214955EF000461E8 /* AppEnvironmentConfiguration.swift */; };
-		A75C5154214955F0000461E8 /* PrimeObjectStoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50DB214955EF000461E8 /* PrimeObjectStoreOperation.swift */; };
-		A75C5155214955F0000461E8 /* InitializeObjectStoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50DC214955EF000461E8 /* InitializeObjectStoreOperation.swift */; };
-		A75C5156214955F0000461E8 /* LoadObjectStoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50DD214955EF000461E8 /* LoadObjectStoreOperation.swift */; };
-		A75C5157214955F0000461E8 /* ResetObjectStoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50DE214955EF000461E8 /* ResetObjectStoreOperation.swift */; };
-		A75C5158214955F0000461E8 /* UpgradeObjectStoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50DF214955EF000461E8 /* UpgradeObjectStoreOperation.swift */; };
-		A75C5159214955F0000461E8 /* PersistentStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50E0214955EF000461E8 /* PersistentStoreController.swift */; };
-		A75C515A214955F0000461E8 /* StartupSequenceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50E2214955EF000461E8 /* StartupSequenceOperation.swift */; };
-		A75C515B214955F0000461E8 /* RegisterDefaultsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50E3214955EF000461E8 /* RegisterDefaultsOperation.swift */; };
-		A75C515C214955F0000461E8 /* StartupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50E4214955EF000461E8 /* StartupManager.swift */; };
-		A75C515D214955F0000461E8 /* DefaultServiceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50E5214955EF000461E8 /* DefaultServiceSession.swift */; };
-		A75C515E214955F0000461E8 /* DebugServiceStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50E6214955EF000461E8 /* DebugServiceStatusManager.swift */; };
-		A75C515F214955F0000461E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75C50E7214955EF000461E8 /* Assets.xcassets */; };
-		A75C5160214955F0000461E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75C50E8214955EF000461E8 /* LaunchScreen.storyboard */; };
-		A75C5161214955F0000461E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75C50EA214955EF000461E8 /* Main.storyboard */; };
-		A75C5162214955F0000461E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50EC214955EF000461E8 /* AppDelegate.swift */; };
-		A75C5163214955F0000461E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75C50ED214955EF000461E8 /* Info.plist */; };
-		A75C5164214955F0000461E8 /* HoratioDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50EF214955EF000461E8 /* HoratioDemoUITests.swift */; };
-		A75C5165214955F0000461E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75C50F0214955EF000461E8 /* Info.plist */; };
-		A75C5166214955F0000461E8 /* HoratioDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C50F2214955EF000461E8 /* HoratioDemoTests.swift */; };
-		A75C5167214955F0000461E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75C50F3214955EF000461E8 /* Info.plist */; };
 		A79B127E2149515D00B4D39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B127D2149515D00B4D39F /* AppDelegate.swift */; };
 		A79B12802149515D00B4D39F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B127F2149515D00B4D39F /* ViewController.swift */; };
 		A79B12832149515D00B4D39F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79B12812149515D00B4D39F /* Main.storyboard */; };
@@ -131,27 +96,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = EDB7F4261EC211DD0037CCB3;
 			remoteInfo = HoratioTests;
-		};
-		A75C50FD214955F0000461E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A75C50C2214955EF000461E8 /* HoratioDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EDB09D271D85BD25000FC309;
-			remoteInfo = HoratioDemo;
-		};
-		A75C50FF214955F0000461E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A75C50C2214955EF000461E8 /* HoratioDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EDB09D3E1D85BD26000FC309;
-			remoteInfo = HoratioDemoTests;
-		};
-		A75C5101214955F0000461E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A75C50C2214955EF000461E8 /* HoratioDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EDB09D491D85BD26000FC309;
-			remoteInfo = HoratioDemoUITests;
 		};
 		A79B12922149515E00B4D39F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -232,42 +176,6 @@
 		A75C50BE214955EF000461E8 /* JSONParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingTests.swift; sourceTree = "<group>"; };
 		A75C50BF214955EF000461E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75C50C0214955EF000461E8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		A75C50C2214955EF000461E8 /* HoratioDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HoratioDemo.xcodeproj; sourceTree = "<group>"; };
-		A75C50C8214955EF000461E8 /* HoratioDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoratioDemo.xcdatamodel; sourceTree = "<group>"; };
-		A75C50C9214955EF000461E8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A75C50CC214955EF000461E8 /* UpgradeAlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeAlertOperation.swift; sourceTree = "<group>"; };
-		A75C50CD214955EF000461E8 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		A75C50CE214955EF000461E8 /* StartupGateOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupGateOperation.swift; sourceTree = "<group>"; };
-		A75C50D0214955EF000461E8 /* EnvironmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentController.swift; sourceTree = "<group>"; };
-		A75C50D1214955EF000461E8 /* EnvironmentPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentPickerViewController.swift; sourceTree = "<group>"; };
-		A75C50D2214955EF000461E8 /* DownloadEnvironmentsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadEnvironmentsOperation.swift; sourceTree = "<group>"; };
-		A75C50D3214955EF000461E8 /* ParseEnvironmentsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseEnvironmentsOperation.swift; sourceTree = "<group>"; };
-		A75C50D4214955EF000461E8 /* LoadLocalAppConfigOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadLocalAppConfigOperation.swift; sourceTree = "<group>"; };
-		A75C50D5214955EF000461E8 /* DownloadAppConfigOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadAppConfigOperation.swift; sourceTree = "<group>"; };
-		A75C50D6214955EF000461E8 /* RefreshAppConfigOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAppConfigOperation.swift; sourceTree = "<group>"; };
-		A75C50D7214955EF000461E8 /* ParseAppConfigOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAppConfigOperation.swift; sourceTree = "<group>"; };
-		A75C50D8214955EF000461E8 /* LoadLocalEnvironmentsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadLocalEnvironmentsOperation.swift; sourceTree = "<group>"; };
-		A75C50D9214955EF000461E8 /* AppEnvironmentConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironmentConfiguration.swift; sourceTree = "<group>"; };
-		A75C50DB214955EF000461E8 /* PrimeObjectStoreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeObjectStoreOperation.swift; sourceTree = "<group>"; };
-		A75C50DC214955EF000461E8 /* InitializeObjectStoreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializeObjectStoreOperation.swift; sourceTree = "<group>"; };
-		A75C50DD214955EF000461E8 /* LoadObjectStoreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadObjectStoreOperation.swift; sourceTree = "<group>"; };
-		A75C50DE214955EF000461E8 /* ResetObjectStoreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetObjectStoreOperation.swift; sourceTree = "<group>"; };
-		A75C50DF214955EF000461E8 /* UpgradeObjectStoreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeObjectStoreOperation.swift; sourceTree = "<group>"; };
-		A75C50E0214955EF000461E8 /* PersistentStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStoreController.swift; sourceTree = "<group>"; };
-		A75C50E2214955EF000461E8 /* StartupSequenceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupSequenceOperation.swift; sourceTree = "<group>"; };
-		A75C50E3214955EF000461E8 /* RegisterDefaultsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDefaultsOperation.swift; sourceTree = "<group>"; };
-		A75C50E4214955EF000461E8 /* StartupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupManager.swift; sourceTree = "<group>"; };
-		A75C50E5214955EF000461E8 /* DefaultServiceSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultServiceSession.swift; sourceTree = "<group>"; };
-		A75C50E6214955EF000461E8 /* DebugServiceStatusManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugServiceStatusManager.swift; sourceTree = "<group>"; };
-		A75C50E7214955EF000461E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A75C50E9214955EF000461E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A75C50EB214955EF000461E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A75C50EC214955EF000461E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A75C50ED214955EF000461E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A75C50EF214955EF000461E8 /* HoratioDemoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoratioDemoUITests.swift; sourceTree = "<group>"; };
-		A75C50F0214955EF000461E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A75C50F2214955EF000461E8 /* HoratioDemoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoratioDemoTests.swift; sourceTree = "<group>"; };
-		A75C50F3214955EF000461E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A79B127A2149515D00B4D39F /* Smart Training Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Training Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79B127D2149515D00B4D39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A79B127F2149515D00B4D39F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -307,7 +215,6 @@
 				A75C5071214955EF000461E8 /* README.md */,
 				A75C5072214955EF000461E8 /* Horatio */,
 				A75C50C0214955EF000461E8 /* .gitignore */,
-				A75C50C1214955EF000461E8 /* HoratioDemo */,
 			);
 			path = Horatio;
 			sourceTree = "<group>";
@@ -473,123 +380,6 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		A75C50C1214955EF000461E8 /* HoratioDemo */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50C2214955EF000461E8 /* HoratioDemo.xcodeproj */,
-				A75C50C6214955EF000461E8 /* HoratioDemo */,
-				A75C50EE214955EF000461E8 /* HoratioDemoUITests */,
-				A75C50F1214955EF000461E8 /* HoratioDemoTests */,
-			);
-			path = HoratioDemo;
-			sourceTree = "<group>";
-		};
-		A75C50C3214955EF000461E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50FE214955F0000461E8 /* HoratioDemo.app */,
-				A75C5100214955F0000461E8 /* HoratioDemoTests.xctest */,
-				A75C5102214955F0000461E8 /* HoratioDemoUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A75C50C6214955EF000461E8 /* HoratioDemo */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50C7214955EF000461E8 /* HoratioDemo.xcdatamodeld */,
-				A75C50C9214955EF000461E8 /* ViewController.swift */,
-				A75C50CA214955EF000461E8 /* Classes */,
-				A75C50E7214955EF000461E8 /* Assets.xcassets */,
-				A75C50E8214955EF000461E8 /* LaunchScreen.storyboard */,
-				A75C50EA214955EF000461E8 /* Main.storyboard */,
-				A75C50EC214955EF000461E8 /* AppDelegate.swift */,
-				A75C50ED214955EF000461E8 /* Info.plist */,
-			);
-			path = HoratioDemo;
-			sourceTree = "<group>";
-		};
-		A75C50CA214955EF000461E8 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50CB214955EF000461E8 /* Upgrade */,
-				A75C50CD214955EF000461E8 /* AppConfiguration.swift */,
-				A75C50CE214955EF000461E8 /* StartupGateOperation.swift */,
-				A75C50CF214955EF000461E8 /* Environments */,
-				A75C50DA214955EF000461E8 /* Persistence */,
-				A75C50E1214955EF000461E8 /* Startup */,
-				A75C50E5214955EF000461E8 /* DefaultServiceSession.swift */,
-				A75C50E6214955EF000461E8 /* DebugServiceStatusManager.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		A75C50CB214955EF000461E8 /* Upgrade */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50CC214955EF000461E8 /* UpgradeAlertOperation.swift */,
-			);
-			path = Upgrade;
-			sourceTree = "<group>";
-		};
-		A75C50CF214955EF000461E8 /* Environments */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50D0214955EF000461E8 /* EnvironmentController.swift */,
-				A75C50D1214955EF000461E8 /* EnvironmentPickerViewController.swift */,
-				A75C50D2214955EF000461E8 /* DownloadEnvironmentsOperation.swift */,
-				A75C50D3214955EF000461E8 /* ParseEnvironmentsOperation.swift */,
-				A75C50D4214955EF000461E8 /* LoadLocalAppConfigOperation.swift */,
-				A75C50D5214955EF000461E8 /* DownloadAppConfigOperation.swift */,
-				A75C50D6214955EF000461E8 /* RefreshAppConfigOperation.swift */,
-				A75C50D7214955EF000461E8 /* ParseAppConfigOperation.swift */,
-				A75C50D8214955EF000461E8 /* LoadLocalEnvironmentsOperation.swift */,
-				A75C50D9214955EF000461E8 /* AppEnvironmentConfiguration.swift */,
-			);
-			path = Environments;
-			sourceTree = "<group>";
-		};
-		A75C50DA214955EF000461E8 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50DB214955EF000461E8 /* PrimeObjectStoreOperation.swift */,
-				A75C50DC214955EF000461E8 /* InitializeObjectStoreOperation.swift */,
-				A75C50DD214955EF000461E8 /* LoadObjectStoreOperation.swift */,
-				A75C50DE214955EF000461E8 /* ResetObjectStoreOperation.swift */,
-				A75C50DF214955EF000461E8 /* UpgradeObjectStoreOperation.swift */,
-				A75C50E0214955EF000461E8 /* PersistentStoreController.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		A75C50E1214955EF000461E8 /* Startup */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50E2214955EF000461E8 /* StartupSequenceOperation.swift */,
-				A75C50E3214955EF000461E8 /* RegisterDefaultsOperation.swift */,
-				A75C50E4214955EF000461E8 /* StartupManager.swift */,
-			);
-			path = Startup;
-			sourceTree = "<group>";
-		};
-		A75C50EE214955EF000461E8 /* HoratioDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50EF214955EF000461E8 /* HoratioDemoUITests.swift */,
-				A75C50F0214955EF000461E8 /* Info.plist */,
-			);
-			path = HoratioDemoUITests;
-			sourceTree = "<group>";
-		};
-		A75C50F1214955EF000461E8 /* HoratioDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				A75C50F2214955EF000461E8 /* HoratioDemoTests.swift */,
-				A75C50F3214955EF000461E8 /* Info.plist */,
-			);
-			path = HoratioDemoTests;
-			sourceTree = "<group>";
-		};
 		A79B12712149515D00B4D39F = {
 			isa = PBXGroup;
 			children = (
@@ -713,10 +503,6 @@
 					ProductGroup = A75C5074214955EF000461E8 /* Products */;
 					ProjectRef = A75C5073214955EF000461E8 /* Horatio.xcodeproj */;
 				},
-				{
-					ProductGroup = A75C50C3214955EF000461E8 /* Products */;
-					ProjectRef = A75C50C2214955EF000461E8 /* HoratioDemo.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -741,27 +527,6 @@
 			remoteRef = A75C50F8214955F0000461E8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A75C50FE214955F0000461E8 /* HoratioDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = HoratioDemo.app;
-			remoteRef = A75C50FD214955F0000461E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A75C5100214955F0000461E8 /* HoratioDemoTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = HoratioDemoTests.xctest;
-			remoteRef = A75C50FF214955F0000461E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A75C5102214955F0000461E8 /* HoratioDemoUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = HoratioDemoUITests.xctest;
-			remoteRef = A75C5101214955F0000461E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -769,7 +534,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75C5165214955F0000461E8 /* Info.plist in Resources */,
 				A75C5105214955F0000461E8 /* README.md in Resources */,
 				A79B128B2149515E00B4D39F /* LaunchScreen.storyboard in Resources */,
 				A75C5140214955F0000461E8 /* Info.plist in Resources */,
@@ -777,14 +541,9 @@
 				A75C5144214955F0000461E8 /* .gitignore in Resources */,
 				A75C5104214955F0000461E8 /* Horatio.podspec in Resources */,
 				A75C5135214955F0000461E8 /* LICENSE.txt in Resources */,
-				A75C5161214955F0000461E8 /* Main.storyboard in Resources */,
-				A75C5163214955F0000461E8 /* Info.plist in Resources */,
-				A75C5167214955F0000461E8 /* Info.plist in Resources */,
-				A75C5160214955F0000461E8 /* LaunchScreen.storyboard in Resources */,
 				A75C5103214955F0000461E8 /* LICENSE in Resources */,
 				A79B12832149515D00B4D39F /* Main.storyboard in Resources */,
 				A75C5143214955F0000461E8 /* Info.plist in Resources */,
-				A75C515F214955F0000461E8 /* Assets.xcassets in Resources */,
 				A75C512A214955F0000461E8 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,13 +562,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75C5162214955F0000461E8 /* AppDelegate.swift in Sources */,
-				A75C515B214955F0000461E8 /* RegisterDefaultsOperation.swift in Sources */,
 				A75C511D214955F0000461E8 /* BlockOperation.swift in Sources */,
 				A75C5115214955F0000461E8 /* NoCancelledDependencies.swift in Sources */,
-				A75C514B214955F0000461E8 /* EnvironmentPickerViewController.swift in Sources */,
 				A75C511E214955F0000461E8 /* LocationCondition.swift in Sources */,
-				A75C5154214955F0000461E8 /* PrimeObjectStoreOperation.swift in Sources */,
 				A75C5134214955F0000461E8 /* JSONServiceResponseProcessor.swift in Sources */,
 				A75C510E214955F0000461E8 /* PhotosCondition.swift in Sources */,
 				A75C5114214955F0000461E8 /* PassbookCondition.swift in Sources */,
@@ -817,77 +572,52 @@
 				A75C5122214955F0000461E8 /* OperationQueue.swift in Sources */,
 				A75C5123214955F0000461E8 /* NSObject+ThrowingKeyValueObserving.m in Sources */,
 				A75C512B214955F0000461E8 /* DelayOperation.swift in Sources */,
-				A75C515A214955F0000461E8 /* StartupSequenceOperation.swift in Sources */,
 				A75C5113214955F0000461E8 /* NegatedCondition.swift in Sources */,
 				A75C512C214955F0000461E8 /* BlockObserver.swift in Sources */,
 				A75C512F214955F0000461E8 /* Operation.swift in Sources */,
 				A79B12862149515D00B4D39F /* Smart_Training_Log.xcdatamodeld in Sources */,
 				A75C5128214955F0000461E8 /* NSURL+CacheFiles.swift in Sources */,
 				A75C511C214955F0000461E8 /* GroupOperation.swift in Sources */,
-				A75C5148214955F0000461E8 /* AppConfiguration.swift in Sources */,
-				A75C514D214955F0000461E8 /* ParseEnvironmentsOperation.swift in Sources */,
 				A75C5127214955F0000461E8 /* AlertOperation.swift in Sources */,
-				A75C5158214955F0000461E8 /* UpgradeObjectStoreOperation.swift in Sources */,
-				A75C515D214955F0000461E8 /* DefaultServiceSession.swift in Sources */,
 				A75C5137214955F0000461E8 /* ServiceRequest.swift in Sources */,
 				A75C513E214955F0000461E8 /* ServiceEndpoint.swift in Sources */,
 				A75C510D214955F0000461E8 /* ReachabilityCondition.swift in Sources */,
 				A75C5130214955F0000461E8 /* TimeoutObserver.swift in Sources */,
 				A75C5121214955F0000461E8 /* URLSessionTaskOperation.swift in Sources */,
 				A75C5131214955F0000461E8 /* Container.swift in Sources */,
-				A75C5156214955F0000461E8 /* LoadObjectStoreOperation.swift in Sources */,
 				A75C5124214955F0000461E8 /* NSOperation+Operations.swift in Sources */,
-				A75C5150214955F0000461E8 /* RefreshAppConfigOperation.swift in Sources */,
 				A79B12802149515D00B4D39F /* ViewController.swift in Sources */,
 				A75C5138214955F0000461E8 /* ServiceRequestConfigurator.swift in Sources */,
 				A75C5132214955F0000461E8 /* JSONServiceRequest.swift in Sources */,
 				A75C513F214955F0000461E8 /* ServiceEndpointPathTransformer.swift in Sources */,
 				A75C5118214955F0000461E8 /* ExclusivityController.swift in Sources */,
-				A75C5155214955F0000461E8 /* InitializeObjectStoreOperation.swift in Sources */,
 				A75C5116214955F0000461E8 /* CKContainer+Operations.swift in Sources */,
-				A75C5164214955F0000461E8 /* HoratioDemoUITests.swift in Sources */,
-				A75C514C214955F0000461E8 /* DownloadEnvironmentsOperation.swift in Sources */,
 				A75C511B214955F0000461E8 /* HealthCondition.swift in Sources */,
 				A75C5136214955F0000461E8 /* Service.swift in Sources */,
 				A75C510C214955F0000461E8 /* RemoteNotificationCondition.swift in Sources */,
-				A75C5153214955F0000461E8 /* AppEnvironmentConfiguration.swift in Sources */,
 				A75C5108214955F0000461E8 /* FeatureManager.swift in Sources */,
-				A75C514F214955F0000461E8 /* DownloadAppConfigOperation.swift in Sources */,
 				A75C5142214955F0000461E8 /* JSONParsingTests.swift in Sources */,
-				A75C514E214955F0000461E8 /* LoadLocalAppConfigOperation.swift in Sources */,
 				A79B127E2149515D00B4D39F /* AppDelegate.swift in Sources */,
-				A75C515C214955F0000461E8 /* StartupManager.swift in Sources */,
 				A75C510B214955F0000461E8 /* TaskScheduler.swift in Sources */,
 				A75C512D214955F0000461E8 /* CalendarCondition.swift in Sources */,
 				A75C5126214955F0000461E8 /* UIUserNotifications+Operations.swift in Sources */,
-				A75C5147214955F0000461E8 /* UpgradeAlertOperation.swift in Sources */,
-				A75C5152214955F0000461E8 /* LoadLocalEnvironmentsOperation.swift in Sources */,
-				A75C5146214955F0000461E8 /* ViewController.swift in Sources */,
 				A75C511F214955F0000461E8 /* MutuallyExclusive.swift in Sources */,
 				A75C510A214955F0000461E8 /* FeatureCondition.swift in Sources */,
-				A75C5149214955F0000461E8 /* StartupGateOperation.swift in Sources */,
 				A75C511A214955F0000461E8 /* SilentCondition.swift in Sources */,
 				A75C513A214955F0000461E8 /* ServiceRequestStatus.swift in Sources */,
 				A75C5119214955F0000461E8 /* CloudCondition.swift in Sources */,
-				A75C5159214955F0000461E8 /* PersistentStoreController.swift in Sources */,
 				A75C5129214955F0000461E8 /* NetworkObserver.swift in Sources */,
 				A75C513D214955F0000461E8 /* ServiceRequestOperation.swift in Sources */,
 				A75C5125214955F0000461E8 /* DependencySuccessCondition.swift in Sources */,
 				A75C513B214955F0000461E8 /* ServiceSession.swift in Sources */,
 				A75C5139214955F0000461E8 /* ServiceEndpoint+JSONParsing.swift in Sources */,
-				A75C515E214955F0000461E8 /* DebugServiceStatusManager.swift in Sources */,
-				A75C5166214955F0000461E8 /* HoratioDemoTests.swift in Sources */,
 				A75C5110214955F0000461E8 /* Dictionary+Operations.swift in Sources */,
 				A75C5111214955F0000461E8 /* LocationOperation.swift in Sources */,
-				A75C5157214955F0000461E8 /* ResetObjectStoreOperation.swift in Sources */,
-				A75C5151214955F0000461E8 /* ParseAppConfigOperation.swift in Sources */,
-				A75C5145214955F0000461E8 /* HoratioDemo.xcdatamodeld in Sources */,
 				A75C5112214955F0000461E8 /* OperationObserver.swift in Sources */,
 				A75C5109214955F0000461E8 /* FeatureSelector.swift in Sources */,
 				A75C5133214955F0000461E8 /* JSONParsing.swift in Sources */,
 				A75C510F214955F0000461E8 /* NSLock+Operations.swift in Sources */,
 				A75C5106214955F0000461E8 /* FeatureSubject.swift in Sources */,
-				A75C514A214955F0000461E8 /* EnvironmentController.swift in Sources */,
 				A75C5117214955F0000461E8 /* UserNotificationCondition.swift in Sources */,
 				A75C513C214955F0000461E8 /* ServiceRequestDecorator.swift in Sources */,
 				A75C5107214955F0000461E8 /* VendorIDFeatureSubject.swift in Sources */,
@@ -915,22 +645,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A75C50E8214955EF000461E8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A75C50E9214955EF000461E8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A75C50EA214955EF000461E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A75C50EB214955EF000461E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A79B12812149515D00B4D39F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1175,16 +889,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A75C50C7214955EF000461E8 /* HoratioDemo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A75C50C8214955EF000461E8 /* HoratioDemo.xcdatamodel */,
-			);
-			currentVersion = A75C50C8214955EF000461E8 /* HoratioDemo.xcdatamodel */;
-			path = HoratioDemo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		A79B12842149515D00B4D39F /* Smart_Training_Log.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
