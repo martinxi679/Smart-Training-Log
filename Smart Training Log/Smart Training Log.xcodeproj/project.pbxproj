@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		923DCE6D72FE3234359D0A9F /* Pods_Smart_Training_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB75A8C06BC5C9EF66D30A21 /* Pods_Smart_Training_Log.framework */; };
-		9D3D9557B397B2E88E2EEC34 /* Pods_Smart_Training_LogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C94BD7CAA4E1459B5E2A3F /* Pods_Smart_Training_LogTests.framework */; };
 		A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA5921495D8B000311B0 /* AppDelegate.swift */; };
 		A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA5D21495D8C000311B0 /* Main.storyboard */; };
 		A72FDA6221495D8C000311B0 /* Smart_Training_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */; };
 		A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA6321495D8C000311B0 /* Assets.xcassets */; };
 		A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA6521495D8C000311B0 /* LaunchScreen.storyboard */; };
-		A72FDA7221495D8C000311B0 /* Smart_Training_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */; };
 		A72FDAD321495E03000311B0 /* FeatureSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8E21495E03000311B0 /* FeatureSubject.swift */; };
 		A72FDAD421495E03000311B0 /* VendorIDFeatureSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */; };
 		A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA9021495E03000311B0 /* FeatureManager.swift */; };
@@ -70,7 +68,6 @@
 		A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACB21495E03000311B0 /* ServiceRequestOperation.swift */; };
 		A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */; };
 		A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */; };
-		A72FDB0D21495E03000311B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDACF21495E03000311B0 /* Info.plist */; };
 		A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */; };
 		A7595D6D214978E3007EDE67 /* StartupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D6C214978E3007EDE67 /* StartupManager.swift */; };
 		A7595D6F214979C9007EDE67 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D6E214979C9007EDE67 /* PersistenceManager.swift */; };
@@ -78,16 +75,6 @@
 		A7595D7D21498100007EDE67 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D7C21498100007EDE67 /* Palette.swift */; };
 		A7595D7F214985E7007EDE67 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D7E214985E7007EDE67 /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A72FDA6E21495D8C000311B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A72FDA4E21495D8B000311B0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A72FDA5521495D8B000311B0;
-			remoteInfo = "Smart Training Log";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02E39533D8FC2E2A4AEBF221 /* Pods-Smart Training LogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,9 +87,6 @@
 		A72FDA6321495D8C000311B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A72FDA6621495D8C000311B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A72FDA6821495D8C000311B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A72FDA6D21495D8C000311B0 /* Smart Training LogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Training LogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Training_LogTests.swift; sourceTree = "<group>"; };
-		A72FDA7321495D8C000311B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72FDA8E21495E03000311B0 /* FeatureSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureSubject.swift; sourceTree = "<group>"; };
 		A72FDA8F21495E03000311B0 /* VendorIDFeatureSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorIDFeatureSubject.swift; sourceTree = "<group>"; };
 		A72FDA9021495E03000311B0 /* FeatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureManager.swift; sourceTree = "<group>"; };
@@ -184,14 +168,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A72FDA6A21495D8C000311B0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D3D9557B397B2E88E2EEC34 /* Pods_Smart_Training_LogTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -210,7 +186,6 @@
 				A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */,
 				A72FDA7C21495DB5000311B0 /* Third Party */,
 				A72FDA5821495D8B000311B0 /* Smart Training Log */,
-				A72FDA7021495D8C000311B0 /* Smart Training LogTests */,
 				A72FDA5721495D8B000311B0 /* Products */,
 				D8E250BFD43E4D8100CC5174 /* Pods */,
 				2BA2AC68F68A9B3E30C67634 /* Frameworks */,
@@ -221,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				A72FDA5621495D8B000311B0 /* Smart Training Log.app */,
-				A72FDA6D21495D8C000311B0 /* Smart Training LogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,15 +212,6 @@
 				A72FDA6821495D8C000311B0 /* Info.plist */,
 			);
 			path = "Smart Training Log";
-			sourceTree = "<group>";
-		};
-		A72FDA7021495D8C000311B0 /* Smart Training LogTests */ = {
-			isa = PBXGroup;
-			children = (
-				A72FDA7121495D8C000311B0 /* Smart_Training_LogTests.swift */,
-				A72FDA7321495D8C000311B0 /* Info.plist */,
-			);
-			path = "Smart Training LogTests";
 			sourceTree = "<group>";
 		};
 		A72FDA7C21495DB5000311B0 /* Third Party */ = {
@@ -514,25 +479,6 @@
 			productReference = A72FDA5621495D8B000311B0 /* Smart Training Log.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A72FDA6C21495D8C000311B0 /* Smart Training LogTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A72FDA7921495D8C000311B0 /* Build configuration list for PBXNativeTarget "Smart Training LogTests" */;
-			buildPhases = (
-				B8638A98EF41988F2215A65B /* [CP] Check Pods Manifest.lock */,
-				A72FDA6921495D8C000311B0 /* Sources */,
-				A72FDA6A21495D8C000311B0 /* Frameworks */,
-				A72FDA6B21495D8C000311B0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A72FDA6F21495D8C000311B0 /* PBXTargetDependency */,
-			);
-			name = "Smart Training LogTests";
-			productName = "Smart Training LogTests";
-			productReference = A72FDA6D21495D8C000311B0 /* Smart Training LogTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -545,10 +491,6 @@
 				TargetAttributes = {
 					A72FDA5521495D8B000311B0 = {
 						CreatedOnToolsVersion = 9.3;
-					};
-					A72FDA6C21495D8C000311B0 = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = A72FDA5521495D8B000311B0;
 					};
 				};
 			};
@@ -566,7 +508,6 @@
 			projectRoot = "";
 			targets = (
 				A72FDA5521495D8B000311B0 /* Smart Training Log */,
-				A72FDA6C21495D8C000311B0 /* Smart Training LogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -582,14 +523,6 @@
 				A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
-				A72FDB0D21495E03000311B0 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A72FDA6B21495D8C000311B0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,24 +563,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Smart Training Log-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8638A98EF41988F2215A65B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smart Training LogTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -724,23 +639,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A72FDA6921495D8C000311B0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A72FDA7221495D8C000311B0 /* Smart_Training_LogTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A72FDA6F21495D8C000311B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A72FDA5521495D8B000311B0 /* Smart Training Log */;
-			targetProxy = A72FDA6E21495D8C000311B0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A72FDA5D21495D8C000311B0 /* Main.storyboard */ = {
@@ -916,50 +815,6 @@
 			};
 			name = Release;
 		};
-		A72FDA7A21495D8C000311B0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3BE528DCF6B530E73DC4353 /* Pods-Smart Training LogTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5XK7JHWX2X;
-				INFOPLIST_FILE = "Smart Training LogTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-LogTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Training Log.app/Smart Training Log";
-			};
-			name = Debug;
-		};
-		A72FDA7B21495D8C000311B0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02E39533D8FC2E2A4AEBF221 /* Pods-Smart Training LogTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5XK7JHWX2X;
-				INFOPLIST_FILE = "Smart Training LogTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-LogTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Training Log.app/Smart Training Log";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -977,15 +832,6 @@
 			buildConfigurations = (
 				A72FDA7721495D8C000311B0 /* Debug */,
 				A72FDA7821495D8C000311B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A72FDA7921495D8C000311B0 /* Build configuration list for PBXNativeTarget "Smart Training LogTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A72FDA7A21495D8C000311B0 /* Debug */,
-				A72FDA7B21495D8C000311B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
