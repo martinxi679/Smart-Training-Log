@@ -6,13 +6,21 @@ target 'Smart Training Log' do
   use_frameworks!
 
   # Pods for Smart Training Log
- 
+
+# Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+
+# Observable
+  pod 'Observable'
+
+# Keychain
+  pod 'KeychainSwift', '~> 11.0'
 
   target 'Smart Training LogTests' do
     inherit! :search_paths
     # Pods for testing
+
   end
 
 end

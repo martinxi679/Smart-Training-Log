@@ -12,6 +12,7 @@ class Palette {
     
     static let navyBlue = UIColor(hex: "002F58")
     static let pureWhite = UIColor(hex: "FFFFFF")
+    static let accentGrey = UIColor(hex: "AAAAAA")
     
     static let navBarBlue = Palette.navyBlue
     static let defaultBackground = Palette.pureWhite

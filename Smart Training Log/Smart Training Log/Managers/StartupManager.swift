@@ -2,7 +2,6 @@
 //  StartupManager.swift
 //  Smart Training Log
 //
-//
 
 import Foundation
 import Firebase
@@ -28,6 +27,9 @@ class StartupManager {
         
         // Register the persistence manager for the core data stack
         Container.register(PersistenceManager.self) { _ in PersistenceManager() }
+
+        // Register the authentication store
+        Container.register(AuthenticationStore.self) {_ in AuthenticationStore() }
     }
     
     private func setupFirebase() {
@@ -35,8 +37,20 @@ class StartupManager {
     }
     
     private func configureNavBar() {
-        UINavigationBar.appearance().backgroundColor = Palette.navBarBlue
-        UINavigationBar.appearance().tintColor = Palette.pureWhite
+
+        let navBarAppearence = UINavigationBar.appearance()
+        
+        navBarAppearence.barTintColor = Palette.navBarBlue
+        navBarAppearence.tintColor = UIColor.white
+        navBarAppearence.isTranslucent = false
+        navBarAppearence.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Palette.pureWhite]
+
+        let tabBarAppearence = UITabBar.appearance()
+
+        tabBarAppearence.barTintColor = Palette.navBarBlue
+        tabBarAppearence.tintColor = Palette.pureWhite
+        tabBarAppearence.isTranslucent = false
+        tabBarAppearence.items?.forEach({$0.setBadgeTextAttributes([NSAttributedStringKey.foregroundColor.rawValue: Palette.pureWhite], for: .normal)})
     }
     
 }
