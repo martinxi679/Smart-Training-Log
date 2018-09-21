@@ -6,7 +6,7 @@
 import UIKit
 import Observable
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, ImageDownloadable {
 
     // MARK: - Outlets
 
@@ -25,12 +25,20 @@ class ProfileViewController: UIViewController {
             self?.nameLabel.text = name
         }.add(to: &disposeBag)
 
-        viewModel.image.observe{ [weak self] (url, _) in
-            self?.downloadProfileImage(url)
+        viewModel.image.observe{ [weak self] (image, _) in
+            self?.profileImageView.image = image
         }.add(to: &disposeBag)
+
+        viewModel.sport.observe({ [weak self] (sport, _) in
+            self?.sportLabel.text = sport ?? "Sport"
+        }).add(to: &disposeBag)
+
+        tabBarItem.title = "Profile"
     }
 
-    private func downloadProfileImage(_ url: URL?) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.update()
     }
+
 }

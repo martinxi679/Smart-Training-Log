@@ -76,6 +76,16 @@ class LoginViewController: UIViewController {
                 return
             }
 
+            if let storageManager = try? Container.resolve(CloudStorageManager.self) {
+                if let url = storageManager.getProfileImageURL(user: user) {
+                    storageManager.getProfilePicture(url: url)
+                }
+            }
+
+            if let dataManager = try? Container.resolve(DatabaseManager.self) {
+                _ = dataManager.getSport(for: user)
+            }
+
             if let authStore = try? Container.resolve(AuthenticationStore.self) {
                 authStore.store(user: user, with: password)
             }

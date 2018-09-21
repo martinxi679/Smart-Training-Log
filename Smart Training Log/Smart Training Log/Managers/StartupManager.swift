@@ -30,6 +30,16 @@ class StartupManager {
 
         // Register the authentication store
         Container.register(AuthenticationStore.self) {_ in AuthenticationStore() }
+
+        // Register the shared url session
+        Container.register(URLSession.self) { _ in URLSession.shared }
+
+        // Register the cache manager
+        Container.register(DownloadCacheManager.self) { _ in DownloadCacheManager() }
+
+
+        Container.register(CloudStorageManager.self) { _ in CloudStorageManager() }
+        Container.register(DatabaseManager.self) { _ in DatabaseManager() }
     }
     
     private func setupFirebase() {

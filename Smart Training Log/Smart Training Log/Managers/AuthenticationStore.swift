@@ -3,9 +3,10 @@
 //  Smart Training Log
 //
 
-import Foundation
+import UIKit
 import FirebaseAuth
 import KeychainSwift
+import Observable
 
 class AuthenticationStore {
 
@@ -18,12 +19,26 @@ class AuthenticationStore {
         }
     }
 
+    var cachedProfilePicture: Observable<UIImage?> = Observable(nil)
+    var userSport: Observable<Sport?> = Observable(nil)
+
     public func store(user: User?, with password: String?) {
-        // TODO- Update keychain?
         let keychain = KeychainSwift()
         guard let email = user?.email, let pass = password else { return }
         keychain.set(email, forKey: AuthenticationStore.USER_EMAIL_KEY)
         keychain.set(pass, forKey: AuthenticationStore.USER_PASSWORD_KEY)
     }
 
+}
+
+extension User {
+    var profilePicture: UIImage? {
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return nil }
+        return authStore.cachedProfilePicture.value
+    }
+
+    var sport: Sport? {
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return nil }
+        return authStore.userSport.value
+    }
 }
