@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum Sports: String {
+public enum Sport: String {
 
     case baseball = "BASEBALL"
     case mensBasketball = "BASKETBALL (M)"
@@ -24,7 +24,7 @@ public enum Sports: String {
 
     static var count = 14
 
-    static func sportForIndex(_ index: Int) -> Sports? {
+    static func sportForIndex(_ index: Int) -> Sport? {
         switch index {
         case 0: return .baseball
         case 1: return .mensBasketball

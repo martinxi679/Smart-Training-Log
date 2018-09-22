@@ -2,9 +2,6 @@
 //  PersistenceManager.swift
 //  Smart Training Log
 //
-//  Created by Kasper Gammeltoft on 9/12/18.
-//  Copyright © 2018 CS4261. All rights reserved.
-//
 
 import Foundation
 import CoreData

@@ -91,9 +91,16 @@
 		A7595D9C214D7F43007EDE67 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D9B214D7F43007EDE67 /* Profile.storyboard */; };
 		A7595D9F214D7FFA007EDE67 /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */; };
 		A7595DA2214D8269007EDE67 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595DA1214D8269007EDE67 /* More.storyboard */; };
+		A7702F6C21501B450007484A /* ImageDownloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F6B21501B450007484A /* ImageDownloadable.swift */; };
+		A7702F6E2150359B0007484A /* DownloadCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F6D2150359B0007484A /* DownloadCacheManager.swift */; };
+		A7702F7021503CD80007484A /* DownloadResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F6F21503CD80007484A /* DownloadResourceService.swift */; };
+		A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F7121504EB30007484A /* CloudStorageManager.swift */; };
+		A7702F74215071930007484A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F73215071930007484A /* DatabaseManager.swift */; };
+		A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772E35921529A32005FB9B5 /* UIImageExtensions.swift */; };
 		A7BB24AF214FDF370088A4C8 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */; };
 		A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */; };
 		A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B2214FE8160088A4C8 /* Sports.swift */; };
+		A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */; };
 		D0B6A4C97BD88F049109A1B5 /* Pods_Smart_Training_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE2786EB6978258EDF3E25B /* Pods_Smart_Training_Log.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,9 +210,16 @@
 		A7595D9B214D7F43007EDE67 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Treatments.storyboard; sourceTree = "<group>"; };
 		A7595DA1214D8269007EDE67 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		A7702F6B21501B450007484A /* ImageDownloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadable.swift; sourceTree = "<group>"; };
+		A7702F6D2150359B0007484A /* DownloadCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCacheManager.swift; sourceTree = "<group>"; };
+		A7702F6F21503CD80007484A /* DownloadResourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadResourceService.swift; sourceTree = "<group>"; };
+		A7702F7121504EB30007484A /* CloudStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageManager.swift; sourceTree = "<group>"; };
+		A7702F73215071930007484A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A772E35921529A32005FB9B5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A7BB24B2214FE8160088A4C8 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
+		A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentsViewController.swift; sourceTree = "<group>"; };
 		C885EE26585B9698313005EC /* Pods_Smart_Training_LogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_LogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB49667F32E4BDDEE417CE6 /* Pods-Smart Training LogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFB2C3A67722AD1C724CC913 /* Pods-Smart Training LogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -434,6 +448,9 @@
 				A7595D6C214978E3007EDE67 /* StartupManager.swift */,
 				A7595D6E214979C9007EDE67 /* PersistenceManager.swift */,
 				A7595D8D214C3A07007EDE67 /* AuthenticationStore.swift */,
+				A7702F6D2150359B0007484A /* DownloadCacheManager.swift */,
+				A7702F7121504EB30007484A /* CloudStorageManager.swift */,
+				A7702F73215071930007484A /* DatabaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -509,6 +526,7 @@
 		A7595D79214980B3007EDE67 /* STLKit */ = {
 			isa = PBXGroup;
 			children = (
+				A7702F6A21501B180007484A /* Service */,
 				A7595D90214C5B12007EDE67 /* Segue */,
 				A7595D8221499B08007EDE67 /* Views */,
 				A7595D7B214980D3007EDE67 /* Palette */,
@@ -524,6 +542,7 @@
 				A7595D8B2149CDA7007EDE67 /* StringExtensions.swift */,
 				A7595D93214C5D82007EDE67 /* UIApplicationExtensions.swift */,
 				A7595D95214D3A27007EDE67 /* UIViewExtensions.swift */,
+				A772E35921529A32005FB9B5 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -559,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */,
+				A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */,
 			);
 			path = Treatments;
 			sourceTree = "<group>";
@@ -569,6 +589,15 @@
 				A7595DA1214D8269007EDE67 /* More.storyboard */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		A7702F6A21501B180007484A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A7702F6B21501B450007484A /* ImageDownloadable.swift */,
+				A7702F6F21503CD80007484A /* DownloadResourceService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -689,6 +718,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Observable/Observable.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -697,6 +727,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Observable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,6 +796,7 @@
 				A72FDADB21495E03000311B0 /* PhotosCondition.swift in Sources */,
 				A7595D6F214979C9007EDE67 /* PersistenceManager.swift in Sources */,
 				A7595D8E214C3A07007EDE67 /* AuthenticationStore.swift in Sources */,
+				A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */,
 				A72FDAF921495E03000311B0 /* BlockObserver.swift in Sources */,
 				A72FDAFE21495E03000311B0 /* Container.swift in Sources */,
 				A7595D98214D727E007EDE67 /* KeyboardReactiveScrollView.swift in Sources */,
@@ -779,6 +811,7 @@
 				A7595D7D21498100007EDE67 /* Palette.swift in Sources */,
 				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
 				A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */,
+				A7702F74215071930007484A /* DatabaseManager.swift in Sources */,
 				A71B4804214E9DF200700340 /* ProfileViewModel.swift in Sources */,
 				A72FDAFD21495E03000311B0 /* TimeoutObserver.swift in Sources */,
 				A7595D8621499C91007EDE67 /* RoundRectButton.swift in Sources */,
@@ -800,13 +833,18 @@
 				A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */,
 				A7595D7F214985E7007EDE67 /* UIColorExtensions.swift in Sources */,
 				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
+				A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */,
+				A7702F6C21501B450007484A /* ImageDownloadable.swift in Sources */,
 				A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */,
+				A7702F7021503CD80007484A /* DownloadResourceService.swift in Sources */,
 				A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */,
 				A72FDAF521495E03000311B0 /* NSURL+CacheFiles.swift in Sources */,
 				A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */,
 				A7BB24AF214FDF370088A4C8 /* CircleImageView.swift in Sources */,
+				A7702F6E2150359B0007484A /* DownloadCacheManager.swift in Sources */,
 				A72FDB0721495E03000311B0 /* ServiceRequestStatus.swift in Sources */,
 				A72FDAF221495E03000311B0 /* DependencySuccessCondition.swift in Sources */,
+				A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */,
 				A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */,
 				A72FDB0521495E03000311B0 /* ServiceRequestConfigurator.swift in Sources */,
 				A72FDAEB21495E03000311B0 /* LocationCondition.swift in Sources */,
