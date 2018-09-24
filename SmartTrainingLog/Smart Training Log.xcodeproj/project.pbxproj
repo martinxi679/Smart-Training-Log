@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		022E45420132DC86B5923085 /* Pods_Smart_Training_LogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C885EE26585B9698313005EC /* Pods_Smart_Training_LogTests.framework */; };
+		5FF217CB043B1ADB7726BEB0 /* Pods_Smart_Training_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830EA71B45708F42547DE3C2 /* Pods_Smart_Training_Log.framework */; };
+		8CF430292D65DA5382C52E95 /* Pods_Smart_Training_LogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BA023BD59C9B0EE13F7AEB /* Pods_Smart_Training_LogTests.framework */; };
 		A71B4802214E98B000700340 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B4801214E98B000700340 /* ProfileViewController.swift */; };
 		A71B4804214E9DF200700340 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B4803214E9DF200700340 /* ProfileViewModel.swift */; };
+		A725784D215705860086D0C7 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A725784C215705860086D0C7 /* Student.swift */; };
 		A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA5921495D8B000311B0 /* AppDelegate.swift */; };
 		A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72FDA5D21495D8C000311B0 /* Main.storyboard */; };
 		A72FDA6221495D8C000311B0 /* Smart_Training_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */; };
@@ -71,7 +73,6 @@
 		A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACB21495E03000311B0 /* ServiceRequestOperation.swift */; };
 		A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */; };
 		A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */; };
-		A72FDB0D21495E03000311B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDACF21495E03000311B0 /* Info.plist */; };
 		A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */; };
 		A7595D6D214978E3007EDE67 /* StartupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D6C214978E3007EDE67 /* StartupManager.swift */; };
 		A7595D6F214979C9007EDE67 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D6E214979C9007EDE67 /* PersistenceManager.swift */; };
@@ -101,7 +102,6 @@
 		A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */; };
 		A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B2214FE8160088A4C8 /* Sports.swift */; };
 		A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */; };
-		D0B6A4C97BD88F049109A1B5 /* Pods_Smart_Training_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE2786EB6978258EDF3E25B /* Pods_Smart_Training_Log.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,11 +115,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23C0A3888AA3A7CDEF788B34 /* Pods-Smart Training Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.release.xcconfig"; sourceTree = "<group>"; };
-		28ACCEB44ABC2E14744F5C75 /* Pods-Smart Training Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.debug.xcconfig"; sourceTree = "<group>"; };
-		2CE2786EB6978258EDF3E25B /* Pods_Smart_Training_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03BA023BD59C9B0EE13F7AEB /* Pods_Smart_Training_LogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_LogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BDC99589586F6D7B3FA143 /* Pods-Smart Training LogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.release.xcconfig"; sourceTree = "<group>"; };
+		59584B79FE0F4A3E77532D78 /* Pods-Smart Training Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.debug.xcconfig"; sourceTree = "<group>"; };
+		5F200C7318446E8B8D5AECEC /* Pods-Smart Training Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log.release.xcconfig"; sourceTree = "<group>"; };
+		830EA71B45708F42547DE3C2 /* Pods_Smart_Training_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83CB36034396187753816885 /* Pods-Smart Training LogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A71B4801214E98B000700340 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A71B4803214E9DF200700340 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A725784C215705860086D0C7 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A72FDA5621495D8B000311B0 /* Smart Training Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Training Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72FDA5921495D8B000311B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A72FDA5E21495D8C000311B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,7 +194,6 @@
 		A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
 		A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpointPathTransformer.swift; sourceTree = "<group>"; };
 		A72FDACE21495E03000311B0 /* Horatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horatio.h; sourceTree = "<group>"; };
-		A72FDACF21495E03000311B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7595D6C214978E3007EDE67 /* StartupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupManager.swift; sourceTree = "<group>"; };
 		A7595D6E214979C9007EDE67 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -220,9 +223,6 @@
 		A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A7BB24B2214FE8160088A4C8 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentsViewController.swift; sourceTree = "<group>"; };
-		C885EE26585B9698313005EC /* Pods_Smart_Training_LogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Training_LogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEB49667F32E4BDDEE417CE6 /* Pods-Smart Training LogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EFB2C3A67722AD1C724CC913 /* Pods-Smart Training LogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Training LogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Training LogTests/Pods-Smart Training LogTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B6A4C97BD88F049109A1B5 /* Pods_Smart_Training_Log.framework in Frameworks */,
+				5FF217CB043B1ADB7726BEB0 /* Pods_Smart_Training_Log.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,29 +238,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				022E45420132DC86B5923085 /* Pods_Smart_Training_LogTests.framework in Frameworks */,
+				8CF430292D65DA5382C52E95 /* Pods_Smart_Training_LogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07C7D7FE61F9840753F0C744 /* Frameworks */ = {
+		0A23D5B27E85299EA681FE3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CE2786EB6978258EDF3E25B /* Pods_Smart_Training_Log.framework */,
-				C885EE26585B9698313005EC /* Pods_Smart_Training_LogTests.framework */,
+				830EA71B45708F42547DE3C2 /* Pods_Smart_Training_Log.framework */,
+				03BA023BD59C9B0EE13F7AEB /* Pods_Smart_Training_LogTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		421AF40C2DCEFAB5AFD28DAA /* Pods */ = {
+		667BC305DDAE6D281B7C04F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				28ACCEB44ABC2E14744F5C75 /* Pods-Smart Training Log.debug.xcconfig */,
-				23C0A3888AA3A7CDEF788B34 /* Pods-Smart Training Log.release.xcconfig */,
-				CEB49667F32E4BDDEE417CE6 /* Pods-Smart Training LogTests.debug.xcconfig */,
-				EFB2C3A67722AD1C724CC913 /* Pods-Smart Training LogTests.release.xcconfig */,
+				59584B79FE0F4A3E77532D78 /* Pods-Smart Training Log.debug.xcconfig */,
+				5F200C7318446E8B8D5AECEC /* Pods-Smart Training Log.release.xcconfig */,
+				83CB36034396187753816885 /* Pods-Smart Training LogTests.debug.xcconfig */,
+				53BDC99589586F6D7B3FA143 /* Pods-Smart Training LogTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 				A72FDA5821495D8B000311B0 /* Smart Training Log */,
 				A72FDA7021495D8C000311B0 /* Smart Training LogTests */,
 				A72FDA5721495D8B000311B0 /* Products */,
-				421AF40C2DCEFAB5AFD28DAA /* Pods */,
-				07C7D7FE61F9840753F0C744 /* Frameworks */,
+				667BC305DDAE6D281B7C04F6 /* Pods */,
+				0A23D5B27E85299EA681FE3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,7 +323,6 @@
 			children = (
 				A72FDA8C21495E02000311B0 /* Classes */,
 				A72FDACE21495E03000311B0 /* Horatio.h */,
-				A72FDACF21495E03000311B0 /* Info.plist */,
 			);
 			path = Horatio;
 			sourceTree = "<group>";
@@ -480,6 +479,7 @@
 			children = (
 				A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */,
 				A7BB24B2214FE8160088A4C8 /* Sports.swift */,
+				A725784C215705860086D0C7 /* Student.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -607,11 +607,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A72FDA7621495D8C000311B0 /* Build configuration list for PBXNativeTarget "Smart Training Log" */;
 			buildPhases = (
-				DFD5DEF89023CCC58134B9BE /* [CP] Check Pods Manifest.lock */,
+				AB9CC183BEF42B9282F3C8B4 /* [CP] Check Pods Manifest.lock */,
 				A72FDA5221495D8B000311B0 /* Sources */,
 				A72FDA5321495D8B000311B0 /* Frameworks */,
 				A72FDA5421495D8B000311B0 /* Resources */,
-				3B2F521596207EE967B53F4E /* [CP] Embed Pods Frameworks */,
+				54B92A7BBD5A74795A5CF328 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -626,7 +626,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A72FDA7921495D8C000311B0 /* Build configuration list for PBXNativeTarget "Smart Training LogTests" */;
 			buildPhases = (
-				61A9414EAA05D2A7B5DBB1DD /* [CP] Check Pods Manifest.lock */,
+				478059F0569EC9F858D02D8F /* [CP] Check Pods Manifest.lock */,
 				A72FDA6921495D8C000311B0 /* Sources */,
 				A72FDA6A21495D8C000311B0 /* Frameworks */,
 				A72FDA6B21495D8C000311B0 /* Resources */,
@@ -693,7 +693,6 @@
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
 				A7595D9F214D7FFA007EDE67 /* Treatments.storyboard in Resources */,
-				A72FDB0D21495E03000311B0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,7 +706,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B2F521596207EE967B53F4E /* [CP] Embed Pods Frameworks */ = {
+		478059F0569EC9F858D02D8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart Training LogTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54B92A7BBD5A74795A5CF328 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -735,25 +752,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		61A9414EAA05D2A7B5DBB1DD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smart Training LogTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DFD5DEF89023CCC58134B9BE /* [CP] Check Pods Manifest.lock */ = {
+		AB9CC183BEF42B9282F3C8B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -834,6 +833,7 @@
 				A7595D7F214985E7007EDE67 /* UIColorExtensions.swift in Sources */,
 				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
 				A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */,
+				A725784D215705860086D0C7 /* Student.swift in Sources */,
 				A7702F6C21501B450007484A /* ImageDownloadable.swift in Sources */,
 				A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */,
 				A7702F7021503CD80007484A /* DownloadResourceService.swift in Sources */,
@@ -1017,7 +1017,7 @@
 		};
 		A72FDA7721495D8C000311B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28ACCEB44ABC2E14744F5C75 /* Pods-Smart Training Log.debug.xcconfig */;
+			baseConfigurationReference = 59584B79FE0F4A3E77532D78 /* Pods-Smart Training Log.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1037,7 +1037,7 @@
 		};
 		A72FDA7821495D8C000311B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C0A3888AA3A7CDEF788B34 /* Pods-Smart Training Log.release.xcconfig */;
+			baseConfigurationReference = 5F200C7318446E8B8D5AECEC /* Pods-Smart Training Log.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1057,7 +1057,7 @@
 		};
 		A72FDA7A21495D8C000311B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEB49667F32E4BDDEE417CE6 /* Pods-Smart Training LogTests.debug.xcconfig */;
+			baseConfigurationReference = 83CB36034396187753816885 /* Pods-Smart Training LogTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1079,7 +1079,7 @@
 		};
 		A72FDA7B21495D8C000311B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFB2C3A67722AD1C724CC913 /* Pods-Smart Training LogTests.release.xcconfig */;
+			baseConfigurationReference = 53BDC99589586F6D7B3FA143 /* Pods-Smart Training LogTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
