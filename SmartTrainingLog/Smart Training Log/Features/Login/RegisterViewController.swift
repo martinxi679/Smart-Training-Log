@@ -20,7 +20,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailField: UnderlineTextField!
     @IBOutlet weak var passwordField: UnderlineTextField!
     @IBOutlet weak var confirmPasswordField: UnderlineTextField!
-    @IBOutlet weak var userTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var registerButton: RoundRectButton!
 
     override func viewDidLoad() {
@@ -64,7 +63,6 @@ class RegisterViewController: UIViewController {
             confirmPass == pass {
             registerButton.isEnabled = true
         } else {
-            handleError(LoginRegistrationError.registerPassword)
             registerButton.isEnabled = false
         }
     }
@@ -92,6 +90,10 @@ class RegisterViewController: UIViewController {
 
             if let authStore = try? Container.resolve(AuthenticationStore.self) {
                 authStore.store(user: user, with: pass)
+            }
+            
+            if let database = try? Container.resolve(DatabaseManager.self) {
+                database.updateUserEntitlements(user: user, entitlement: Entitlement.student)
             }
 
             self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)

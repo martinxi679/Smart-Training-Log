@@ -78,12 +78,12 @@ class EditProfileViewController: UIViewController {
     private func updateAndSave() {
         guard
             let name = nameField.text,
-            let image = profileImageView.image,
-            let sport = Sport.sportForIndex(sportPickerView.selectedRow(inComponent: 0))
+            let image = profileImageView.image
         else {
             return
             // TODO: Show Error
         }
+        let sport = Sport.allCases[sportPickerView.selectedRow(inComponent: 0)]
 
         if
             let authStore = try? Container.resolve(AuthenticationStore.self),
@@ -94,10 +94,7 @@ class EditProfileViewController: UIViewController {
             storageManager.saveProfilePicture(image: image, user: user)
 
             // Save sport choice
-            let sport = Sport.sportForIndex(sportPickerView.selectedRow(inComponent: 0))
-            if
-                let dataManager = try? Container.resolve(DatabaseManager.self),
-                let sport = sport {
+            if let dataManager = try? Container.resolve(DatabaseManager.self) {
                 dataManager.updateUserSport(user: user, sport: sport)
             }
 
@@ -119,11 +116,11 @@ extension EditProfileViewController: UIPickerViewDataSource, UIPickerViewDelegat
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Sport.count
+        return Sport.allCases.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Sport.sportForIndex(row)?.rawValue
+        return Sport.allCases[row].rawValue
     }
 
 }
