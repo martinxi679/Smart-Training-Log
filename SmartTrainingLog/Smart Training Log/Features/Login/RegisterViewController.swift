@@ -64,6 +64,7 @@ class RegisterViewController: UIViewController {
             confirmPass == pass {
             registerButton.isEnabled = true
         } else {
+            handleError(LoginRegistrationError.registerPassword)
             registerButton.isEnabled = false
         }
     }
