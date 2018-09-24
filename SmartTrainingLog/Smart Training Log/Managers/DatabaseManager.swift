@@ -88,11 +88,11 @@ extension DatabaseManager {
     
     func getEntitlement(for user: User, resultHandler: @escaping (Entitlement?) -> Void = {(_) in }) -> Entitlement? {
         getUserInfoValue(key: Root.Users.Entitlement.name, user: user) { (value) in
-            if let entitlementStr = value as? String,
-                let entitlement = Entitlement(rawValue: entitlementStr) {
-                resultHandler(entitlement)
-            } else {
-                resultHandler(nil)
+            let entitlementStr = value as? String
+            let entitlement = Entitlement(rawValue: entitlementStr ?? "")
+            resultHandler(entitlement)
+            if let auth = try? Container.resolve(AuthenticationStore.self) {
+                auth.userEntitlement.value = entitlement
             }
         }
         
@@ -104,11 +104,11 @@ extension DatabaseManager {
 
     func getSport(for user: User, resultHandler: @escaping (Sport?) -> Void = {(_) in }) -> Sport? {
         getUserInfoValue(key: Root.Users.Sport.name, user: user) { (value) in
-            if let sportStr = value as? String,
-                let sport = Sport(rawValue: sportStr) {
-                resultHandler(sport)
-            } else {
-                resultHandler(nil)
+            let sportStr = value as? String
+            let sport = Sport(rawValue: sportStr ?? "")
+            resultHandler(sport)
+            if let auth = try? Container.resolve(AuthenticationStore.self) {
+                auth.userSport.value = sport
             }
         }
 
@@ -131,7 +131,7 @@ class Path {
      users->(uid)->sport, provide the uid and the path string it should be inserted after. You
      can optionally include it in the origional path string as well. For example, users/uid/sport
      or users/sport with uid provided and uidAfter = users would give the same result. If the uid
-     was in the path and provided by setting uid, it will not be inserted again. 
+     was in the path and provided by setting uid, it will not be inserted again.
      - Parameter path: The path string
      - Parameter uid: If the uid is needed in the path, it will be inserted using this value
      - Parameter uidAfter: If the uid is needed in the path, it will be inserted after this value
