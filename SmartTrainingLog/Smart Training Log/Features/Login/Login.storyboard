@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ea-kC-dvL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ea-kC-dvL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,7 +55,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAc-Yd-w6o" customClass="RoundRectButton" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="42.5" y="130" width="250.5" height="50"/>
+                                                <rect key="frame" x="42.5" y="130" width="250" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.18431372549019609" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="ZAJ-Ek-GWv"/>
@@ -84,7 +84,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3e-wc-B5M" customClass="RoundRectButton" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="42.5" y="205" width="250.5" height="50"/>
+                                                <rect key="frame" x="42.5" y="205" width="250" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="J1c-Xp-6sH"/>
                                                     <constraint firstAttribute="width" constant="250" id="sNE-b0-H41"/>
@@ -205,7 +205,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-PX-pYl">
-                                        <rect key="frame" x="20" y="170" width="335" height="385"/>
+                                        <rect key="frame" x="20" y="170" width="335" height="310"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qzH-uE-Spu" customClass="UnderlineTextField" customModule="Smart_Training_Log" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -255,34 +255,8 @@
                                                     <action selector="textFieldDidChange:" destination="nqu-zQ-ALi" eventType="editingChanged" id="a72-pg-hPC"/>
                                                 </connections>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-GE-gDm">
-                                                <rect key="frame" x="0.0" y="260" width="335" height="50"/>
-                                                <subviews>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w9w-p4-ZoM">
-                                                        <rect key="frame" x="55" y="11.5" width="125" height="29"/>
-                                                        <segments>
-                                                            <segment title="Student"/>
-                                                            <segment title="Trainer"/>
-                                                        </segments>
-                                                        <color key="tintColor" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </segmentedControl>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMs-u8-wjv">
-                                                        <rect key="frame" x="0.0" y="15" width="50" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="iMs-u8-wjv" firstAttribute="leading" secondItem="qzW-GE-gDm" secondAttribute="leading" id="0jV-Bw-Ydq"/>
-                                                    <constraint firstAttribute="height" constant="50" id="ATW-sL-cDk"/>
-                                                    <constraint firstItem="w9w-p4-ZoM" firstAttribute="centerY" secondItem="iMs-u8-wjv" secondAttribute="centerY" id="OGD-sO-I9h"/>
-                                                    <constraint firstItem="w9w-p4-ZoM" firstAttribute="leading" secondItem="iMs-u8-wjv" secondAttribute="trailing" constant="5" id="OnS-TO-5aj"/>
-                                                    <constraint firstItem="iMs-u8-wjv" firstAttribute="centerY" secondItem="qzW-GE-gDm" secondAttribute="centerY" id="cVc-Vn-s7l"/>
-                                                </constraints>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n2-hv-CEg" customClass="RoundRectButton" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="42.5" y="335" width="250.5" height="50"/>
+                                                <rect key="frame" x="42.5" y="260" width="250" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="G1V-RY-Y5U"/>
@@ -318,8 +292,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="qzW-GE-gDm" secondAttribute="trailing" id="0Eo-QL-93X"/>
-                                            <constraint firstItem="qzW-GE-gDm" firstAttribute="leading" secondItem="Q81-PX-pYl" secondAttribute="leading" id="6lO-jZ-aFW"/>
                                             <constraint firstAttribute="trailing" secondItem="qzH-uE-Spu" secondAttribute="trailing" id="AJ2-gM-paT"/>
                                             <constraint firstAttribute="trailing" secondItem="ech-kV-5fh" secondAttribute="trailing" id="Iep-CN-2hd"/>
                                             <constraint firstAttribute="trailing" secondItem="FeK-oZ-XPz" secondAttribute="trailing" id="ZtO-UQ-CLi"/>
@@ -361,7 +333,6 @@
                         <outlet property="nameField" destination="qzH-uE-Spu" id="7as-Cf-BdT"/>
                         <outlet property="passwordField" destination="ech-kV-5fh" id="JH0-TH-y94"/>
                         <outlet property="registerButton" destination="5n2-hv-CEg" id="CiV-lE-4AH"/>
-                        <outlet property="userTypeSegmentedControl" destination="w9w-p4-ZoM" id="1bo-UQ-WBm"/>
                         <segue destination="der-Ld-m6k" kind="custom" identifier="registerToMain" customClass="NavigationTransistionSegue" customModule="Smart_Training_Log" customModuleProvider="target" id="O3W-bh-JTy"/>
                     </connections>
                 </viewController>

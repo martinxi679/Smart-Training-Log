@@ -21,6 +21,7 @@ class AuthenticationStore {
 
     var cachedProfilePicture: Observable<UIImage?> = Observable(nil)
     var userSport: Observable<Sport?> = Observable(nil)
+    var userEntitlement: Observable<Entitlement?> = Observable(nil)
 
     public func store(user: User?, with password: String?) {
         let keychain = KeychainSwift()
@@ -40,5 +41,10 @@ extension User {
     var sport: Sport? {
         guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return nil }
         return authStore.userSport.value
+    }
+    
+    var entitlement: Entitlement? {
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return nil }
+        return authStore.userEntitlement.value
     }
 }

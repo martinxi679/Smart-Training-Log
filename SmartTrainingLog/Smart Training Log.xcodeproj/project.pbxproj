@@ -98,6 +98,7 @@
 		A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F7121504EB30007484A /* CloudStorageManager.swift */; };
 		A7702F74215071930007484A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F73215071930007484A /* DatabaseManager.swift */; };
 		A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772E35921529A32005FB9B5 /* UIImageExtensions.swift */; };
+		A7818EAA2159558100836B6E /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EA92159558100836B6E /* Entitlements.swift */; };
 		A7BB24AF214FDF370088A4C8 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */; };
 		A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */; };
 		A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B2214FE8160088A4C8 /* Sports.swift */; };
@@ -219,6 +220,7 @@
 		A7702F7121504EB30007484A /* CloudStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageManager.swift; sourceTree = "<group>"; };
 		A7702F73215071930007484A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A772E35921529A32005FB9B5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		A7818EA92159558100836B6E /* Entitlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlements.swift; sourceTree = "<group>"; };
 		A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A7BB24B2214FE8160088A4C8 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 				A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */,
 				A7BB24B2214FE8160088A4C8 /* Sports.swift */,
 				A725784C215705860086D0C7 /* Student.swift */,
+				A7818EA92159558100836B6E /* Entitlements.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				A72FDAED21495E03000311B0 /* OperationCondition.swift in Sources */,
 				A7595D6D214978E3007EDE67 /* StartupManager.swift in Sources */,
 				A7595D8421499B27007EDE67 /* UnderlineTextField.swift in Sources */,
+				A7818EAA2159558100836B6E /* Entitlements.swift in Sources */,
 				A72FDB0121495E03000311B0 /* JSONServiceResponseProcessor.swift in Sources */,
 				A72FDAE821495E03000311B0 /* HealthCondition.swift in Sources */,
 				A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */,

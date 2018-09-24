@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum Sport: String {
+public enum Sport: String, CaseIterable {
 
     case baseball = "BASEBALL"
     case mensBasketball = "BASKETBALL (M)"
@@ -23,24 +23,4 @@ public enum Sport: String {
     case vollyball = "VOLLEYBALL"
 
     static var count = 14
-
-    static func sportForIndex(_ index: Int) -> Sport? {
-        switch index {
-        case 0: return .baseball
-        case 1: return .mensBasketball
-        case 2: return .womensBasketball
-        case 3: return .mensCrossCountry
-        case 4: return .womensCrossCountry
-        case 5: return .football
-        case 6: return .golf
-        case 7: return .softball
-        case 8: return .swimAndDive
-        case 9: return .mensTennis
-        case 10: return .womensTennis
-        case 11: return .mensTrack
-        case 12: return .womensTrack
-        case 13: return .vollyball
-        default: return nil
-        }
-    }
 }
