@@ -7,18 +7,17 @@ import UIKit
 
 extension UIImage {
 
-    func compressed(to bytes: Int) -> UIImage? {
+    func compressed(to bytes: Int) -> Data? {
         guard var data = UIImagePNGRepresentation(self) else { return nil }
-        if data.count > bytes {
-            let compressionRatio: CGFloat = CGFloat(bytes / data.count)
-            if let newBytes = UIImageJPEGRepresentation(self, compressionRatio) {
-                return UIImage(data: newBytes)
+        while data.count > bytes {
+            let compressionRatio: CGFloat = 0.9
+            if let newData = UIImageJPEGRepresentation(self, compressionRatio) {
+                data = newData
             } else {
                 return nil
             }
-        } else {
-            return self
         }
+        return data
     }
 
 }

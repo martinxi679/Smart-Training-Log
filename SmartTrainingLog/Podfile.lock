@@ -1,4 +1,5 @@
 PODS:
+  - CodableFirebase (0.2.0)
   - Firebase/Auth (5.7.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.3)
@@ -72,6 +73,7 @@ PODS:
   - Observable (1.3.3)
 
 DEPENDENCIES:
+  - CodableFirebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -81,6 +83,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CodableFirebase
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -98,6 +101,7 @@ SPEC REPOS:
     - Observable
 
 SPEC CHECKSUMS:
+  CodableFirebase: 4b865f58c583a6c0ef8c81c6b12c6bf15ebd9181
   Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
   FirebaseAnalytics: 993577e91157feb40945abedd6ab346d8a4b6ac8
   FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
@@ -114,6 +118,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Observable: 360b0132cef970a50bc69611df7fcbda46e91c34
 
-PODFILE CHECKSUM: c7142b2be5ad843229da3e31728a913f3ddb0c82
+PODFILE CHECKSUM: 0a2c1968d098f94d8dedb3a2346f2c949df472d3
 
 COCOAPODS: 1.5.3

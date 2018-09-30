@@ -6,6 +6,7 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseAuth
+import CodableFirebase
 
 // MARK: - Database Core Functions
 
@@ -120,6 +121,48 @@ extension DatabaseManager {
 
 }
 
+// MARK: - Treatments
+
+extension DatabaseManager {
+
+    func updateTreatment(treatment: TreatmentFlywieght) {
+        let id = String(treatment.id)
+        let path = Path(path: Root.Treatments.path, uid: id, insertUIDAfter: Root.Treatments.name)
+        let encoder = FirebaseEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+
+        if let value = try? encoder.encode(treatment) {
+            saveValue(value: value, at: path)
+        }
+    }
+
+    func getTreatments(for user: User, resultHandler: @escaping ([TreatmentModel]) -> Void) {
+        let uid = user.uid
+        let path = Path(path: Root.Treatments.path, uid: uid, insertUIDAfter: Root.Treatments.name)
+
+        let decoder = FirebaseDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        getValue(at: path, key: nil) { (value) in
+            if let treatments = value as? [Any] {
+                guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
+                persistenceManager.persistentContainer.performBackgroundTask { (context) in
+                    for treatment in treatments {
+                        if let treatmentVal = try? decoder.decode(TreatmentFlywieght.self, from: treatment) {
+                            var model = Treatment.fetchOrCreate(id: treatmentVal.getID())
+                            model.update(with: treatmentVal)
+                        }
+                    }
+                    do {
+                        try context.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+}
+
 // MARK: - Path
 
 class Path {
@@ -176,5 +219,10 @@ fileprivate struct Root {
             static let name = "entitlement"
             static let path = Users.path + "/" + Entitlement.name
         }
+    }
+
+    struct Treatments {
+        static let name = "treatments"
+        static let path = Root.path + "/" + Treatments.name
     }
 }
