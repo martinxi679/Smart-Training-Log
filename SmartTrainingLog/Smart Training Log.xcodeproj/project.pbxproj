@@ -98,9 +98,10 @@
 		A7702F74215071930007484A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F73215071930007484A /* DatabaseManager.swift */; };
 		A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772E35921529A32005FB9B5 /* UIImageExtensions.swift */; };
 		A7818EAA2159558100836B6E /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EA92159558100836B6E /* Entitlements.swift */; };
-		A7818EAC21615FB900836B6E /* Treatments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EAB21615FB900836B6E /* Treatments.swift */; };
+		A7818EAC21615FB900836B6E /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EAB21615FB900836B6E /* Treatment.swift */; };
 		A7818EAE216167C600836B6E /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */; };
 		A7818EB2216173A200836B6E /* AddTreatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */; };
+		A7818EB42161A7CE00836B6E /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */; };
 		A7BB24AF214FDF370088A4C8 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */; };
 		A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */; };
 		A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B2214FE8160088A4C8 /* Sports.swift */; };
@@ -223,8 +224,9 @@
 		A7702F73215071930007484A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A772E35921529A32005FB9B5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A7818EA92159558100836B6E /* Entitlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlements.swift; sourceTree = "<group>"; };
-		A7818EAB21615FB900836B6E /* Treatments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatments.swift; sourceTree = "<group>"; };
+		A7818EAB21615FB900836B6E /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
 		A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTreatmentViewController.swift; sourceTree = "<group>"; };
+		A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A7BB24B2214FE8160088A4C8 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
@@ -487,7 +489,7 @@
 				A7BB24B2214FE8160088A4C8 /* Sports.swift */,
 				A725784C215705860086D0C7 /* Student.swift */,
 				A7818EA92159558100836B6E /* Entitlements.swift */,
-				A7818EAB21615FB900836B6E /* Treatments.swift */,
+				A7818EAB21615FB900836B6E /* Treatment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,6 +588,7 @@
 			isa = PBXGroup;
 			children = (
 				A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */,
+				A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */,
 				A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */,
 				A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */,
 			);
@@ -819,7 +822,7 @@
 				A72FDAE221495E03000311B0 /* NoCancelledDependencies.swift in Sources */,
 				A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */,
 				A7595D7D21498100007EDE67 /* Palette.swift in Sources */,
-				A7818EAC21615FB900836B6E /* Treatments.swift in Sources */,
+				A7818EAC21615FB900836B6E /* Treatment.swift in Sources */,
 				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
 				A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */,
 				A7702F74215071930007484A /* DatabaseManager.swift in Sources */,
@@ -845,6 +848,7 @@
 				A7595D7F214985E7007EDE67 /* UIColorExtensions.swift in Sources */,
 				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
 				A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */,
+				A7818EB42161A7CE00836B6E /* ViewControllerTableViewCell.swift in Sources */,
 				A725784D215705860086D0C7 /* Student.swift in Sources */,
 				A7702F6C21501B450007484A /* ImageDownloadable.swift in Sources */,
 				A72FDAEE21495E03000311B0 /* URLSessionTaskOperation.swift in Sources */,
