@@ -55,6 +55,13 @@ class DatabaseManager {
         path.components.append(key)
         saveValue(value: value, at: path)
     }
+    
+    func saveTreatmentInfoValue(value: Any, key: String, user: User) {
+        let uid = user.uid
+        let path = Path(path: Root.Treatments.path, uid: uid, insertUIDAfter: Root.Users.name)
+        path.components.append(key)
+        saveValue(value: value, at: path)
+    }
 
     /**
      Gets the user value indicated by the key specified. Will get the value under users/($uid)/key in the realtime database
@@ -73,6 +80,9 @@ class DatabaseManager {
 // MARK: - User Sport and Entitlements
 
 extension DatabaseManager {
+    func updateTreatment(user: User, treatment: Treatment) {
+        saveTreatmentInfoValue(value: treatment.title, key: Root.Treatments.name, user: user)
+    }
     
     func updateUserEntitlements(user: User, entitlement: Entitlement) {
         saveUserInfoValue(value: entitlement.rawValue, key: Root.Users.Entitlement.name, user: user)
@@ -176,5 +186,10 @@ fileprivate struct Root {
             static let name = "entitlement"
             static let path = Users.path + "/" + Entitlement.name
         }
+    }
+    
+    struct Treatments {
+        static let name = "treatments"
+        static let path = Root.path + "/" + Treatments.name
     }
 }
