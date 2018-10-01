@@ -11,10 +11,10 @@ import UIKit
 import FirebaseAuth
 
 class Treatment {
-    var title: String
-    var content: String
+    var title: String?
+    var content: String?
     var date: Date
-    var uid: String
+    var uid: String?
     // maybe uid: String ?
     // also include trainer: User ?
     
@@ -25,6 +25,6 @@ class Treatment {
         self.content = content;
     }
     var id: String {
-        return uid
+        return uid!
     }
 }
