@@ -134,28 +134,34 @@ extension DatabaseManager {
         if let value = try? encoder.encode(treatment) {
             saveValue(value: value, at: path)
         }
+
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
+        guard let user = authStore.user else { return }
+        if user.uid == treatment.athleteID || user.uid == treatment.trainerID {
+            saveUserInfoValue(value: treatment.id, key: Root.Users.UserTreatments.name, user: user)
+        }
     }
 
-    func getTreatments(for user: User, resultHandler: @escaping ([TreatmentModel]) -> Void) {
-        let uid = user.uid
-        let path = Path(path: Root.Treatments.path, uid: uid, insertUIDAfter: Root.Treatments.name)
+    func getTreatment(_ id: String? = nil, resultHandler: @escaping ([TreatmentModel]) -> Void) {
+        let path = Path(path: Root.Treatments.path, uid: id, insertUIDAfter: Root.Treatments.name)
 
         let decoder = FirebaseDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
+        guard let user = authStore.user else { return }
         getValue(at: path, key: nil) { (value) in
-            if let treatments = value as? [Any] {
-                guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
-                persistenceManager.persistentContainer.performBackgroundTask { (context) in
-                    for treatment in treatments {
-                        if let treatmentVal = try? decoder.decode(TreatmentFlywieght.self, from: treatment) {
-                            var model = Treatment.fetchOrCreate(id: treatmentVal.getID())
-                            model.update(with: treatmentVal)
+            guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
+            guard let value = value else { return }
+            persistenceManager.persistentContainer.performBackgroundTask { (context) in
+                if let treatmentVal = try? decoder.decode(TreatmentFlywieght.self, from: value) {
+                    if treatmentVal.athleteID == user.uid || treatmentVal.trainerID == user.uid {
+                        var model = Treatment.fetchOrCreate(id: treatmentVal.getID())
+                        model.update(with: treatmentVal)
+                        do {
+                            try context.save()
+                        } catch {
+                            print(error.localizedDescription)
                         }
-                    }
-                    do {
-                        try context.save()
-                    } catch {
-                        print(error.localizedDescription)
                     }
                 }
             }
@@ -218,6 +224,11 @@ fileprivate struct Root {
         struct Entitlement {
             static let name = "entitlement"
             static let path = Users.path + "/" + Entitlement.name
+        }
+
+        struct UserTreatments {
+            static let name = "treatments"
+            static let path = Users.path + "/" + UserTreatments.name
         }
     }
 
