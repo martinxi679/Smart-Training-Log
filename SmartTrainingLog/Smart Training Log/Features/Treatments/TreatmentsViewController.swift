@@ -15,7 +15,7 @@ class TreatmentsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         
-        let treatment: Treatment
+        let treatment: DummyTreatment
         
         treatment = treatmentList[indexPath.row]
         
@@ -30,7 +30,7 @@ class TreatmentsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTreatmentButton: UIButton!
     
-    var treatmentList = [Treatment]()
+    var treatmentList = [DummyTreatment]()
     override func viewDidLoad() {
         ref = Database.database().reference().child("treatments");
         
@@ -43,7 +43,7 @@ class TreatmentsViewController: UIViewController, UITableViewDelegate, UITableVi
                     let title = treatmentObject?["title"]
                     let content = treatmentObject?["content"]
                     
-                    let treatment = Treatment(with: uid as! String, title: title as! String, content: content as! String)
+                    let treatment = DummyTreatment(with: uid as! String, title: title as! String, content: content as! String)
                     
                     self.treatmentList.append(treatment)
                 }

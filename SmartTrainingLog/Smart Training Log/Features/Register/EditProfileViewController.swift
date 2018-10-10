@@ -17,12 +17,6 @@ class EditProfileViewController: UIViewController {
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
-        if let authStore = try? Container.resolve(AuthenticationStore.self),
-            let user = authStore.user {
-            nameField.text = user.displayName
-            downloadImage(with: user.photoURL)
-        }
-
         var mediaOptions: [String] = []
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             if let media = UIImagePickerController.availableMediaTypes(for: .photoLibrary) {
@@ -41,6 +35,15 @@ class EditProfileViewController: UIViewController {
 
         sportPickerView.dataSource = self
         sportPickerView.delegate = self
+
+        if let authStore = try? Container.resolve(AuthenticationStore.self),
+            let user = authStore.user {
+            nameField.text = user.displayName
+            downloadImage(with: user.photoURL)
+            if let sport = user.sport {
+            sportPickerView.selectRow(Sport.allCases.firstIndex(of: sport) ?? 0, inComponent: 0, animated: false)
+            }
+        }
     }
 
     // MARK: - Actions

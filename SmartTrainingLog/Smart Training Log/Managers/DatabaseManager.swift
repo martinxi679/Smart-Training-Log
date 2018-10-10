@@ -6,6 +6,7 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseAuth
+import CodableFirebase
 
 // MARK: - Database Core Functions
 
@@ -55,13 +56,6 @@ class DatabaseManager {
         path.components.append(key)
         saveValue(value: value, at: path)
     }
-    
-    func saveTreatmentInfoValue(value: Any, key: String, user: User) {
-        let uid = user.uid
-        let path = Path(path: Root.Treatments.path, uid: uid, insertUIDAfter: Root.Users.name)
-        path.components.append(key)
-        saveValue(value: value, at: path)
-    }
 
     /**
      Gets the user value indicated by the key specified. Will get the value under users/($uid)/key in the realtime database
@@ -80,9 +74,6 @@ class DatabaseManager {
 // MARK: - User Sport and Entitlements
 
 extension DatabaseManager {
-    func updateTreatment(user: User, treatment: Treatment) {
-        saveTreatmentInfoValue(value: treatment.title, key: Root.Treatments.name, user: user)
-    }
     
     func updateUserEntitlements(user: User, entitlement: Entitlement) {
         saveUserInfoValue(value: entitlement.rawValue, key: Root.Users.Entitlement.name, user: user)
@@ -128,6 +119,54 @@ extension DatabaseManager {
         return authStore.userSport.value
     }
 
+}
+
+// MARK: - Treatments
+
+extension DatabaseManager {
+
+    func updateTreatment(treatment: TreatmentFlywieght) {
+        let id = String(treatment.id)
+        let path = Path(path: Root.Treatments.path, uid: id, insertUIDAfter: Root.Treatments.name)
+        let encoder = FirebaseEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+
+        if let value = try? encoder.encode(treatment) {
+            saveValue(value: value, at: path)
+        }
+
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
+        guard let user = authStore.user else { return }
+        if user.uid == treatment.athleteID || user.uid == treatment.trainerID {
+            saveUserInfoValue(value: treatment.id, key: Root.Users.UserTreatments.name, user: user)
+        }
+    }
+
+    func getTreatment(_ id: String? = nil, resultHandler: @escaping ([TreatmentModel]) -> Void) {
+        let path = Path(path: Root.Treatments.path, uid: id, insertUIDAfter: Root.Treatments.name)
+
+        let decoder = FirebaseDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
+        guard let user = authStore.user else { return }
+        getValue(at: path, key: nil) { (value) in
+            guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
+            guard let value = value else { return }
+            persistenceManager.persistentContainer.performBackgroundTask { (context) in
+                if let treatmentVal = try? decoder.decode(TreatmentFlywieght.self, from: value) {
+                    if treatmentVal.athleteID == user.uid || treatmentVal.trainerID == user.uid {
+                        var model = Treatment.fetchOrCreate(id: treatmentVal.getID())
+                        model.update(with: treatmentVal)
+                        do {
+                            try context.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Path
@@ -186,8 +225,13 @@ fileprivate struct Root {
             static let name = "entitlement"
             static let path = Users.path + "/" + Entitlement.name
         }
+
+        struct UserTreatments {
+            static let name = "treatments"
+            static let path = Users.path + "/" + UserTreatments.name
+        }
     }
-    
+
     struct Treatments {
         static let name = "treatments"
         static let path = Root.path + "/" + Treatments.name

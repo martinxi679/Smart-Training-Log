@@ -1,5 +1,5 @@
 //
-//  Treatments.swift
+//  DummyTreatment.swift
 //  Smart Training Log
 //
 //  Created by Alice Lew on 9/30/18.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 
-class Treatment {
+class DummyTreatment {
     var title: String?
     var content: String?
     var date: Date

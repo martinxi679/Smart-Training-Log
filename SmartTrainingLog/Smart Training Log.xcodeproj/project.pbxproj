@@ -98,7 +98,7 @@
 		A7702F74215071930007484A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F73215071930007484A /* DatabaseManager.swift */; };
 		A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772E35921529A32005FB9B5 /* UIImageExtensions.swift */; };
 		A7818EAA2159558100836B6E /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EA92159558100836B6E /* Entitlements.swift */; };
-		A7818EAC21615FB900836B6E /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EAB21615FB900836B6E /* Treatment.swift */; };
+		A7818EAC21615FB900836B6E /* DummyTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EAB21615FB900836B6E /* DummyTreatment.swift */; };
 		A7818EAE216167C600836B6E /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */; };
 		A7818EB2216173A200836B6E /* AddTreatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */; };
 		A7818EB42161A7CE00836B6E /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */; };
@@ -106,6 +106,9 @@
 		A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */; };
 		A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB24B2214FE8160088A4C8 /* Sports.swift */; };
 		A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */; };
+		A7CAE541215B339600A62719 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE540215B339600A62719 /* Treatment.swift */; };
+		A7CAE544215B378300A62719 /* TreatmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE543215B378300A62719 /* TreatmentModel.swift */; };
+		A7CAE546215B3B9400A62719 /* TreatmentFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,13 +227,16 @@
 		A7702F73215071930007484A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A772E35921529A32005FB9B5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A7818EA92159558100836B6E /* Entitlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlements.swift; sourceTree = "<group>"; };
-		A7818EAB21615FB900836B6E /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
+		A7818EAB21615FB900836B6E /* DummyTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTreatment.swift; sourceTree = "<group>"; };
 		A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTreatmentViewController.swift; sourceTree = "<group>"; };
 		A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		A7BB24AE214FDF370088A4C8 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A7BB24B2214FE8160088A4C8 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentsViewController.swift; sourceTree = "<group>"; };
+		A7CAE540215B339600A62719 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
+		A7CAE543215B378300A62719 /* TreatmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentModel.swift; sourceTree = "<group>"; };
+		A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentFlyweight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,11 +491,13 @@
 		A7595D6A2149786F007EDE67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */,
+				A7CAE542215B376600A62719 /* Flyweights */,
+				A7CAE53F215B337200A62719 /* CoreData */,
 				A7BB24B2214FE8160088A4C8 /* Sports.swift */,
 				A725784C215705860086D0C7 /* Student.swift */,
 				A7818EA92159558100836B6E /* Entitlements.swift */,
-				A7818EAB21615FB900836B6E /* Treatment.swift */,
+				A7CAE543215B378300A62719 /* TreatmentModel.swift */,
+				A7818EAB21615FB900836B6E /* DummyTreatment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -610,6 +618,23 @@
 				A7702F6F21503CD80007484A /* DownloadResourceService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A7CAE53F215B337200A62719 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */,
+				A7CAE540215B339600A62719 /* Treatment.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A7CAE542215B376600A62719 /* Flyweights */ = {
+			isa = PBXGroup;
+			children = (
+				A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */,
+			);
+			path = Flyweights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -743,6 +768,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Smart Training Log/Pods-Smart Training Log-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
@@ -752,6 +778,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
@@ -822,7 +849,7 @@
 				A72FDAE221495E03000311B0 /* NoCancelledDependencies.swift in Sources */,
 				A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */,
 				A7595D7D21498100007EDE67 /* Palette.swift in Sources */,
-				A7818EAC21615FB900836B6E /* Treatment.swift in Sources */,
+				A7818EAC21615FB900836B6E /* DummyTreatment.swift in Sources */,
 				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
 				A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */,
 				A7702F74215071930007484A /* DatabaseManager.swift in Sources */,
@@ -856,9 +883,11 @@
 				A72FDAE521495E03000311B0 /* ExclusivityController.swift in Sources */,
 				A72FDAF521495E03000311B0 /* NSURL+CacheFiles.swift in Sources */,
 				A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */,
+				A7CAE544215B378300A62719 /* TreatmentModel.swift in Sources */,
 				A7BB24AF214FDF370088A4C8 /* CircleImageView.swift in Sources */,
 				A7702F6E2150359B0007484A /* DownloadCacheManager.swift in Sources */,
 				A72FDB0721495E03000311B0 /* ServiceRequestStatus.swift in Sources */,
+				A7CAE546215B3B9400A62719 /* TreatmentFlyweight.swift in Sources */,
 				A72FDAF221495E03000311B0 /* DependencySuccessCondition.swift in Sources */,
 				A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */,
 				A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */,
@@ -875,6 +904,7 @@
 				A72FDB0821495E03000311B0 /* ServiceSession.swift in Sources */,
 				A72FDADE21495E03000311B0 /* LocationOperation.swift in Sources */,
 				A72FDAFB21495E03000311B0 /* OperationErrors.swift in Sources */,
+				A7CAE541215B339600A62719 /* Treatment.swift in Sources */,
 				A72FDAF821495E03000311B0 /* DelayOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController, ImageDownloadable {
         }.add(to: &disposeBag)
 
         viewModel.image.observe{ [weak self] (image, _) in
-            self?.profileImageView.image = image
+            self?.profileImageView.image = image ?? UIImage(named: "defaultProfile")
         }.add(to: &disposeBag)
 
         viewModel.sport.observe({ [weak self] (sport, _) in
