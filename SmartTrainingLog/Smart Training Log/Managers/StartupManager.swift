@@ -5,6 +5,7 @@
 
 import Foundation
 import Firebase
+import CoreData
 
 class StartupManager {
     
@@ -15,6 +16,7 @@ class StartupManager {
         setupHoratio()
         setupFirebase()
         configureNavBar()
+        pruneCoreData()
     }
     
     
@@ -44,6 +46,26 @@ class StartupManager {
     
     private func setupFirebase() {
         FirebaseApp.configure()
+    }
+
+    private func pruneCoreData() {
+        guard let persistantStore = try? Container.resolve(PersistenceManager.self) else { return }
+
+        let treatmentRequest: NSFetchRequest<Treatment> = Treatment.fetchRequest()
+        let deleteTreatmentsRequest = NSBatchDeleteRequest(fetchRequest: treatmentRequest as! NSFetchRequest<NSFetchRequestResult>)
+
+        let userRequest: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
+        let deleteUserRequest = NSBatchDeleteRequest(fetchRequest: userRequest  as! NSFetchRequest<NSFetchRequestResult>)
+
+
+        persistantStore.persistentContainer.performBackgroundTask { (context) in
+            do {
+                try context.execute(deleteTreatmentsRequest)
+                try context.execute(deleteUserRequest)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func configureNavBar() {

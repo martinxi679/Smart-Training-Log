@@ -93,7 +93,10 @@ class RegisterViewController: UIViewController {
             }
             
             if let database = try? Container.resolve(DatabaseManager.self) {
-                database.updateUserEntitlements(user: user, entitlement: Entitlement.student)
+                var userModel = UserFlyweight(uid: user.uid)
+                userModel.entitlement = Entitlement.student.rawValue
+                userModel.name = self?.nameField.text
+                database.updateUser(user: userModel)
             }
 
             self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)

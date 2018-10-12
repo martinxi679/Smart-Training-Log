@@ -5,33 +5,43 @@
 
 import UIKit
 import Observable
+import CoreData
 
 
-class ProfileViewModel {
+class ProfileViewModel: NSObject {
 
     var name: Observable<String?> = Observable(nil)
     var image: Observable<UIImage?> = Observable(nil)
     var sport: Observable<String?> = Observable(nil)
 
+    var user: UserModel?
+
     private var disposeBag: Disposal = []
+    private var resultsController: NSFetchedResultsController<UserInfo>?
 
-    init() {
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        authStore.userSport.observe() { [weak self] (sport, _) in
-            self?.sport.value = sport?.rawValue
-        }.add(to: &disposeBag)
+    override init() {
+        super.init()
 
-        authStore.cachedProfilePicture.observe(){ [weak self] (picture, _) in
-            self?.image.value = picture
-        }.add(to: &disposeBag)
+        guard let user = (try? Container.resolve(AuthenticationStore.self))?.firebaseUser else { return }
+        self.user = UserFlyweight(uid: user.uid)
+        guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
+        let request = UserInfo.fetchRequest(uid: user.uid)
+        request.sortDescriptors = [NSSortDescriptor(key: "uid", ascending: true)]
+        resultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: persistenceManager.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+
+        resultsController?.delegate = self
+        try? resultsController?.performFetch()
         update()
     }
 
     func update() {
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        if let user = authStore.user {
-            name.value = user.displayName
-            self.getProfileImage(user.photoURL)
+        if let user = resultsController?.fetchedObjects?.first {
+            self.user?.update(with: user)
+            name.value = user.name
+            sport.value = user.sport
+            if let urlStr = user.photoURL {
+                getProfileImage(URL(string: urlStr))
+            }
         }
     }
 
@@ -42,5 +52,11 @@ class ProfileViewModel {
             guard let image = image else { return }
             self?.image.value = image
         })
+    }
+}
+
+extension ProfileViewModel: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        update()
     }
 }

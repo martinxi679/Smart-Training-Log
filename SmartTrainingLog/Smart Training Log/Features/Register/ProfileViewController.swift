@@ -40,5 +40,4 @@ class ProfileViewController: UIViewController, ImageDownloadable {
         super.viewWillAppear(animated)
         viewModel.update()
     }
-
 }

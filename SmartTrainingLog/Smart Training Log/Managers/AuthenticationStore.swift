@@ -13,11 +13,13 @@ class AuthenticationStore {
     static let USER_EMAIL_KEY = "USER_EMAIL"
     static let USER_PASSWORD_KEY = "USER_PASSWORD"
 
-    var user: User? {
+    var firebaseUser: User? {
         get {
             return Auth.auth().currentUser
         }
     }
+
+    var user: UserModel?
 
     var cachedProfilePicture: Observable<UIImage?> = Observable(nil)
     var userSport: Observable<Sport?> = Observable(nil)

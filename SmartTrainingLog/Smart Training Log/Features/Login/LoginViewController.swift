@@ -76,23 +76,16 @@ class LoginViewController: UIViewController {
                 return
             }
 
-            if let storageManager = try? Container.resolve(CloudStorageManager.self) {
-                if let url = storageManager.getProfileImageURL(user: user) {
-                    storageManager.getProfilePicture(url: url)
-                }
-            }
-
-            if let dataManager = try? Container.resolve(DatabaseManager.self) {
-                _ = dataManager.getSport(for: user)
-            }
-
             if let authStore = try? Container.resolve(AuthenticationStore.self) {
                 authStore.store(user: user, with: password)
             }
 
-            self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
+            if let operationQueue = try? Container.resolve(OperationQueue.self) {
+                let userOperation = GetUserOperation(userToFetch: UserFlyweight(uid: user.uid))
+                operationQueue.addOperation(userOperation)
+            }
 
-            // Segue
+            self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
         }
     }
     

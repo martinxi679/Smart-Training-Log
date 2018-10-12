@@ -109,6 +109,18 @@
 		A7CAE541215B339600A62719 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE540215B339600A62719 /* Treatment.swift */; };
 		A7CAE544215B378300A62719 /* TreatmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE543215B378300A62719 /* TreatmentModel.swift */; };
 		A7CAE546215B3B9400A62719 /* TreatmentFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */; };
+		CADD31F8216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */; };
+		CADD31FB216D9CE700B6D0E0 /* AthleteInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */; };
+		CADD31FD216DA55C00B6D0E0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FC216DA55C00B6D0E0 /* UserInfo.swift */; };
+		CADD31FF216DA6D600B6D0E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FE216DA6D600B6D0E0 /* UserModel.swift */; };
+		CADD3201216DAD3900B6D0E0 /* UserFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD3200216DAD3900B6D0E0 /* UserFlyweight.swift */; };
+		CADD3204216E440200B6D0E0 /* GetUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD3203216E440200B6D0E0 /* GetUserOperation.swift */; };
+		CADD3206216E510700B6D0E0 /* AllTreatmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD3205216E510700B6D0E0 /* AllTreatmentsViewModel.swift */; };
+		CADD3209216E626700B6D0E0 /* AthletePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD3208216E626700B6D0E0 /* AthletePickerViewController.swift */; };
+		CADD320B216E6A3A00B6D0E0 /* AthletePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD320A216E6A3A00B6D0E0 /* AthletePickerTableViewCell.xib */; };
+		CADD320D216E6A6400B6D0E0 /* AthletePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD320C216E6A6400B6D0E0 /* AthletePickerTableViewCell.swift */; };
+		CADD320F216E7B7800B6D0E0 /* AllTreatmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD320E216E7B7800B6D0E0 /* AllTreatmentsTableViewCell.swift */; };
+		CADD3211216E7BBD00B6D0E0 /* AllTreatmentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD3210216E7BBD00B6D0E0 /* AllTreatmentsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +249,18 @@
 		A7CAE540215B339600A62719 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
 		A7CAE543215B378300A62719 /* TreatmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentModel.swift; sourceTree = "<group>"; };
 		A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentFlyweight.swift; sourceTree = "<group>"; };
+		CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AthleteInfoDetailView.xib; sourceTree = "<group>"; };
+		CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteInfoDetailView.swift; sourceTree = "<group>"; };
+		CADD31FC216DA55C00B6D0E0 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CADD31FE216DA6D600B6D0E0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CADD3200216DAD3900B6D0E0 /* UserFlyweight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlyweight.swift; sourceTree = "<group>"; };
+		CADD3203216E440200B6D0E0 /* GetUserOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserOperation.swift; sourceTree = "<group>"; };
+		CADD3205216E510700B6D0E0 /* AllTreatmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTreatmentsViewModel.swift; sourceTree = "<group>"; };
+		CADD3208216E626700B6D0E0 /* AthletePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletePickerViewController.swift; sourceTree = "<group>"; };
+		CADD320A216E6A3A00B6D0E0 /* AthletePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AthletePickerTableViewCell.xib; sourceTree = "<group>"; };
+		CADD320C216E6A6400B6D0E0 /* AthletePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletePickerTableViewCell.swift; sourceTree = "<group>"; };
+		CADD320E216E7B7800B6D0E0 /* AllTreatmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTreatmentsTableViewCell.swift; sourceTree = "<group>"; };
+		CADD3210216E7BBD00B6D0E0 /* AllTreatmentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTreatmentsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +522,7 @@
 				A7818EA92159558100836B6E /* Entitlements.swift */,
 				A7CAE543215B378300A62719 /* TreatmentModel.swift */,
 				A7818EAB21615FB900836B6E /* DummyTreatment.swift */,
+				CADD31FE216DA6D600B6D0E0 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,6 +569,7 @@
 		A7595D79214980B3007EDE67 /* STLKit */ = {
 			isa = PBXGroup;
 			children = (
+				CADD3202216E43F000B6D0E0 /* Operations */,
 				A7702F6A21501B180007484A /* Service */,
 				A7595D90214C5B12007EDE67 /* Segue */,
 				A7595D8221499B08007EDE67 /* Views */,
@@ -595,10 +621,13 @@
 		A7595D9D214D7FEB007EDE67 /* Treatments */ = {
 			isa = PBXGroup;
 			children = (
+				CADD3207216E625500B6D0E0 /* AthletePicker */,
+				CADD31F9216D9CD500B6D0E0 /* Views */,
 				A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */,
 				A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */,
 				A7BFE47021556F2C0064C0CB /* TreatmentsViewController.swift */,
 				A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */,
+				CADD3205216E510700B6D0E0 /* AllTreatmentsViewModel.swift */,
 			);
 			path = Treatments;
 			sourceTree = "<group>";
@@ -625,6 +654,7 @@
 			children = (
 				A72FDA6021495D8C000311B0 /* Smart_Training_Log.xcdatamodeld */,
 				A7CAE540215B339600A62719 /* Treatment.swift */,
+				CADD31FC216DA55C00B6D0E0 /* UserInfo.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -633,8 +663,38 @@
 			isa = PBXGroup;
 			children = (
 				A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */,
+				CADD3200216DAD3900B6D0E0 /* UserFlyweight.swift */,
 			);
 			path = Flyweights;
+			sourceTree = "<group>";
+		};
+		CADD31F9216D9CD500B6D0E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */,
+				CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */,
+				CADD320E216E7B7800B6D0E0 /* AllTreatmentsTableViewCell.swift */,
+				CADD3210216E7BBD00B6D0E0 /* AllTreatmentsTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CADD3202216E43F000B6D0E0 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				CADD3203216E440200B6D0E0 /* GetUserOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		CADD3207216E625500B6D0E0 /* AthletePicker */ = {
+			isa = PBXGroup;
+			children = (
+				CADD3208216E626700B6D0E0 /* AthletePickerViewController.swift */,
+				CADD320A216E6A3A00B6D0E0 /* AthletePickerTableViewCell.xib */,
+				CADD320C216E6A6400B6D0E0 /* AthletePickerTableViewCell.swift */,
+			);
+			path = AthletePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,11 +784,14 @@
 				A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */,
 				A7595DA2214D8269007EDE67 /* More.storyboard in Resources */,
 				A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */,
+				CADD31F8216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib in Resources */,
 				A7595D9C214D7F43007EDE67 /* Profile.storyboard in Resources */,
+				CADD320B216E6A3A00B6D0E0 /* AthletePickerTableViewCell.xib in Resources */,
 				A7595D7721497C90007EDE67 /* Login.storyboard in Resources */,
 				A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
 				A7818EAE216167C600836B6E /* Treatments.storyboard in Resources */,
+				CADD3211216E7BBD00B6D0E0 /* AllTreatmentsTableViewCell.xib in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,11 +882,13 @@
 				A7595D882149B386007EDE67 /* LoginViewController.swift in Sources */,
 				A72FDAF121495E03000311B0 /* NSOperation+Operations.swift in Sources */,
 				A7595D94214C5D82007EDE67 /* UIApplicationExtensions.swift in Sources */,
+				CADD3206216E510700B6D0E0 /* AllTreatmentsViewModel.swift in Sources */,
 				A72FDB0321495E03000311B0 /* Service.swift in Sources */,
 				A7595D96214D3A27007EDE67 /* UIViewExtensions.swift in Sources */,
 				A72FDAE021495E03000311B0 /* NegatedCondition.swift in Sources */,
 				A72FDADC21495E03000311B0 /* NSLock+Operations.swift in Sources */,
 				A72FDB0621495E03000311B0 /* ServiceEndpoint+JSONParsing.swift in Sources */,
+				CADD31FB216D9CE700B6D0E0 /* AthleteInfoDetailView.swift in Sources */,
 				A72FDB0921495E03000311B0 /* ServiceRequestDecorator.swift in Sources */,
 				A72FDAEA21495E03000311B0 /* BlockOperation.swift in Sources */,
 				A72FDA6221495D8C000311B0 /* Smart_Training_Log.xcdatamodeld in Sources */,
@@ -839,6 +904,7 @@
 				A72FDAFE21495E03000311B0 /* Container.swift in Sources */,
 				A7595D98214D727E007EDE67 /* KeyboardReactiveScrollView.swift in Sources */,
 				A72FDAED21495E03000311B0 /* OperationCondition.swift in Sources */,
+				CADD320F216E7B7800B6D0E0 /* AllTreatmentsTableViewCell.swift in Sources */,
 				A7595D6D214978E3007EDE67 /* StartupManager.swift in Sources */,
 				A7595D8421499B27007EDE67 /* UnderlineTextField.swift in Sources */,
 				A7818EAA2159558100836B6E /* Entitlements.swift in Sources */,
@@ -853,10 +919,13 @@
 				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
 				A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */,
 				A7702F74215071930007484A /* DatabaseManager.swift in Sources */,
+				CADD3201216DAD3900B6D0E0 /* UserFlyweight.swift in Sources */,
 				A71B4804214E9DF200700340 /* ProfileViewModel.swift in Sources */,
 				A72FDAFD21495E03000311B0 /* TimeoutObserver.swift in Sources */,
 				A7595D8621499C91007EDE67 /* RoundRectButton.swift in Sources */,
+				CADD3209216E626700B6D0E0 /* AthletePickerViewController.swift in Sources */,
 				A72FDAE621495E03000311B0 /* CloudCondition.swift in Sources */,
+				CADD31FF216DA6D600B6D0E0 /* UserModel.swift in Sources */,
 				A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */,
 				A72FDAD321495E03000311B0 /* FeatureSubject.swift in Sources */,
 				A72FDAD721495E03000311B0 /* FeatureCondition.swift in Sources */,
@@ -867,6 +936,7 @@
 				A72FDB0021495E03000311B0 /* JSONParsing.swift in Sources */,
 				A7595D8C2149CDA7007EDE67 /* StringExtensions.swift in Sources */,
 				A72FDADF21495E03000311B0 /* OperationObserver.swift in Sources */,
+				CADD31FD216DA55C00B6D0E0 /* UserInfo.swift in Sources */,
 				A71B4802214E98B000700340 /* ProfileViewController.swift in Sources */,
 				A72FDAE321495E03000311B0 /* CKContainer+Operations.swift in Sources */,
 				A72FDAE721495E03000311B0 /* SilentCondition.swift in Sources */,
@@ -897,10 +967,12 @@
 				A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */,
 				A72FDAF421495E03000311B0 /* AlertOperation.swift in Sources */,
 				A72FDAFF21495E03000311B0 /* JSONServiceRequest.swift in Sources */,
+				CADD3204216E440200B6D0E0 /* GetUserOperation.swift in Sources */,
 				A72FDAE921495E03000311B0 /* GroupOperation.swift in Sources */,
 				A72FDAD421495E03000311B0 /* VendorIDFeatureSubject.swift in Sources */,
 				A7595D92214C5BB8007EDE67 /* NavigationTransitionSegue.swift in Sources */,
 				A7595D8A2149B3AF007EDE67 /* RegisterViewController.swift in Sources */,
+				CADD320D216E6A6400B6D0E0 /* AthletePickerTableViewCell.swift in Sources */,
 				A72FDB0821495E03000311B0 /* ServiceSession.swift in Sources */,
 				A72FDADE21495E03000311B0 /* LocationOperation.swift in Sources */,
 				A72FDAFB21495E03000311B0 /* OperationErrors.swift in Sources */,

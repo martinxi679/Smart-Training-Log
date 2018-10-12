@@ -1,7 +1,6 @@
 PODS:
-<<<<<<< HEAD
+  - CodableFirebase (0.2.1)
   - Firebase/Auth (5.10.0):
-  - CodableFirebase (0.2.0)
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.4)
   - Firebase/Core (5.10.0):
@@ -106,10 +105,10 @@ SPEC REPOS:
     - Observable
 
 SPEC CHECKSUMS:
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
   FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
-  CodableFirebase: 4b865f58c583a6c0ef8c81c6b12c6bf15ebd9181
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: c6079de64c1a87000e52e9b408dddcadc901177f
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54

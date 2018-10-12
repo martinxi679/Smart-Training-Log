@@ -2,33 +2,39 @@
 //  Treatment.swift
 //  Smart Training Log
 //
-//  Created by Kasper Gammeltoft on 9/25/18.
-//  Copyright © 2018 CS4261. All rights reserved.
-//
 
 import Foundation
 import CoreData
+import FirebaseAuth
 
 extension Treatment {
 
-    static func fetchOrCreate(id: Int64) -> Treatment {
-        return fetchOrCreate(id: Int(id))
-    }
+    static func fetchOrCreate(id: String) -> Treatment {
 
-    static func fetchOrCreate(id: Int) -> Treatment {
-
-        let fetchRequest = NSFetchRequest<Treatment>()
-        fetchRequest.predicate = NSPredicate(format: "id == %l", id)
+        let fetchRequest: NSFetchRequest<Treatment> = Treatment.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
 
         if
             let results = try? fetchRequest.execute(),
             let result = results.first {
             return result
         } else {
-            let treatment = Treatment()
-            treatment.id = Int64(id)
+            guard let context = (try? Container.resolve(PersistenceManager.self))?.persistentContainer.viewContext else { return Treatment() }
+            let treatment = Treatment(context: context)
+            treatment.id = id
             return treatment
         }
+    }
+
+    static func allTreatmentsRequest(for user: UserModel) -> NSFetchRequest<Treatment> {
+        let fetchRequest = NSFetchRequest<Treatment>()
+        guard let id = user.uid else { return fetchRequest }
+        let athletePredicate = NSPredicate(format: "athleteID == %@", id)
+        let trainerPredicate = NSPredicate(format: "trainerID == %@", id)
+
+        fetchRequest.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [athletePredicate, trainerPredicate])
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        return fetchRequest
     }
 }
 
