@@ -50,6 +50,14 @@ struct UserFlyweight: UserModel, Codable {
                 athleteModels.append(UserFlyweight(uid: athleteID))
             }
             athletes = NSSet(array: athleteModels)
+        } else if let athleteDict = try container.decodeIfPresent([String: String].self, forKey: .athletes) {
+            var athleteModels: [UserModel] = []
+            for athleteID in athleteDict.values {
+                athleteModels.append(UserFlyweight(uid: athleteID))
+            }
+            athletes = NSSet(array: athleteModels)
+        } else if let athleteID = try container.decodeIfPresent(String.self, forKey: .athletes) {
+            athletes = NSSet(array: [UserFlyweight(uid: athleteID)])
         }
     }
 

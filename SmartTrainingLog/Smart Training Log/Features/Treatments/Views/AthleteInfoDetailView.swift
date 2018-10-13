@@ -7,16 +7,32 @@ import UIKit
 
 class AthleteInfoDetailView: UIView {
 
-    @IBOutlet weak var profileImageLoadingIndicator: UIActivityIndicatorView!
 
-    @IBOutlet weak var profileImageView: UIImageView!
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet var contentView: UIView!
+    @IBOutlet var profileImageLoadingIndicator: UIActivityIndicatorView!
 
-    @IBOutlet weak var injuryLabel: UILabel!
+    @IBOutlet var profileImageView: UIImageView!
 
-    override func awakeFromNib() {
-        profileImageLoadingIndicator.startAnimating()
+    @IBOutlet var nameLabel: UILabel!
+
+    @IBOutlet var injuryLabel: UILabel!
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
+    private func commonInit() {
+        Bundle.main.loadNibNamed("AthleteInfoDetailView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 
     func reset() {

@@ -8,13 +8,16 @@ import UIKit
 class AthletePickerTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var athleteDetailView: AthleteInfoDetailView!
+    @IBOutlet var athleteDetailView: AthleteInfoDetailView!
 
     override func prepareForReuse() {
+        super.prepareForReuse()
         athleteDetailView.reset()
     }
 
     func configure(with athlete: UserModel) {
+        athleteDetailView.layoutIfNeeded()
+        athleteDetailView.reset()
         athleteDetailView.configure(with: athlete)
     }
 

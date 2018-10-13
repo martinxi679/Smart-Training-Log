@@ -41,7 +41,9 @@ class EditProfileViewController: UIViewController {
         sportPickerView.delegate = self
 
         viewModel.image.observe { [weak self] (image, _) in
-            self?.profileImageView.image = image
+            if image != nil {
+                self?.profileImageView.image = image
+            }
         }.add(to: &disposeBag)
 
         viewModel.name.observe { [weak self] (name, _) in
@@ -72,25 +74,25 @@ class EditProfileViewController: UIViewController {
 
     @objc
     private func updateAndSave() {
-        guard
-            let name = nameField.text,
-            let image = profileImageView.image
-        else {
-            return
-            // TODO: Show Error
-        }
         let sport = Sport.allCases[sportPickerView.selectedRow(inComponent: 0)]
 
         if
             let storageManager = try? Container.resolve(CloudStorageManager.self),
             var user = viewModel.user {
-                user.sport = sport.rawValue
-                user.name = name
 
-            let photoStr = storageManager.getProfileImageURL(user: user)?.absoluteString
-                user.photoURL = photoStr
+            // Update user sport and name
+            user.sport = sport.rawValue
+            if let name = nameField.text {
+                user.name = name
+            }
+
             // Upload profile picture
-            storageManager.saveProfilePicture(image: image, user: user)
+            let photoStr = storageManager.getProfileImageURL(user: user)?.absoluteString
+            user.photoURL = photoStr
+
+            if let image = profileImageView.image {
+                storageManager.saveProfilePicture(image: image, user: user)
+            }
 
             // Save user
             if
@@ -102,7 +104,9 @@ class EditProfileViewController: UIViewController {
             // Change profile
             if let authStore = try? Container.resolve(AuthenticationStore.self) {
                 let request = authStore.firebaseUser?.createProfileChangeRequest()
-                request?.displayName = name
+                if let name = nameField.text {
+                    request?.displayName = name
+                }
                 request?.photoURL = storageManager.getProfileImageURL(user: user)
                 request?.commitChanges(completion: nil)
             }

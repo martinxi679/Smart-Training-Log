@@ -28,6 +28,20 @@ extension UserModel {
         return Entitlement(rawValue: entitlement ?? "")
     }
 
+    var isTrainer: Bool {
+        get {
+            guard let type = getEntitlement() else { return false }
+            return type == .trainer
+        }
+    }
+
+    var isAthlete: Bool {
+        get {
+            guard let type = getEntitlement() else { return false }
+            return type == .student
+        }
+    }
+
     func getPhotoURL() -> URL? {
         if let urlStr = photoURL {
             return URL(string: urlStr)

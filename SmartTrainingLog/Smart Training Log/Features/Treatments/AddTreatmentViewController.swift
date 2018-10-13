@@ -23,6 +23,7 @@ class AddTreatmentViewController: UIViewController {
 
     var trainer: UserModel?
     var selectedAthlete: UserModel?
+    var viewModel = AllTreatmentsViewModel()
     
     override func viewDidLoad() {
         treatmentNameLabel.isHidden = true
@@ -78,6 +79,7 @@ extension AddTreatmentViewController: AthletePickerDelegate {
         athleteDetailView.reset()
         athleteDetailView.configure(with: athlete)
         athleteDetailView.isHidden = false
+        
     }
 
     func athletePickerDidCancel() {
@@ -89,15 +91,15 @@ extension AddTreatmentViewController: AthletePickerDelegate {
 
 extension AddTreatmentViewController: AthletePickerDataSource {
     func numberOfAthletes() -> Int {
-        return trainer?.getAthletes().count ?? 0
+        return viewModel.numberOfAthletes()
     }
 
     func athlete(at index: IndexPath) -> UserModel {
-        let row = index.item
-        guard row < numberOfAthletes() else {
+        if let athlete = viewModel.athlete(for: index) {
+            return athlete
+        } else {
             assertionFailure()
             return UserFlyweight(uid: "")
         }
-        return trainer?.getAthletes()[row] ?? UserFlyweight(uid: "")
     }
 }

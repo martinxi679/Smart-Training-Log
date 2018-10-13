@@ -131,9 +131,20 @@ extension DatabaseManager {
         if let value = try? encoder.encode(user) {
             saveValue(value: value, at: path)
         }
+
+        guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
+        persistenceManager.persistentContainer.performBackgroundTask { context in
+            var userInfo = UserInfo.fetchOrCreate(uid: id)
+            userInfo.update(with: user)
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 
-    func getUser(uid: String, onCompletion: @escaping () -> Void) {
+    func getUser(uid: String, onCompletion: @escaping () -> Void = {}) {
         let path = Path(path: Root.Users.path, uid: uid, insertUIDAfter: Root.Users.name)
 
         let decoder = FirebaseDecoder()
@@ -148,7 +159,7 @@ extension DatabaseManager {
                 if let athletes = user.athletes {
                     for athlete in athletes {
                         guard
-                            let athlete = athlete as? UserModel,
+                            let athlete = athlete as? UserFlyweight,
                             let aID = athlete.uid
                         else {
                             continue
@@ -167,8 +178,20 @@ extension DatabaseManager {
                     onCompletion()
                 }
             })
+            self.getAthletes(for: user)
         })
 
+    }
+
+    func getAthletes(for user: UserModel) {
+
+        if user.isTrainer {
+            for athlete in user.getAthletes() {
+                if let athleteID = athlete.uid {
+                    getUser(uid: athleteID)
+                }
+            }
+        }
     }
 
 }

@@ -10,7 +10,7 @@ extension UserInfo {
 
     static func fetchOrCreate(uid: String) -> UserInfo {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        request.predicate = NSPredicate(format: "uid == %@", uid)
+        request.predicate = NSPredicate(format: "uid = %@", uid)
 
         if let info = try? request.execute(),
             let userInfo = info.first {
@@ -25,7 +25,7 @@ extension UserInfo {
 
     static func fetchRequest(uid: String) -> NSFetchRequest<UserInfo> {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        request.predicate = NSPredicate(format: "uid == %@", uid)
+        request.predicate = NSPredicate(format: "uid = %@", uid)
         return request
     }
 

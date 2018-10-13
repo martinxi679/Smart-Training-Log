@@ -17,18 +17,35 @@ class AllTreatmentsViewModel: NSObject {
     override init() {
         super.init()
 
-        guard let user = (try? Container.resolve(AuthenticationStore.self))?.user else { return }
+        guard let user = (try? Container.resolve(AuthenticationStore.self))?.firebaseUser else { return }
         guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
-        let request = Treatment.allTreatmentsRequest(for: user)
+        let request = Treatment.allTreatmentsRequest(for: user.uid)
         resultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: persistenceManager.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
 
         resultsController?.delegate = self
         try? resultsController?.performFetch()
 
         let athleteRequest: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
+        athleteRequest.predicate = NSPredicate(format: "uid != %@", user.uid)
+        athleteRequest.sortDescriptors = [NSSortDescriptor(key: "uid", ascending: true)]
         athleteController = NSFetchedResultsController(fetchRequest: athleteRequest, managedObjectContext: persistenceManager.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
 
         try? athleteController?.performFetch()
+    }
+
+    func numberOfAthletes() -> Int {
+        return athleteController?.fetchedObjects?.count ?? 0
+    }
+
+    func athlete(for indexPath: IndexPath) -> UserModel? {
+        let index = indexPath.item
+        guard
+            index < numberOfAthletes(),
+            let athletes = athleteController?.fetchedObjects
+        else {
+            return nil
+        }
+        return athletes[index]
     }
 
     func numberOfSections() -> Int {
