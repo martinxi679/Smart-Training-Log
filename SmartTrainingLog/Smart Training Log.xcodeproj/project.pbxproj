@@ -97,6 +97,8 @@
 		A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F7121504EB30007484A /* CloudStorageManager.swift */; };
 		A7702F74215071930007484A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F73215071930007484A /* DatabaseManager.swift */; };
 		A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772E35921529A32005FB9B5 /* UIImageExtensions.swift */; };
+		A77D3D1921989D29004B49D8 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77D3D1821989D29004B49D8 /* History.storyboard */; };
+		A77D3D1B21989E39004B49D8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */; };
 		A7818EAA2159558100836B6E /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EA92159558100836B6E /* Entitlements.swift */; };
 		A7818EAC21615FB900836B6E /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EAB21615FB900836B6E /* Treatment.swift */; };
 		A7818EAE216167C600836B6E /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */; };
@@ -223,6 +225,8 @@
 		A7702F7121504EB30007484A /* CloudStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageManager.swift; sourceTree = "<group>"; };
 		A7702F73215071930007484A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A772E35921529A32005FB9B5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		A77D3D1821989D29004B49D8 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = "Smart Training Log/Features/History/History.storyboard"; sourceTree = SOURCE_ROOT; };
+		A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = "Smart Training Log/Features/History/HistoryViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A7818EA92159558100836B6E /* Entitlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlements.swift; sourceTree = "<group>"; };
 		A7818EAB21615FB900836B6E /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
 		A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTreatmentViewController.swift; sourceTree = "<group>"; };
@@ -465,6 +469,7 @@
 		A7595D6621497778007EDE67 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A77D3D1721989D05004B49D8 /* History */,
 				A7595DA0214D8259007EDE67 /* More */,
 				A7595D9D214D7FEB007EDE67 /* Treatments */,
 				A7595D7421497BF8007EDE67 /* Main */,
@@ -612,6 +617,16 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		A77D3D1721989D05004B49D8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A77D3D1821989D29004B49D8 /* History.storyboard */,
+				A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */,
+			);
+			name = History;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -699,6 +714,7 @@
 				A72FDB0221495E03000311B0 /* LICENSE.txt in Resources */,
 				A7595DA2214D8269007EDE67 /* More.storyboard in Resources */,
 				A72FDA6721495D8C000311B0 /* LaunchScreen.storyboard in Resources */,
+				A77D3D1921989D29004B49D8 /* History.storyboard in Resources */,
 				A7595D9C214D7F43007EDE67 /* Profile.storyboard in Resources */,
 				A7595D7721497C90007EDE67 /* Login.storyboard in Resources */,
 				A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */,
@@ -860,6 +876,7 @@
 				A7702F6E2150359B0007484A /* DownloadCacheManager.swift in Sources */,
 				A72FDB0721495E03000311B0 /* ServiceRequestStatus.swift in Sources */,
 				A72FDAF221495E03000311B0 /* DependencySuccessCondition.swift in Sources */,
+				A77D3D1B21989E39004B49D8 /* HistoryViewController.swift in Sources */,
 				A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */,
 				A72FDAD521495E03000311B0 /* FeatureManager.swift in Sources */,
 				A72FDB0521495E03000311B0 /* ServiceRequestConfigurator.swift in Sources */,
