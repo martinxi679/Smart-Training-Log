@@ -79,4 +79,18 @@ class AllAthletesViewModel: NSObject {
         }
         return row
     }
+
+    var allAthletes: [StudentModel] {
+        get {
+            var athleteModels: [StudentModel] = []
+            queue.sync {
+                for key in athletes.keys {
+                    if let val = athletes[key] {
+                        athleteModels.append(contentsOf: val)
+                    }
+                }
+            }
+            return athleteModels
+        }
+    }
 }

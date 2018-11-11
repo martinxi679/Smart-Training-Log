@@ -33,6 +33,11 @@ class ProfileViewModel: NSObject {
         guard let cloudManager = try? Container.resolve(CloudStorageManager.self) else { return }
         guard let user = user else { return }
         guard let url = cloudManager.getProfileImageURL(user: user) else { return }
+        if let authManager = try? Container.resolve(AuthenticationStore.self) {
+            if let imageVal = authManager.cachedProfilePicture.value {
+                image.value = imageVal
+            }
+        }
 
         cloudManager.getProfilePicture(url: url, handler: { [weak self] (image) in
             guard let image = image else { return }

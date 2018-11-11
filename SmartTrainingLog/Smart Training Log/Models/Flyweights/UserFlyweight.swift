@@ -13,6 +13,7 @@ struct UserFlyweight: StudentModel & TrainerModel, Codable {
     var sport: Sport?
     var injury: Injury?
     var trainer: TrainerModel?
+    var dob: Date?
 
     // Trainer
     var athletes: [StudentModel] = []
