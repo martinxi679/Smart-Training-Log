@@ -47,6 +47,7 @@ class AllAthletesViewModel: NSObject {
 
     func teamForSection(_ section: Int) -> String {
         var team: String = ""
+        guard !athletes.keys.isEmpty else { return ""}
         queue.sync {
             team = athletes.keys[athletes.keys.index(athletes.startIndex, offsetBy: section)]
         }

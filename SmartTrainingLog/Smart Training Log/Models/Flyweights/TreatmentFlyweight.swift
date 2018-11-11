@@ -15,7 +15,7 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
     var info: String?
     var complete: Bool?
 
-    enum codingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case athleteID
         case trainerID
@@ -29,21 +29,22 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
         self.id = id
     }
 
-    init(decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: codingKeys.self)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        athleteID = try container.decode(String.self, forKey: .athleteID)
-        trainerID = try container.decode(String.self, forKey: .trainerID)
+        athleteID = try container.decodeIfPresent(String.self, forKey: .athleteID)
+        trainerID = try container.decodeIfPresent(String.self, forKey: .trainerID)
         if let dateStr = try container.decodeIfPresent(String.self, forKey: .date) {
             date = Date.dateFromISO8601String(dateStr)
         }
         treatment = try container.decodeIfPresent(String.self, forKey: .treatment)
         info = try container.decodeIfPresent(String.self, forKey: .info)
-        complete = try container.decode(Bool.self, forKey: .complete)
+        complete = try container.decodeIfPresent(Bool.self, forKey: .complete)
     }
 
     func encode(to: Encoder) throws {
-        var container = to.container(keyedBy: codingKeys.self)
+        var container = to.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encodeIfPresent(athleteID, forKey: .athleteID)
         try container.encodeIfPresent(trainerID, forKey: .trainerID)
