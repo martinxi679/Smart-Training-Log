@@ -13,6 +13,7 @@ struct UserFlyweight: StudentModel & TrainerModel, Codable {
     var sport: Sport?
     var injury: Injury?
     var trainer: TrainerModel?
+    var dob: Date?
 
     // Trainer
     var athletes: [StudentModel] = []
@@ -42,7 +43,7 @@ struct UserFlyweight: StudentModel & TrainerModel, Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id)
+        id = try container.decodeIfPresent(String.self, forKey: .id)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         if let sportStr = try container.decodeIfPresent(String.self, forKey: .sport) {
             sport = Sport(rawValue: sportStr)

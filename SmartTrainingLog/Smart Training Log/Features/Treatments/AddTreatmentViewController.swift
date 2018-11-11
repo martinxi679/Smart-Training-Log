@@ -18,19 +18,21 @@ class AddTreatmentViewController: UIViewController {
 
     enum SegueType: String {
         case namePickerSegue
-
     }
 
     var trainer: UserModel?
     var selectedAthlete: UserModel?
-    var viewModel = AllTreatmentsViewModel()
-    
+
     override func viewDidLoad() {
         treatmentNameLabel.isHidden = true
         addButton.isEnabled = true
         infoTextField.text = ""
         athleteDetailView.isHidden = true
         datePicker.setDate(Date().addingTimeInterval(60.0 * 30.0), animated: false)
+        if let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser,
+            user.isTrainer {
+            trainer = user
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -39,7 +41,6 @@ class AddTreatmentViewController: UIViewController {
 
     private func addTreatment() {
         guard
-            let treatment = treatmentNameLabel.text,
             let athlete = selectedAthlete
         else {
             // Show user alert!
@@ -47,10 +48,10 @@ class AddTreatmentViewController: UIViewController {
         }
 
         var newTreatment = TreatmentFlywieght()
-        newTreatment.athleteID = athlete.id
+        newTreatment.athleteID = athlete.name?.sha256()
         newTreatment.trainerID = trainer?.id
         newTreatment.info = infoTextField.text
-        newTreatment.treatment = treatment
+        newTreatment.treatment = treatmentNameLabel.text
         newTreatment.date = datePicker.date
 
         guard let dbManager = try? Container.resolve(DatabaseManager.self) else { return }
@@ -67,8 +68,7 @@ class AddTreatmentViewController: UIViewController {
         switch segueType {
         case .namePickerSegue:
             if let namePickerVC = segue.destination as? AthletePickerViewController {
-//                namePickerVC.dataSource = self
-//                namePickerVC.delegate = self
+                namePickerVC.delegate = self
             }
         }
     }
@@ -80,12 +80,10 @@ extension AddTreatmentViewController: AthletePickerDelegate {
         athleteDetailView.reset()
         athleteDetailView.configure(with: athlete)
         athleteDetailView.isHidden = false
-        
+        selectedAthlete = athlete
     }
 
     func athletePickerDidCancel() {
         // Nothing to do right now
     }
-
-
 }

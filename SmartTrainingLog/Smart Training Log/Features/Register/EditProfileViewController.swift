@@ -78,29 +78,26 @@ class EditProfileViewController: UIViewController {
 
         if
             let storageManager = try? Container.resolve(CloudStorageManager.self),
-            var user = viewModel.user {
+            var user = viewModel.user as? UserFlyweight {
 
             // Update user sport and name
-            if var student = user as? StudentModel {
-                student.sport = sport
-            }
+            user.sport = sport
 
             if let name = nameField.text {
                 user.name = name
             }
 
             // Upload profile picture
-            let photoStr = storageManager.getProfileImageURL(user: user)?.absoluteString
-
             if let image = profileImageView.image {
                 storageManager.saveProfilePicture(image: image, user: user)
+                if let authStore = try? Container.resolve(AuthenticationStore.self) {
+                    authStore.cachedProfilePicture.value = image
+                }
             }
 
             // Save user
-            if
-                let dataManager = try? Container.resolve(DatabaseManager.self),
-                let model = user as? UserFlyweight {
-                dataManager.updateUser(model)
+            if let dataManager = try? Container.resolve(DatabaseManager.self) {
+                dataManager.updateUser(user)
             }
 
             self.navigationController?.popViewController(animated: true)

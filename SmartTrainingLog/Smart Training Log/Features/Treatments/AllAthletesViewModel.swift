@@ -47,6 +47,7 @@ class AllAthletesViewModel: NSObject {
 
     func teamForSection(_ section: Int) -> String {
         var team: String = ""
+        guard !athletes.keys.isEmpty else { return ""}
         queue.sync {
             team = athletes.keys[athletes.keys.index(athletes.startIndex, offsetBy: section)]
         }
@@ -78,5 +79,19 @@ class AllAthletesViewModel: NSObject {
             row = athletes[team]?.count ?? 0
         }
         return row
+    }
+
+    var allAthletes: [StudentModel] {
+        get {
+            var athleteModels: [StudentModel] = []
+            queue.sync {
+                for key in athletes.keys {
+                    if let val = athletes[key] {
+                        athleteModels.append(contentsOf: val)
+                    }
+                }
+            }
+            return athleteModels
+        }
     }
 }

@@ -77,7 +77,6 @@ class DatabaseManager {
         let path = Path(path: Root.Users.path, uid: uid, insertUIDAfter: Root.Users.name)
         getValue(at: path, key: key, handler: handler)
     }
-
 }
 
 extension DatabaseManager {
@@ -97,10 +96,14 @@ extension DatabaseManager {
         if let encodedUser = try? encoder.encode(user) {
             ref.setValue(encodedUser)
         }
+        if let authStore = try? Container.resolve(AuthenticationStore.self) {
+            authStore.currentUser = user
+        }
     }
 
     func getAthletes(team: String, trainer: UserFlyweight, completion: @escaping (([StudentModel]) -> Void)) {
         let ref = db.collection(team)
+        guard trainer.teams.contains(team) else { return }
 
         ref.getDocuments{ [weak self] (snapshot, error) in
             guard
@@ -114,10 +117,12 @@ extension DatabaseManager {
             }
             var athletes: [StudentModel] = []
             for document in snapshot.documents {
-                if let athlete = try? strongSelf.firestoreDecoder.decode(UserFlyweight.self, from: document.data()) {
+                if var athlete = try? strongSelf.firestoreDecoder.decode(UserFlyweight.self, from: document.data()) {
+                    athlete.id = athlete.name?.sha256()
                     athletes.append(athlete)
                 }
             }
+            completion(athletes)
         }
     }
 }
@@ -137,12 +142,13 @@ extension DatabaseManager {
     func updateTreatment(treatment: TreatmentFlywieght) {
         guard let id = treatment.id else { return }
         guard let athleteID = treatment.athleteID else { return }
-        let path = Path(path: Root.Treatments.path, uid: "\(athleteID)/\(id)", insertUIDAfter: Root.Treatments.name)
+        let ref = rootRef.child(Root.Treatments.name).child(athleteID).child(id)
+
         let encoder = FirebaseEncoder()
         encoder.dateEncodingStrategy = .iso8601
 
         if let value = try? encoder.encode(treatment) {
-            saveValue(value: value, at: path)
+            ref.setValue(value)
         }
     }
 
@@ -161,8 +167,8 @@ extension DatabaseManager {
                     treatments.append(treatment)
                 }
             }
+            completionHandler(treatments)
         }
-        completionHandler(treatments)
     }
 }
 
