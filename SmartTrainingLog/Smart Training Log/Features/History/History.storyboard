@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Past Treatments-->
         <scene sceneID="I0k-AW-SbA">
             <objects>
-                <viewController id="5CJ-Vf-E2z" sceneMemberID="viewController">
+                <viewController id="5CJ-Vf-E2z" customClass="HistoryViewController" customModule="Smart_Training_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b9L-yv-g9y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,38 +47,86 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zj0-xC-N7f"/>
                     </view>
-                    <navigationItem key="navigationItem" id="645-Pr-x51" userLabel="Past Treatments"/>
+                    <navigationItem key="navigationItem" title="Past Treatments" id="645-Pr-x51" userLabel="Past Treatments"/>
+                    <connections>
+                        <outlet property="tableView" destination="U4P-JO-Ikc" id="DCA-Ng-vr8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHC-0H-MKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880.79999999999995" y="14.842578710644679"/>
         </scene>
-        <!--View Controller-->
+        <!--Treatment Details View Controller-->
         <scene sceneID="Wu2-36-8cn">
             <objects>
-                <viewController id="E1w-dC-qrJ" sceneMemberID="viewController">
+                <viewController id="E1w-dC-qrJ" customClass="TreatmentDetailsViewController" customModule="Smart_Training_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oTD-Do-QCJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNk-9q-KMz">
-                                <rect key="frame" x="138" y="504" width="99" height="30"/>
+                                <rect key="frame" x="138" y="581" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Comment"/>
+                                <connections>
+                                    <segue destination="zTF-an-0gQ" kind="popoverPresentation" popoverAnchorView="aNk-9q-KMz" id="AlU-a1-lm7">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FVl-cf-nuo"/>
                     </view>
+                    <connections>
+                        <outlet property="addCommentButton" destination="aNk-9q-KMz" id="bWF-Cc-B0N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynr-YC-9p3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1878" y="15"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Comment View Controller-->
+        <scene sceneID="xlK-F8-bwS">
+            <objects>
+                <viewController id="zTF-an-0gQ" customClass="AddCommentViewController" customModule="Smart_Training_Log" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfi-xK-hbN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFH-Iy-z7h">
+                                <rect key="frame" x="144" y="438" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addCommentPressed:" destination="zTF-an-0gQ" eventType="touchUpInside" id="eyJ-J7-uqk"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sN2-Pf-Q1a">
+                                <rect key="frame" x="30" y="134" width="314" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lcf-WJ-gsy"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="YFH-Iy-z7h" id="4AS-o7-Dot"/>
+                        <outlet property="commentContent" destination="sN2-Pf-Q1a" id="quQ-S4-DqJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuc-dx-3no" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951.1999999999998" y="-3.1484257871064472"/>
+        </scene>
+        <!--History-->
         <scene sceneID="hwk-CZ-Yjh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="swM-cM-4gy" sceneMemberID="viewController">
+                <navigationController title="History" automaticallyAdjustsScrollViewInsets="NO" id="swM-cM-4gy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cHO-He-zvT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
