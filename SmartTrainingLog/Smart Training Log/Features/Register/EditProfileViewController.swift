@@ -81,7 +81,7 @@ class EditProfileViewController: UIViewController {
             var user = viewModel.user {
 
             // Update user sport and name
-            if var student = user as? StudentModel {
+            if var student = user as? UserFlyweight {
                 student.sport = sport
             }
 
@@ -90,10 +90,11 @@ class EditProfileViewController: UIViewController {
             }
 
             // Upload profile picture
-            let photoStr = storageManager.getProfileImageURL(user: user)?.absoluteString
-
             if let image = profileImageView.image {
                 storageManager.saveProfilePicture(image: image, user: user)
+                if let authStore = try? Container.resolve(AuthenticationStore.self) {
+                    authStore.cachedProfilePicture.value = image
+                }
             }
 
             // Save user
