@@ -78,12 +78,10 @@ class EditProfileViewController: UIViewController {
 
         if
             let storageManager = try? Container.resolve(CloudStorageManager.self),
-            var user = viewModel.user {
+            var user = viewModel.user as? UserFlyweight {
 
             // Update user sport and name
-            if var student = user as? UserFlyweight {
-                student.sport = sport
-            }
+            user.sport = sport
 
             if let name = nameField.text {
                 user.name = name
@@ -98,10 +96,8 @@ class EditProfileViewController: UIViewController {
             }
 
             // Save user
-            if
-                let dataManager = try? Container.resolve(DatabaseManager.self),
-                let model = user as? UserFlyweight {
-                dataManager.updateUser(model)
+            if let dataManager = try? Container.resolve(DatabaseManager.self) {
+                dataManager.updateUser(user)
             }
 
             self.navigationController?.popViewController(animated: true)
