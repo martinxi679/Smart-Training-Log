@@ -4,14 +4,24 @@
 //
 
 import Foundation
+import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseAuth
+import CodableFirebase
 
 // MARK: - Database Core Functions
 
 class DatabaseManager {
 
     var rootRef = Database.database().reference()
+
+    private var db = Firestore.firestore()
+
+    var firestoreDecoder = FirestoreDecoder()
+    var firestoreEncoder = FirestoreEncoder()
+
+    var decoder = FirebaseDecoder()
+    var encoder = FirebaseEncoder()
 
     /**
      Saves a value to the realtime database.
@@ -55,13 +65,6 @@ class DatabaseManager {
         path.components.append(key)
         saveValue(value: value, at: path)
     }
-    
-    func saveTreatmentInfoValue(value: Any, key: String, user: User) {
-        let uid = user.uid
-        let path = Path(path: Root.Treatments.path, uid: uid, insertUIDAfter: Root.Users.name)
-        path.components.append(key)
-        saveValue(value: value, at: path)
-    }
 
     /**
      Gets the user value indicated by the key specified. Will get the value under users/($uid)/key in the realtime database
@@ -77,57 +80,90 @@ class DatabaseManager {
 
 }
 
-// MARK: - User Sport and Entitlements
+extension DatabaseManager {
+
+    func getUser(id: String, completion: @escaping (UserFlyweight?) -> Void) {
+        let ref = rootRef.child(Root.Users.name).child(id)
+        ref.observeSingleEvent(of: .value) { [weak self] (snapshot) in
+            guard let value = snapshot.value else { completion(nil); return }
+            let user = try? self?.decoder.decode(UserFlyweight.self, from: value)
+            completion(user ?? nil)
+        }
+    }
+
+    func updateUser(_ user: UserFlyweight) {
+        guard let uid = user.id else { return }
+        let ref = rootRef.child(Root.Users.name).child(uid)
+        if let encodedUser = try? encoder.encode(user) {
+            ref.setValue(encodedUser)
+        }
+    }
+
+    func getAthletes(team: String, trainer: UserFlyweight, completion: @escaping (([StudentModel]) -> Void)) {
+        let ref = db.collection(team)
+
+        ref.getDocuments{ [weak self] (snapshot, error) in
+            guard
+                error == nil,
+                let snapshot = snapshot,
+                !snapshot.isEmpty,
+                let strongSelf = self
+                else {
+                    completion([])
+                    return
+            }
+            var athletes: [StudentModel] = []
+            for document in snapshot.documents {
+                if let athlete = try? strongSelf.firestoreDecoder.decode(UserFlyweight.self, from: document.data()) {
+                    athletes.append(athlete)
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Treatments
 
 extension DatabaseManager {
-    func updateTreatment(user: User, treatment: Treatment) {
-        saveTreatmentInfoValue(value: treatment.title, key: Root.Treatments.name, user: user)
-    }
-    
-    func updateUserEntitlements(user: User, entitlement: Entitlement) {
-        saveUserInfoValue(value: entitlement.rawValue, key: Root.Users.Entitlement.name, user: user)
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        authStore.userEntitlement.value = entitlement
+
+    func addTreatment(treatment: inout TreatmentFlywieght) {
+        guard let athleteID = treatment.athleteID else { return }
+        if let id = rootRef.child(Root.Treatments.name).child(athleteID).childByAutoId().key {
+            treatment.id = id
+            updateTreatment(treatment: treatment)
+        }
     }
 
-    func updateUserSport(user: User, sport: Sport) {
-        saveUserInfoValue(value: sport.rawValue, key: Root.Users.Sport.name, user: user)
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        authStore.userSport.value = sport
+    func updateTreatment(treatment: TreatmentFlywieght) {
+        guard let id = treatment.id else { return }
+        guard let athleteID = treatment.athleteID else { return }
+        let path = Path(path: Root.Treatments.path, uid: "\(athleteID)/\(id)", insertUIDAfter: Root.Treatments.name)
+        let encoder = FirebaseEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+
+        if let value = try? encoder.encode(treatment) {
+            saveValue(value: value, at: path)
+        }
     }
-    
-    func getEntitlement(for user: User, resultHandler: @escaping (Entitlement?) -> Void = {(_) in }) -> Entitlement? {
-        getUserInfoValue(key: Root.Users.Entitlement.name, user: user) { (value) in
-            let entitlementStr = value as? String
-            let entitlement = Entitlement(rawValue: entitlementStr ?? "")
-            resultHandler(entitlement)
-            if let auth = try? Container.resolve(AuthenticationStore.self) {
-                auth.userEntitlement.value = entitlement
+
+    func getTreatments(forUserID: String, completionHandler: @escaping ([TreatmentModel]) -> Void) {
+
+        var treatments: [TreatmentModel] = []
+
+        let ref = rootRef.child(Root.Treatments.path).child(forUserID)
+        ref.observeSingleEvent(of: .value) { [weak self] (snapshot, error) in
+            guard error == nil, let strongSelf = self else { completionHandler([]); return }
+            for child in snapshot.children {
+                guard let childval = child as? DataSnapshot else { continue }
+                guard let val = childval.value else { continue }
+
+                if let treatment = try? strongSelf.decoder.decode(TreatmentFlywieght.self, from: val) {
+                    treatments.append(treatment)
+                }
             }
         }
-        
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else {
-            return nil
-        }
-        return authStore.userEntitlement.value
+        completionHandler(treatments)
     }
-
-    func getSport(for user: User, resultHandler: @escaping (Sport?) -> Void = {(_) in }) -> Sport? {
-        getUserInfoValue(key: Root.Users.Sport.name, user: user) { (value) in
-            let sportStr = value as? String
-            let sport = Sport(rawValue: sportStr ?? "")
-            resultHandler(sport)
-            if let auth = try? Container.resolve(AuthenticationStore.self) {
-                auth.userSport.value = sport
-            }
-        }
-
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else {
-            return nil
-        }
-        return authStore.userSport.value
-    }
-
 }
 
 // MARK: - Path
@@ -186,8 +222,13 @@ fileprivate struct Root {
             static let name = "entitlement"
             static let path = Users.path + "/" + Entitlement.name
         }
+
+        struct UserTreatments {
+            static let name = "treatments"
+            static let path = Users.path + "/" + UserTreatments.name
+        }
     }
-    
+
     struct Treatments {
         static let name = "treatments"
         static let path = Root.path + "/" + Treatments.name

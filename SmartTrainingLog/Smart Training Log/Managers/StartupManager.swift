@@ -5,6 +5,7 @@
 
 import Foundation
 import Firebase
+import CoreData
 
 class StartupManager {
     
@@ -16,7 +17,6 @@ class StartupManager {
         setupFirebase()
         configureNavBar()
     }
-    
     
     // MARK: - Private
     
@@ -33,10 +33,6 @@ class StartupManager {
 
         // Register the shared url session
         Container.register(URLSession.self) { _ in URLSession.shared }
-
-        // Register the cache manager
-        Container.register(DownloadCacheManager.self) { _ in DownloadCacheManager() }
-
 
         Container.register(CloudStorageManager.self) { _ in CloudStorageManager() }
         Container.register(DatabaseManager.self) { _ in DatabaseManager() }

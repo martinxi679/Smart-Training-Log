@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Observable
 
 class EditProfileViewController: UIViewController {
 
@@ -14,15 +15,12 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var sportPickerView: UIPickerView!
 
     var imagePickerVC = UIImagePickerController()
+    var viewModel = ProfileViewModel()
+
+    var disposeBag: Disposal = []
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
-        if let authStore = try? Container.resolve(AuthenticationStore.self),
-            let user = authStore.user {
-            nameField.text = user.displayName
-            downloadImage(with: user.photoURL)
-        }
-
         var mediaOptions: [String] = []
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             if let media = UIImagePickerController.availableMediaTypes(for: .photoLibrary) {
@@ -41,6 +39,21 @@ class EditProfileViewController: UIViewController {
 
         sportPickerView.dataSource = self
         sportPickerView.delegate = self
+
+        viewModel.image.observe { [weak self] (image, _) in
+            if image != nil {
+                self?.profileImageView.image = image
+            }
+        }.add(to: &disposeBag)
+
+        viewModel.name.observe { [weak self] (name, _) in
+            self?.nameField.text = name
+        }.add(to: &disposeBag)
+
+        viewModel.sport.observe { [weak self] (sport, _) in
+            guard let sport = Sport(rawValue: sport ?? "") else { return }
+            self?.sportPickerView.selectRow(Sport.allCases.firstIndex(of: sport) ?? 0, inComponent: 0, animated: false)
+        }.add(to: &disposeBag)
     }
 
     // MARK: - Actions
@@ -59,50 +72,36 @@ class EditProfileViewController: UIViewController {
 
     // MARK: - Private
 
-    private func downloadImage(with url: URL?) {
-        guard
-            let url = url,
-            let fileManager = try? Container.resolve(CloudStorageManager.self)
-        else {
-            return
-        }
-
-        fileManager.getProfilePicture(url: url, handler: { [weak self] (image) in
-            if let image = image {
-                self?.profileImageView.image = image
-            }
-        })
-    }
-
     @objc
     private func updateAndSave() {
-        guard
-            let name = nameField.text,
-            let image = profileImageView.image
-        else {
-            return
-            // TODO: Show Error
-        }
         let sport = Sport.allCases[sportPickerView.selectedRow(inComponent: 0)]
 
         if
-            let authStore = try? Container.resolve(AuthenticationStore.self),
             let storageManager = try? Container.resolve(CloudStorageManager.self),
-            let user = authStore.user {
+            var user = viewModel.user {
 
-            // Upload profile picture
-            storageManager.saveProfilePicture(image: image, user: user)
-
-            // Save sport choice
-            if let dataManager = try? Container.resolve(DatabaseManager.self) {
-                dataManager.updateUserSport(user: user, sport: sport)
+            // Update user sport and name
+            if var student = user as? StudentModel {
+                student.sport = sport
             }
 
-            // Change profile
-            let request = user.createProfileChangeRequest()
-            request.displayName = name
-            request.photoURL = storageManager.getProfileImageURL(user: user)
-            request.commitChanges(completion: nil)
+            if let name = nameField.text {
+                user.name = name
+            }
+
+            // Upload profile picture
+            let photoStr = storageManager.getProfileImageURL(user: user)?.absoluteString
+
+            if let image = profileImageView.image {
+                storageManager.saveProfilePicture(image: image, user: user)
+            }
+
+            // Save user
+            if
+                let dataManager = try? Container.resolve(DatabaseManager.self),
+                let model = user as? UserFlyweight {
+                dataManager.updateUser(model)
+            }
 
             self.navigationController?.popViewController(animated: true)
         }

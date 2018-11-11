@@ -49,9 +49,6 @@ class CloudStorageManager {
                 }
 
                 handler(image)
-                if let authStore = try? Container.resolve(AuthenticationStore.self) {
-                    authStore.cachedProfilePicture.value = image
-                }
             })
         }
     }
@@ -66,20 +63,22 @@ class CloudStorageManager {
         ref.putData(data)
     }
 
-    func saveProfilePicture(image: UIImage, user: User){
+    func saveProfilePicture(image: UIImage, user: UserModel){
         if
-            let sizedImage = image.compressed(to: Int(CloudStorageManager.MAX_SIZE)),
-            let data = UIImagePNGRepresentation(sizedImage),
-            let url = getProfileImageURL(user: user) {
+            let data = image.compressed(to: Int(CloudStorageManager.MAX_SIZE)),
+            let id = user.id,
+            let url = getProfileImageURL(uid: id) {
 
             saveResource(data: data, at: url)
-            guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-            authStore.cachedProfilePicture.value = image
         }
     }
 
-    func getProfileImageURL(user: User) -> URL? {
-        let uid = user.uid
+    func getProfileImageURL(user: UserModel) -> URL? {
+        guard let uid = user.id else { return nil }
+        return URL(string: Files.Profile.Picture.url + uid + ".png") ?? nil
+    }
+
+    func getProfileImageURL(uid: String) -> URL? {
         return URL(string: Files.Profile.Picture.url + uid + ".png") ?? nil
     }
 }

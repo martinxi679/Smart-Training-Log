@@ -6,7 +6,7 @@
 import UIKit
 import Observable
 
-class ProfileViewController: UIViewController, ImageDownloadable {
+class ProfileViewController: UIViewController {
 
     // MARK: - Outlets
 
@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController, ImageDownloadable {
         }.add(to: &disposeBag)
 
         viewModel.image.observe{ [weak self] (image, _) in
-            self?.profileImageView.image = image
+            self?.profileImageView.image = image ?? UIImage(named: "defaultProfile")
         }.add(to: &disposeBag)
 
         viewModel.sport.observe({ [weak self] (sport, _) in
@@ -40,5 +40,4 @@ class ProfileViewController: UIViewController, ImageDownloadable {
         super.viewWillAppear(animated)
         viewModel.update()
     }
-
 }

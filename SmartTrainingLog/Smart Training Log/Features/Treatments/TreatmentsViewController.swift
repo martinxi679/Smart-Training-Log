@@ -6,51 +6,50 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Observable
 
-class TreatmentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return treatmentList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
-        
-        let treatment: Treatment
-        
-        treatment = treatmentList[indexPath.row]
-        
-        cell.titleLabel.text = treatment.title
-        
-        return cell
-    }
-    
-    
-    var ref: DatabaseReference!
-    
+class TreatmentsViewController: UIViewController {
+
+    var viewModel = AllTreatmentsViewModel()
+    var disposeBag: Disposal = []
+
+    let treatmentInfoCellID = "AllTreatmentsTableViewCell"
+
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addTreatmentButton: UIButton!
-    
-    var treatmentList = [Treatment]()
+
     override func viewDidLoad() {
-        ref = Database.database().reference().child("treatments");
-        
-        ref.observe(DataEventType.value, with: { (snapshot) in
-            if snapshot.childrenCount > 0 {
-                self.treatmentList.removeAll()
-                for treatments in snapshot.children.allObjects as! [DataSnapshot] {
-                    let treatmentObject = treatments.value as? [String: AnyObject]
-                    let uid = treatmentObject?["uid"]
-                    let title = treatmentObject?["title"]
-                    let content = treatmentObject?["content"]
-                    
-                    let treatment = Treatment(with: uid as! String, title: title as! String, content: content as! String)
-                    
-                    self.treatmentList.append(treatment)
-                }
-                self.tableView.reloadData()
+        tableView.register(UINib(nibName: treatmentInfoCellID, bundle: nil), forCellReuseIdentifier: treatmentInfoCellID)
+        viewModel.refreshed.observe({ [weak self] (refreshed, _) in
+            if refreshed {
+                self?.tableView.reloadData()
             }
-        })
-        // setup
+        }).add(to: &disposeBag)
     }
-    
 }
+//
+//extension TreatmentsViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let treatment = viewModel.treatment(for: indexPath) else { return }
+//        // TODO: Nav to treatment detail page
+//    }
+//}
+//
+//extension TreatmentsViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return viewModel.numberOfRows(in: section)
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: treatmentInfoCellID, for: indexPath) as? AllTreatmentsTableViewCell else {
+//            assertionFailure()
+//            return UITableViewCell()
+//        }
+//
+//        guard let treatment = viewModel.treatment(for: indexPath),
+//            let athlete = viewModel.athlete(id: treatment.athleteID) else {
+//            return cell
+//        }
+//        cell.configure(with: treatment, athlete: athlete)
+//        return cell
+//    }
+//}
