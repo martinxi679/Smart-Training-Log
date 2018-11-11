@@ -94,6 +94,10 @@
 		A7702F7221504EB30007484A /* CloudStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F7121504EB30007484A /* CloudStorageManager.swift */; };
 		A7702F74215071930007484A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7702F73215071930007484A /* DatabaseManager.swift */; };
 		A772E35A21529A32005FB9B5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772E35921529A32005FB9B5 /* UIImageExtensions.swift */; };
+		A77370022198BACC0038847C /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77370012198BACC0038847C /* AddCommentViewController.swift */; };
+		A77370042198BAEC0038847C /* TreatmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77370032198BAEC0038847C /* TreatmentDetailsViewController.swift */; };
+		A77370062198BEAA0038847C /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77370052198BEAA0038847C /* CommentModel.swift */; };
+		A77370082198BF160038847C /* CommentFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77370072198BF160038847C /* CommentFlyweight.swift */; };
 		A77D3D1921989D29004B49D8 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77D3D1821989D29004B49D8 /* History.storyboard */; };
 		A77D3D1B21989E39004B49D8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */; };
 		A7818EAA2159558100836B6E /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EA92159558100836B6E /* Entitlements.swift */; };
@@ -232,6 +236,10 @@
 		A7702F7121504EB30007484A /* CloudStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageManager.swift; sourceTree = "<group>"; };
 		A7702F73215071930007484A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A772E35921529A32005FB9B5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		A77370012198BACC0038847C /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = SOURCE_ROOT; };
+		A77370032198BAEC0038847C /* TreatmentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		A77370052198BEAA0038847C /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		A77370072198BF160038847C /* CommentFlyweight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFlyweight.swift; sourceTree = "<group>"; };
 		A77D3D1821989D29004B49D8 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = "Smart Training Log/Features/History/History.storyboard"; sourceTree = SOURCE_ROOT; };
 		A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = "Smart Training Log/Features/History/HistoryViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A7818EA92159558100836B6E /* Entitlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlements.swift; sourceTree = "<group>"; };
@@ -519,6 +527,7 @@
 				CADD31FE216DA6D600B6D0E0 /* UserModel.swift */,
 				A725784C215705860086D0C7 /* StudentModel.swift */,
 				A7DBBECB2193569500DCE373 /* TrainerModel.swift */,
+				A77370052198BEAA0038847C /* CommentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -636,6 +645,18 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		A77D3D1721989D05004B49D8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A77D3D1821989D29004B49D8 /* History.storyboard */,
+				A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */,
+				A77370012198BACC0038847C /* AddCommentViewController.swift */,
+				A77370032198BAEC0038847C /* TreatmentDetailsViewController.swift */,
+			);
+			name = History;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		A7CAE53F215B337200A62719 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,6 +670,7 @@
 			children = (
 				A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */,
 				CADD3200216DAD3900B6D0E0 /* UserFlyweight.swift */,
+				A77370072198BF160038847C /* CommentFlyweight.swift */,
 			);
 			path = Flyweights;
 			sourceTree = "<group>";
@@ -679,16 +701,6 @@
 				CADD320C216E6A6400B6D0E0 /* AthletePickerTableViewCell.swift */,
 			);
 			path = AthletePicker;
-			sourceTree = "<group>";
-		};
-		A77D3D1721989D05004B49D8 /* History */ = {
-			isa = PBXGroup;
-			children = (
-				A77D3D1821989D29004B49D8 /* History.storyboard */,
-				A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */,
-			);
-			name = History;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -900,6 +912,7 @@
 				CADD31FB216D9CE700B6D0E0 /* AthleteInfoDetailView.swift in Sources */,
 				A72FDB0921495E03000311B0 /* ServiceRequestDecorator.swift in Sources */,
 				A72FDAEA21495E03000311B0 /* BlockOperation.swift in Sources */,
+				A77370042198BAEC0038847C /* TreatmentDetailsViewController.swift in Sources */,
 				A72FDA6221495D8C000311B0 /* Smart_Training_Log.xcdatamodeld in Sources */,
 				A72FDAEC21495E03000311B0 /* MutuallyExclusive.swift in Sources */,
 				A72FDAD921495E03000311B0 /* RemoteNotificationCondition.swift in Sources */,
@@ -940,6 +953,8 @@
 				A72FDAEF21495E03000311B0 /* OperationQueue.swift in Sources */,
 				A72FDAE121495E03000311B0 /* PassbookCondition.swift in Sources */,
 				A72FDAD621495E03000311B0 /* FeatureSelector.swift in Sources */,
+				A77370062198BEAA0038847C /* CommentModel.swift in Sources */,
+				A77370022198BACC0038847C /* AddCommentViewController.swift in Sources */,
 				A72FDB0421495E03000311B0 /* ServiceRequest.swift in Sources */,
 				A72FDB0021495E03000311B0 /* JSONParsing.swift in Sources */,
 				A7595D8C2149CDA7007EDE67 /* StringExtensions.swift in Sources */,
@@ -951,6 +966,7 @@
 				A72FDAF021495E03000311B0 /* NSObject+ThrowingKeyValueObserving.m in Sources */,
 				A7DBBECC2193569500DCE373 /* TrainerModel.swift in Sources */,
 				A7595D7F214985E7007EDE67 /* UIColorExtensions.swift in Sources */,
+				A77370082198BF160038847C /* CommentFlyweight.swift in Sources */,
 				A72FDAFC21495E03000311B0 /* Operation.swift in Sources */,
 				A7BFE47121556F2C0064C0CB /* TreatmentsViewController.swift in Sources */,
 				A7818EB42161A7CE00836B6E /* ViewControllerTableViewCell.swift in Sources */,

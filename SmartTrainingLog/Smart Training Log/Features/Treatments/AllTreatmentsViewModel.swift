@@ -23,7 +23,6 @@ class AllTreatmentsViewModel: NSObject {
         athleteViewModel.refreshed.observe({ [weak self] (_,_) in
             self?.update()
         }).add(to: &disposeBag)
-
         update()
     }
 
@@ -50,6 +49,15 @@ class AllTreatmentsViewModel: NSObject {
             retVal.append(contentsOf: treatments)
         }
         return retVal
+    }
+    
+    func getPastTreatments() -> [TreatmentModel] {
+        let currentDate = Date()
+        var past = getAllTreatments()
+        past = past.filter({(treatment) in
+            return treatment.date! < currentDate
+        })
+        return past
     }
 
     func athleteForID(id: String) -> StudentModel? {
@@ -79,3 +87,4 @@ class AllTreatmentsViewModel: NSObject {
         return treatment
     }
 }
+

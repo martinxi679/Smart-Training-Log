@@ -170,6 +170,39 @@ extension DatabaseManager {
             completionHandler(treatments)
         }
     }
+    
+    func getPastTreatments(forUserID: String, completionHandler: @escaping ([TreatmentModel]) -> Void) {
+        
+        var treatments: [TreatmentModel] = []
+        
+        let ref = rootRef.child(Root.Treatments.path).child(forUserID)
+        ref.observeSingleEvent(of: .value) { [weak self] (snapshot, error) in
+            guard error == nil, let strongSelf = self else { completionHandler([]); return }
+            for child in snapshot.children {
+                guard let childval = child as? DataSnapshot else { continue }
+                guard let val = childval.value else { continue }
+                
+                if let treatment = try? strongSelf.decoder.decode(TreatmentFlywieght.self, from: val) {
+                    let calendar = Calendar.current
+                    
+                    //treatment's date and time
+                    let treatmentDate = treatment.date
+//                    let treatmentHour = calendar.component(.hour, from: treatmentDate!)
+//                    let treatmentMinute = calendar.component(.minute, from: treatmentDate!)
+                    
+                    // current date and time
+                    let currentDate = Date()
+//                    let currentHour = calendar.component(.hour, from: currentDate)
+//                    let currentMinutes = calendar.component(.minute, from: currentDate)
+                    
+                    if (treatmentDate! < currentDate) { // if treatmentDate is before currentDate aka its already passed
+                        treatments.append(treatment)
+                    }
+                }
+            }
+        }
+        completionHandler(treatments)
+    }
 }
 
 // MARK: - Path
