@@ -44,6 +44,14 @@ class AllTreatmentsViewModel: NSObject {
         }
     }
 
+    func getAllTreatments() -> [TreatmentModel] {
+        var retVal: [TreatmentModel] = []
+        queue.sync {
+            retVal.append(contentsOf: treatments)
+        }
+        return retVal
+    }
+
     func athleteForID(id: String) -> StudentModel? {
         return athleteViewModel.allAthletes.first(where: { $0.id == id })
     }
@@ -53,7 +61,11 @@ class AllTreatmentsViewModel: NSObject {
     }
 
     func numberOfTreatments(in section: Int) -> Int {
-        return treatments.count
+        var count = 0
+        queue.sync {
+            count = treatments.count
+        }
+        return count
     }
 
     func treatment(atIndexPath indexPath: IndexPath) -> TreatmentModel? {
