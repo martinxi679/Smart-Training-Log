@@ -13,6 +13,7 @@ protocol TreatmentModel {
     var date: Date? {get set}
     var treatment: String? {get set}
     var info: String? {get set}
+    var complete: Bool? { get set }
 
 }
 
@@ -42,5 +43,6 @@ extension TreatmentModel {
         date = model.date ?? date
         treatment = model.treatment ?? treatment
         info = model.info ?? info
+        complete = model.complete ?? complete
     }
 }

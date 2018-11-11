@@ -6,7 +6,7 @@
 import UIKit
 import Observable
 
-class ProfileViewController: UIViewController, ImageDownloadable {
+class ProfileViewController: UIViewController {
 
     // MARK: - Outlets
 

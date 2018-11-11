@@ -47,8 +47,8 @@ class AddTreatmentViewController: UIViewController {
         }
 
         var newTreatment = TreatmentFlywieght()
-        newTreatment.athleteID = athlete.uid
-        newTreatment.trainerID = trainer?.uid
+        newTreatment.athleteID = athlete.id
+        newTreatment.trainerID = trainer?.id
         newTreatment.info = infoTextField.text
         newTreatment.treatment = treatment
         newTreatment.date = datePicker.date
@@ -67,8 +67,8 @@ class AddTreatmentViewController: UIViewController {
         switch segueType {
         case .namePickerSegue:
             if let namePickerVC = segue.destination as? AthletePickerViewController {
-                namePickerVC.dataSource = self
-                namePickerVC.delegate = self
+//                namePickerVC.dataSource = self
+//                namePickerVC.delegate = self
             }
         }
     }
@@ -76,6 +76,7 @@ class AddTreatmentViewController: UIViewController {
 
 extension AddTreatmentViewController: AthletePickerDelegate {
     func athletePicker(didFinishSelectingWith athlete: UserModel) {
+        guard let athlete = athlete as? StudentModel else { return }
         athleteDetailView.reset()
         athleteDetailView.configure(with: athlete)
         athleteDetailView.isHidden = false
@@ -87,19 +88,4 @@ extension AddTreatmentViewController: AthletePickerDelegate {
     }
 
 
-}
-
-extension AddTreatmentViewController: AthletePickerDataSource {
-    func numberOfAthletes() -> Int {
-        return viewModel.numberOfAthletes()
-    }
-
-    func athlete(at index: IndexPath) -> UserModel {
-        if let athlete = viewModel.athlete(for: index) {
-            return athlete
-        } else {
-            assertionFailure()
-            return UserFlyweight(uid: "")
-        }
-    }
 }

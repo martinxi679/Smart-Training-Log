@@ -60,7 +60,7 @@ extension AthletePickerViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        guard let athlete = dataSource?.athlete(at: indexPath) else { return cell }
+        guard let athlete = dataSource?.athlete(at: indexPath) as? StudentModel else { return cell }
         cell.configure(with: athlete)
         return cell
     }

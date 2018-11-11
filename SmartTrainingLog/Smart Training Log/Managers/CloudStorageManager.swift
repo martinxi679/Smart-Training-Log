@@ -66,7 +66,7 @@ class CloudStorageManager {
     func saveProfilePicture(image: UIImage, user: UserModel){
         if
             let data = image.compressed(to: Int(CloudStorageManager.MAX_SIZE)),
-            let id = user.uid,
+            let id = user.id,
             let url = getProfileImageURL(uid: id) {
 
             saveResource(data: data, at: url)
@@ -74,7 +74,7 @@ class CloudStorageManager {
     }
 
     func getProfileImageURL(user: UserModel) -> URL? {
-        guard let uid = user.uid else { return nil }
+        guard let uid = user.id else { return nil }
         return URL(string: Files.Profile.Picture.url + uid + ".png") ?? nil
     }
 

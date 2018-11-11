@@ -7,8 +7,6 @@ import UIKit
 
 class AthleteInfoDetailView: UIView {
 
-
-
     @IBOutlet var contentView: UIView!
     @IBOutlet var profileImageLoadingIndicator: UIActivityIndicatorView!
 
@@ -45,9 +43,9 @@ class AthleteInfoDetailView: UIView {
         injuryLabel.text = "Injury or description"
     }
 
-    func configure(with athlete: UserModel) {
+    func configure(with athlete: StudentModel) {
         nameLabel.text = athlete.name
-        injuryLabel.text = athlete.injury
+        injuryLabel.text = athlete.injury?.rawValue
         athlete.getProfileImage{ [weak self] (image) in
             if image != nil {
                 self?.profileImageView.image = image

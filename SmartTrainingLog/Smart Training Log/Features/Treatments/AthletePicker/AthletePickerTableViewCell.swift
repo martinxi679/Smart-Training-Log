@@ -15,7 +15,7 @@ class AthletePickerTableViewCell: UITableViewCell {
         athleteDetailView.reset()
     }
 
-    func configure(with athlete: UserModel) {
+    func configure(with athlete: StudentModel) {
         athleteDetailView.layoutIfNeeded()
         athleteDetailView.reset()
         athleteDetailView.configure(with: athlete)

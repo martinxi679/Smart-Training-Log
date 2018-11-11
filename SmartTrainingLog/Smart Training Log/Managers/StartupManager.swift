@@ -16,9 +16,7 @@ class StartupManager {
         setupHoratio()
         setupFirebase()
         configureNavBar()
-        pruneCoreData()
     }
-    
     
     // MARK: - Private
     
@@ -36,36 +34,12 @@ class StartupManager {
         // Register the shared url session
         Container.register(URLSession.self) { _ in URLSession.shared }
 
-        // Register the cache manager
-        Container.register(DownloadCacheManager.self) { _ in DownloadCacheManager() }
-
-
         Container.register(CloudStorageManager.self) { _ in CloudStorageManager() }
         Container.register(DatabaseManager.self) { _ in DatabaseManager() }
     }
     
     private func setupFirebase() {
         FirebaseApp.configure()
-    }
-
-    private func pruneCoreData() {
-        guard let persistantStore = try? Container.resolve(PersistenceManager.self) else { return }
-
-        let treatmentRequest: NSFetchRequest<Treatment> = Treatment.fetchRequest()
-        let deleteTreatmentsRequest = NSBatchDeleteRequest(fetchRequest: treatmentRequest as! NSFetchRequest<NSFetchRequestResult>)
-
-        let userRequest: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        let deleteUserRequest = NSBatchDeleteRequest(fetchRequest: userRequest  as! NSFetchRequest<NSFetchRequestResult>)
-
-
-        persistantStore.persistentContainer.performBackgroundTask { (context) in
-            do {
-                try context.execute(deleteTreatmentsRequest)
-                try context.execute(deleteUserRequest)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
     }
     
     private func configureNavBar() {

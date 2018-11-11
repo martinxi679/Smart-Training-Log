@@ -84,22 +84,17 @@ class RegisterViewController: UIViewController {
                 return
             }
 
-            let request = user.createProfileChangeRequest()
-            request.displayName = self?.nameField.text
-            request.commitChanges(completion: nil)
-
             if let authStore = try? Container.resolve(AuthenticationStore.self) {
                 authStore.store(user: user, with: pass)
+                if let database = try? Container.resolve(DatabaseManager.self) {
+                    var userModel = UserFlyweight(id: user.uid)
+                    userModel.entitlement = Entitlement.student
+                    userModel.name = self?.nameField.text
+                    database.updateUser(userModel)
+                    authStore.currentUser = userModel
+                    self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
+                }
             }
-            
-            if let database = try? Container.resolve(DatabaseManager.self) {
-                var userModel = UserFlyweight(uid: user.uid)
-                userModel.entitlement = Entitlement.student.rawValue
-                userModel.name = self?.nameField.text
-                database.updateUser(user: userModel)
-            }
-
-            self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
         }
     }
 

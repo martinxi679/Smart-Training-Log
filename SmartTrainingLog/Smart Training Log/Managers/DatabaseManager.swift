@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseAuth
 import CodableFirebase
@@ -13,6 +14,14 @@ import CodableFirebase
 class DatabaseManager {
 
     var rootRef = Database.database().reference()
+
+    private var db = Firestore.firestore()
+
+    var firestoreDecoder = FirestoreDecoder()
+    var firestoreEncoder = FirestoreEncoder()
+
+    var decoder = FirebaseDecoder()
+    var encoder = FirebaseEncoder()
 
     /**
      Saves a value to the realtime database.
@@ -71,129 +80,46 @@ class DatabaseManager {
 
 }
 
-// MARK: - User Sport and Entitlements
-
-extension DatabaseManager {
-    
-    func updateUserEntitlements(user: User, entitlement: Entitlement) {
-        saveUserInfoValue(value: entitlement.rawValue, key: Root.Users.Entitlement.name, user: user)
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        authStore.userEntitlement.value = entitlement
-    }
-
-    func updateUserSport(user: User, sport: Sport) {
-        saveUserInfoValue(value: sport.rawValue, key: Root.Users.Sport.name, user: user)
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        authStore.userSport.value = sport
-    }
-    
-    func getEntitlement(for user: User, resultHandler: @escaping (Entitlement?) -> Void = {(_) in }) -> Entitlement? {
-        getUserInfoValue(key: Root.Users.Entitlement.name, user: user) { (value) in
-            let entitlementStr = value as? String
-            let entitlement = Entitlement(rawValue: entitlementStr ?? "")
-            resultHandler(entitlement)
-            if let auth = try? Container.resolve(AuthenticationStore.self) {
-                auth.userEntitlement.value = entitlement
-            }
-        }
-        
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else {
-            return nil
-        }
-        return authStore.userEntitlement.value
-    }
-
-    func getSport(for user: User, resultHandler: @escaping (Sport?) -> Void = {(_) in }) -> Sport? {
-        getUserInfoValue(key: Root.Users.Sport.name, user: user) { (value) in
-            let sportStr = value as? String
-            let sport = Sport(rawValue: sportStr ?? "")
-            resultHandler(sport)
-            if let auth = try? Container.resolve(AuthenticationStore.self) {
-                auth.userSport.value = sport
-            }
-        }
-
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else {
-            return nil
-        }
-        return authStore.userSport.value
-    }
-
-}
-
 extension DatabaseManager {
 
-    func updateUser(user: UserFlyweight) {
-        guard let id = user.uid else { return }
-        let path = Path(path: Root.Users.path, uid: id, insertUIDAfter: Root.Users.name)
-        let encoder = FirebaseEncoder()
-
-        if let value = try? encoder.encode(user) {
-            saveValue(value: value, at: path)
+    func getUser(id: String, completion: @escaping (UserFlyweight?) -> Void) {
+        let ref = rootRef.child(Root.Users.name).child(id)
+        ref.observeSingleEvent(of: .value) { [weak self] (snapshot) in
+            guard let value = snapshot.value else { completion(nil); return }
+            let user = try? self?.decoder.decode(UserFlyweight.self, from: value)
+            completion(user ?? nil)
         }
+    }
 
-        guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
-        persistenceManager.persistentContainer.performBackgroundTask { context in
-            var userInfo = UserInfo.fetchOrCreate(uid: id)
-            userInfo.update(with: user)
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
+    func updateUser(_ user: UserFlyweight) {
+        guard let uid = user.id else { return }
+        let ref = rootRef.child(Root.Users.name).child(uid)
+        if let encodedUser = try? encoder.encode(user) {
+            ref.setValue(encodedUser)
+        }
+    }
+
+    func getAthletes(team: String, trainer: UserFlyweight, completion: @escaping (([StudentModel]) -> Void)) {
+        let ref = db.collection(team)
+
+        ref.getDocuments{ [weak self] (snapshot, error) in
+            guard
+                error == nil,
+                let snapshot = snapshot,
+                !snapshot.isEmpty,
+                let strongSelf = self
+                else {
+                    completion([])
+                    return
             }
-        }
-    }
-
-    func getUser(uid: String, onCompletion: @escaping () -> Void = {}) {
-        let path = Path(path: Root.Users.path, uid: uid, insertUIDAfter: Root.Users.name)
-
-        let decoder = FirebaseDecoder()
-        getValue(at: path, key: nil, handler: {(value) in
-            guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
-            guard let value = value else { return }
-            guard let user = try? decoder.decode(UserFlyweight.self, from: value) else { return }
-            guard let id = user.uid else { return }
-            persistenceManager.persistentContainer.performBackgroundTask({ (context) in
-                var userInfo = UserInfo.fetchOrCreate(uid: id)
-                userInfo.update(with: user)
-                if let athletes = user.athletes {
-                    for athlete in athletes {
-                        guard
-                            let athlete = athlete as? UserFlyweight,
-                            let aID = athlete.uid
-                        else {
-                            continue
-                        }
-                        var athleteModel = UserInfo.fetchOrCreate(uid: aID)
-                        athleteModel.update(with: athlete)
-                        userInfo.addToAthletes(athleteModel)
-                    }
-                }
-                do {
-                    try context.save()
-                } catch {
-                    print(error.localizedDescription)
-                }
-                DispatchQueue.main.async {
-                    onCompletion()
-                }
-            })
-            self.getAthletes(for: user)
-        })
-
-    }
-
-    func getAthletes(for user: UserModel) {
-
-        if user.isTrainer {
-            for athlete in user.getAthletes() {
-                if let athleteID = athlete.uid {
-                    getUser(uid: athleteID)
+            var athletes: [StudentModel] = []
+            for document in snapshot.documents {
+                if let athlete = try? strongSelf.firestoreDecoder.decode(UserFlyweight.self, from: document.data()) {
+                    athletes.append(athlete)
                 }
             }
         }
     }
-
 }
 
 // MARK: - Treatments
@@ -201,7 +127,8 @@ extension DatabaseManager {
 extension DatabaseManager {
 
     func addTreatment(treatment: inout TreatmentFlywieght) {
-        if let id = rootRef.child(Root.Treatments.name).childByAutoId().key {
+        guard let athleteID = treatment.athleteID else { return }
+        if let id = rootRef.child(Root.Treatments.name).child(athleteID).childByAutoId().key {
             treatment.id = id
             updateTreatment(treatment: treatment)
         }
@@ -209,69 +136,33 @@ extension DatabaseManager {
 
     func updateTreatment(treatment: TreatmentFlywieght) {
         guard let id = treatment.id else { return }
-        let path = Path(path: Root.Treatments.path, uid: id, insertUIDAfter: Root.Treatments.name)
+        guard let athleteID = treatment.athleteID else { return }
+        let path = Path(path: Root.Treatments.path, uid: "\(athleteID)/\(id)", insertUIDAfter: Root.Treatments.name)
         let encoder = FirebaseEncoder()
         encoder.dateEncodingStrategy = .iso8601
 
         if let value = try? encoder.encode(treatment) {
             saveValue(value: value, at: path)
         }
-
-        guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
-        persistenceManager.persistentContainer.performBackgroundTask({ (context) in
-            var model = Treatment.fetchOrCreate(id: id)
-            model.update(with: treatment)
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        })
     }
 
-    func getTreatment(_ id: String? = nil, completionHandler: @escaping () -> Void) {
-        let path = Path(path: Root.Treatments.path, uid: id, insertUIDAfter: Root.Treatments.name)
+    func getTreatments(forUserID: String, completionHandler: @escaping ([TreatmentModel]) -> Void) {
 
-        getValue(at: path, key: nil) {[weak self] (value) in
-            guard let value = value else { return }
+        var treatments: [TreatmentModel] = []
 
-            if let treatmentValues = value as? [String: Any] {
-                for id in treatmentValues.keys {
-                    self?.saveTreatment(id, treatmentValues[id])
-                }
-            } else {
-                self?.saveTreatment(id, value)
-            }
-            DispatchQueue.main.async {
-                completionHandler()
-            }
-        }
-    }
+        let ref = rootRef.child(Root.Treatments.path).child(forUserID)
+        ref.observeSingleEvent(of: .value) { [weak self] (snapshot, error) in
+            guard error == nil, let strongSelf = self else { completionHandler([]); return }
+            for child in snapshot.children {
+                guard let childval = child as? DataSnapshot else { continue }
+                guard let val = childval.value else { continue }
 
-    private func saveTreatment(_ id: String?, _ value: Any?) {
-        guard let persistenceManager = try? Container.resolve(PersistenceManager.self) else { return }
-        let decoder = FirebaseDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-
-        guard let authStore = try? Container.resolve(AuthenticationStore.self) else { return }
-        guard let user = authStore.user else { return }
-
-        guard let value = value else { return }
-
-        persistenceManager.persistentContainer.performBackgroundTask { (context) in
-            if let treatmentVal = try? decoder.decode(TreatmentFlywieght.self, from: value) {
-                guard let tid = treatmentVal.id else { return }
-                if treatmentVal.athleteID == user.uid || treatmentVal.trainerID == user.uid {
-                    var model = Treatment.fetchOrCreate(id: tid)
-                    model.update(with: treatmentVal)
-                    do {
-                        try context.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                if let treatment = try? strongSelf.decoder.decode(TreatmentFlywieght.self, from: val) {
+                    treatments.append(treatment)
                 }
             }
         }
+        completionHandler(treatments)
     }
 }
 

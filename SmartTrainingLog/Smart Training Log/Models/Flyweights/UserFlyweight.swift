@@ -4,83 +4,103 @@
 //
 
 import Foundation
+import FirebaseAuth
 
-struct UserFlyweight: UserModel, Codable {
+struct UserFlyweight: StudentModel & TrainerModel, Codable {
 
-    var uid: String?
+    // Athlete
+    var year: Int?
+    var sport: Sport?
+    var injury: Injury?
+    var trainer: TrainerModel?
+
+    // Trainer
+    var athletes: [StudentModel] = []
+    var teams: [String] = []
+
+    // User
+    var authUser: User?
+    var entitlement: Entitlement?
     var name: String?
-    var photoURL: String?
-    var sport: String?
-    var entitlement: String?
-    var injury: String?
-    var trainerModel: UserModel?
-    var athletes: NSSet?
+    var id: String?
 
     enum CodingKeys: String, CodingKey {
-        case uid
+        case id
         case name
-        case photoURL
         case sport
         case entitlement
         case injury
         case trainer
         case athletes
+        case year
+        case teams
     }
 
-    init(uid: String) {
-        self.uid = uid
+    init(id: String) {
+        self.id = id
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        uid = try container.decode(String.self, forKey: .uid)
+        id = try container.decode(String.self, forKey: .id)
         name = try container.decodeIfPresent(String.self, forKey: .name)
-        photoURL = try container.decodeIfPresent(String.self, forKey: .photoURL)
-        sport = try container.decodeIfPresent(String.self, forKey: .sport)
-        entitlement = try container.decodeIfPresent(String.self, forKey: .entitlement)
-        injury = try container.decodeIfPresent(String.self, forKey: .injury)
+        if let sportStr = try container.decodeIfPresent(String.self, forKey: .sport) {
+            sport = Sport(rawValue: sportStr)
+        }
+        if let entitlementStr = try container.decodeIfPresent(String.self, forKey: .entitlement) {
+            entitlement = Entitlement(rawValue: entitlementStr)
+        }
+        if let injuryStr = try container.decodeIfPresent(String.self, forKey: .injury) {
+            injury = Injury(rawValue: injuryStr)
+        }
         
         if let trainerID = try container.decodeIfPresent(String.self, forKey: .trainer) {
-            trainerModel = UserFlyweight(uid: trainerID)
+            trainer = UserFlyweight(id: trainerID)
         }
 
         if let athleteArr = try container.decodeIfPresent([String].self, forKey: .athletes) {
-            var athleteModels: [UserModel] = []
+            var athleteModels: [UserFlyweight] = []
             for athleteID in athleteArr {
-                athleteModels.append(UserFlyweight(uid: athleteID))
+                athleteModels.append(UserFlyweight(id: athleteID))
             }
-            athletes = NSSet(array: athleteModels)
+            athletes = athleteModels
         } else if let athleteDict = try container.decodeIfPresent([String: String].self, forKey: .athletes) {
-            var athleteModels: [UserModel] = []
+            var athleteModels: [UserFlyweight] = []
             for athleteID in athleteDict.values {
-                athleteModels.append(UserFlyweight(uid: athleteID))
+                athleteModels.append(UserFlyweight(id: athleteID))
             }
-            athletes = NSSet(array: athleteModels)
+            athletes = athleteModels
         } else if let athleteID = try container.decodeIfPresent(String.self, forKey: .athletes) {
-            athletes = NSSet(array: [UserFlyweight(uid: athleteID)])
+            athletes = [UserFlyweight(id: athleteID)]
+        }
+
+        if let teamsArr = try container.decodeIfPresent([String].self, forKey: .teams) {
+            teams = teamsArr
+        } else if let teamsDict = try container.decodeIfPresent([String:String].self, forKey: .teams) {
+            teams = teamsDict.map({return $1})
+        } else if let team = try container.decodeIfPresent(String.self, forKey: .teams) {
+            teams = [team]
         }
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(uid!, forKey: .uid)
+        try container.encode(id!, forKey: .id)
         try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(sport, forKey: .sport)
-        try container.encodeIfPresent(entitlement, forKey: .entitlement)
-        try container.encodeIfPresent(injury, forKey: .injury)
-        if let model = trainerModel as? UserFlyweight {
-            try container.encodeIfPresent(model.uid, forKey: .trainer)
+        try container.encodeIfPresent(sport?.rawValue, forKey: .sport)
+        try container.encodeIfPresent(entitlement?.rawValue, forKey: .entitlement)
+        try container.encodeIfPresent(injury?.rawValue, forKey: .injury)
+        if let model = trainer as? UserFlyweight {
+            try container.encodeIfPresent(model.id, forKey: .trainer)
         }
 
         var athleteFlyweights: [String?] = []
 
-        if let athletes = self.athletes {
-            for value in athletes where value is UserFlyweight {
-                athleteFlyweights.append((value as! UserFlyweight).uid)
-            }
+        for value in athletes {
+            athleteFlyweights.append(value.id)
         }
 
         try container.encode(athleteFlyweights.compactMap({return $0}), forKey: .athletes)
+        try container.encode(teams, forKey: .teams)
     }
-
 }

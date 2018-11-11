@@ -47,10 +47,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="mYl-3u-VD0" id="F5x-z5-UWJ"/>
-                                    <outlet property="delegate" destination="mYl-3u-VD0" id="Kdl-E0-kWA"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -208,8 +204,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ZMM-42-fOL" firstAttribute="top" secondItem="D4Z-To-bSR" secondAttribute="top" id="EbF-UH-A3a"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZMM-42-fOL" secondAttribute="bottom" id="Own-xG-Y3c"/>
                                     <constraint firstAttribute="trailing" secondItem="ZMM-42-fOL" secondAttribute="trailing" constant="15" id="Z4I-Is-1T3"/>
+                                    <constraint firstAttribute="bottom" secondItem="w9Q-5y-waU" secondAttribute="bottom" constant="32.5" id="eX8-Fd-gAy"/>
                                     <constraint firstItem="w9Q-5y-waU" firstAttribute="top" secondItem="ZMM-42-fOL" secondAttribute="bottom" constant="30" id="hlZ-WJ-McK"/>
                                     <constraint firstItem="ZMM-42-fOL" firstAttribute="width" secondItem="D4Z-To-bSR" secondAttribute="width" constant="-30" id="hnc-q0-h5T"/>
                                     <constraint firstItem="w9Q-5y-waU" firstAttribute="centerX" secondItem="D4Z-To-bSR" secondAttribute="centerX" constant="-16.5" id="mQV-yL-Y7Z"/>

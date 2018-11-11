@@ -81,14 +81,16 @@ class EditProfileViewController: UIViewController {
             var user = viewModel.user {
 
             // Update user sport and name
-            user.sport = sport.rawValue
+            if var student = user as? StudentModel {
+                student.sport = sport
+            }
+
             if let name = nameField.text {
                 user.name = name
             }
 
             // Upload profile picture
             let photoStr = storageManager.getProfileImageURL(user: user)?.absoluteString
-            user.photoURL = photoStr
 
             if let image = profileImageView.image {
                 storageManager.saveProfilePicture(image: image, user: user)
@@ -98,18 +100,9 @@ class EditProfileViewController: UIViewController {
             if
                 let dataManager = try? Container.resolve(DatabaseManager.self),
                 let model = user as? UserFlyweight {
-                dataManager.updateUser(user: model)
+                dataManager.updateUser(model)
             }
 
-            // Change profile
-            if let authStore = try? Container.resolve(AuthenticationStore.self) {
-                let request = authStore.firebaseUser?.createProfileChangeRequest()
-                if let name = nameField.text {
-                    request?.displayName = name
-                }
-                request?.photoURL = storageManager.getProfileImageURL(user: user)
-                request?.commitChanges(completion: nil)
-            }
             self.navigationController?.popViewController(animated: true)
         }
     }

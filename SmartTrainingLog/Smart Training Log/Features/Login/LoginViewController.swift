@@ -78,14 +78,13 @@ class LoginViewController: UIViewController {
 
             if let authStore = try? Container.resolve(AuthenticationStore.self) {
                 authStore.store(user: user, with: password)
+                if let databaseManager = try? Container.resolve(DatabaseManager.self) {
+                    databaseManager.getUser(id: user.uid, completion: { [weak self] (userFlyweight) in
+                        authStore.currentUser = userFlyweight
+                        self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
+                    })
+                }
             }
-
-            if let operationQueue = try? Container.resolve(OperationQueue.self) {
-                let userOperation = GetUserOperation(userToFetch: UserFlyweight(uid: user.uid))
-                operationQueue.addOperation(userOperation)
-            }
-
-            self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
         }
     }
     
@@ -125,4 +124,3 @@ extension LoginViewController: UITextFieldDelegate {
         return false
     }
 }
-
