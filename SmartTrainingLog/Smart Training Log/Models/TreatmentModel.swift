@@ -14,6 +14,7 @@ protocol TreatmentModel {
     var treatment: String? {get set}
     var info: String? {get set}
     var complete: Bool? { get set }
+    var comments: [CommentModel] { get set }
 
 }
 
@@ -44,5 +45,6 @@ extension TreatmentModel {
         treatment = model.treatment ?? treatment
         info = model.info ?? info
         complete = model.complete ?? complete
+        comments = model.comments.isEmpty ? comments : model.comments
     }
 }

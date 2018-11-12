@@ -2,9 +2,6 @@
 //  ViewControllerTableViewCell.swift
 //  Smart Training Log
 //
-//  Created by Alice Lew on 9/30/18.
-//  Copyright © 2018 CS4261. All rights reserved.
-//
 
 import UIKit
 
@@ -22,5 +19,4 @@ class ViewControllerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

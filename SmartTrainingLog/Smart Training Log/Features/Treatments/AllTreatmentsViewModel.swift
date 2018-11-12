@@ -28,14 +28,18 @@ class AllTreatmentsViewModel: NSObject {
 
     func update() {
         guard let dataManager = try? Container.resolve(DatabaseManager.self) else { return }
-        let athletes = athleteViewModel.allAthletes
+        let athletes = athleteViewModel.allAthletes()
 
         for athlete in athletes {
             if let id = athlete.id {
                 queue.sync {
                     dataManager.getTreatments(forUserID: id, completionHandler: {[weak self] (models) in
                         guard let strongSelf = self else { return }
-                        strongSelf.treatments.append(contentsOf: models)
+                        for model in models {
+                            if !strongSelf.treatments.contains(where: {$0.id == model.id }) {
+                                strongSelf.treatments.append(model)
+                            }
+                        }
                         strongSelf.refreshed.value = true
                     })
                 }
@@ -53,15 +57,30 @@ class AllTreatmentsViewModel: NSObject {
     
     func getPastTreatments() -> [TreatmentModel] {
         let currentDate = Date()
-        var past = getAllTreatments()
-        past = past.filter({(treatment) in
-            return treatment.date! < currentDate
-        })
-        return past
+        let allTreatments = getAllTreatments()
+        return allTreatments.filter ({(treatment) in
+            if let date = treatment.date {
+                return date < currentDate
+            } else {
+                return false
+            }
+        }).sorted(by: { return $0.date! < $1.date! })
+    }
+
+    func getUpcomingTreatments() -> [TreatmentModel] {
+        let currentDate = Date()
+        let allTreatments = getAllTreatments()
+        return allTreatments.filter ({ (treatment) in
+            if let date = treatment.date {
+                return date >= currentDate
+            } else {
+                return false
+            }
+        }).sorted(by: { return $0.date! < $1.date! })
     }
 
     func athleteForID(id: String) -> StudentModel? {
-        return athleteViewModel.allAthletes.first(where: { $0.id == id })
+        return athleteViewModel.allAthletes().first(where: { $0.id == id })
     }
 
     func numberOfSections() -> Int {
@@ -88,3 +107,36 @@ class AllTreatmentsViewModel: NSObject {
     }
 }
 
+class UpcomingTreatmentsViewModel: AllTreatmentsViewModel {
+
+    override func numberOfSections() -> Int {
+        return 1
+    }
+
+    override func numberOfTreatments(in section: Int) -> Int {
+        return getUpcomingTreatments().count
+    }
+
+    override func treatment(atIndexPath indexPath: IndexPath) -> TreatmentModel? {
+        let upcoming = getUpcomingTreatments()
+        guard indexPath.row < upcoming.count else { return nil }
+        return upcoming[indexPath.row]
+    }
+}
+
+class PastTreatmentsViewModel: AllTreatmentsViewModel {
+
+    override func numberOfSections() -> Int {
+        return 1
+    }
+
+    override func numberOfTreatments(in section: Int) -> Int {
+        return getPastTreatments().count
+    }
+
+    override func treatment(atIndexPath indexPath: IndexPath) -> TreatmentModel? {
+        let past = getPastTreatments()
+        guard indexPath.row < past.count else { return nil }
+        return past[indexPath.row]
+    }
+}

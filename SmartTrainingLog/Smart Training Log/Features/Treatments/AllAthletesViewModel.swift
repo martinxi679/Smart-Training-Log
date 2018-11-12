@@ -37,6 +37,10 @@ class AllAthletesViewModel: NSObject {
         }
     }
 
+    func athleteByID(_ id: String) -> StudentModel? {
+        return allAthletes().first(where: {$0.id == id})
+    }
+
     func numberOfAthletes(_ team: String) -> Int {
         var num = 0
         queue.sync {
@@ -81,17 +85,15 @@ class AllAthletesViewModel: NSObject {
         return row
     }
 
-    var allAthletes: [StudentModel] {
-        get {
-            var athleteModels: [StudentModel] = []
-            queue.sync {
-                for key in athletes.keys {
-                    if let val = athletes[key] {
-                        athleteModels.append(contentsOf: val)
-                    }
+    func allAthletes() -> [StudentModel] {
+        var athleteModels: [StudentModel] = []
+        queue.sync {
+            for key in athletes.keys {
+                if let val = athletes[key] {
+                    athleteModels.append(contentsOf: val)
                 }
             }
-            return athleteModels
         }
+        return athleteModels
     }
 }

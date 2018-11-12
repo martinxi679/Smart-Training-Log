@@ -18,6 +18,7 @@ class AddTreatmentViewController: UIViewController {
 
     enum SegueType: String {
         case namePickerSegue
+        case treatmentPickerSegue
     }
 
     var trainer: UserModel?
@@ -25,6 +26,9 @@ class AddTreatmentViewController: UIViewController {
 
     override func viewDidLoad() {
         treatmentNameLabel.isHidden = true
+        treatmentNameLabel.text = nil
+        infoTextField.layer.borderWidth = 2
+        infoTextField.layer.borderColor = Palette.navBarBlue.cgColor
         addButton.isEnabled = true
         infoTextField.text = ""
         athleteDetailView.isHidden = true
@@ -56,6 +60,7 @@ class AddTreatmentViewController: UIViewController {
 
         guard let dbManager = try? Container.resolve(DatabaseManager.self) else { return }
         dbManager.addTreatment(treatment: &newTreatment)
+        self.navigationController?.popViewController(animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,6 +74,10 @@ class AddTreatmentViewController: UIViewController {
         case .namePickerSegue:
             if let namePickerVC = segue.destination as? AthletePickerViewController {
                 namePickerVC.delegate = self
+            }
+        case .treatmentPickerSegue:
+            if let treatmentPickerVC = segue.destination as? TreatmentPickerViewController {
+                treatmentPickerVC.delegate = self
             }
         }
     }
@@ -85,5 +94,12 @@ extension AddTreatmentViewController: AthletePickerDelegate {
 
     func athletePickerDidCancel() {
         // Nothing to do right now
+    }
+}
+
+extension AddTreatmentViewController: TreatmentPickerViewControllerDelegate {
+    func finishedPickingTreatment(_ treatment: String) {
+        treatmentNameLabel.text = treatment
+        treatmentNameLabel.isHidden = false
     }
 }

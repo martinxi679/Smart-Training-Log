@@ -100,6 +100,8 @@
 		A77370082198BF160038847C /* CommentFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77370072198BF160038847C /* CommentFlyweight.swift */; };
 		A77D3D1921989D29004B49D8 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77D3D1821989D29004B49D8 /* History.storyboard */; };
 		A77D3D1B21989E39004B49D8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */; };
+		A77E55F1219920E100C68C73 /* TreatmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E55F0219920E100C68C73 /* TreatmentDetailViewController.swift */; };
+		A77E55F4219929B100C68C73 /* TreatmentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E55F3219929B100C68C73 /* TreatmentPickerViewController.swift */; };
 		A7818EAA2159558100836B6E /* Entitlements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EA92159558100836B6E /* Entitlements.swift */; };
 		A7818EAE216167C600836B6E /* Treatments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */; };
 		A7818EB2216173A200836B6E /* AddTreatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */; };
@@ -242,6 +244,8 @@
 		A77370072198BF160038847C /* CommentFlyweight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFlyweight.swift; sourceTree = "<group>"; };
 		A77D3D1821989D29004B49D8 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = History.storyboard; path = "Smart Training Log/Features/History/History.storyboard"; sourceTree = SOURCE_ROOT; };
 		A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = "Smart Training Log/Features/History/HistoryViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A77E55F0219920E100C68C73 /* TreatmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TreatmentDetailViewController.swift; path = "Smart Training Log/STLKit/Extensions/TreatmentDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A77E55F3219929B100C68C73 /* TreatmentPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPickerViewController.swift; sourceTree = "<group>"; };
 		A7818EA92159558100836B6E /* Entitlements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlements.swift; sourceTree = "<group>"; };
 		A7818EB1216173A200836B6E /* AddTreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTreatmentViewController.swift; sourceTree = "<group>"; };
 		A7818EB32161A7CE00836B6E /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
@@ -625,6 +629,7 @@
 		A7595D9D214D7FEB007EDE67 /* Treatments */ = {
 			isa = PBXGroup;
 			children = (
+				A77E55F2219929A100C68C73 /* TreatmentPicker */,
 				CADD3207216E625500B6D0E0 /* AthletePicker */,
 				CADD31F9216D9CD500B6D0E0 /* Views */,
 				A7595D9E214D7FFA007EDE67 /* Treatments.storyboard */,
@@ -652,9 +657,18 @@
 				A77D3D1A21989E39004B49D8 /* HistoryViewController.swift */,
 				A77370012198BACC0038847C /* AddCommentViewController.swift */,
 				A77370032198BAEC0038847C /* TreatmentDetailsViewController.swift */,
+				A77E55F0219920E100C68C73 /* TreatmentDetailViewController.swift */,
 			);
 			name = History;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A77E55F2219929A100C68C73 /* TreatmentPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A77E55F3219929B100C68C73 /* TreatmentPickerViewController.swift */,
+			);
+			path = TreatmentPicker;
 			sourceTree = "<group>";
 		};
 		A7CAE53F215B337200A62719 /* CoreData */ = {
@@ -905,6 +919,7 @@
 				A7595D94214C5D82007EDE67 /* UIApplicationExtensions.swift in Sources */,
 				CADD3206216E510700B6D0E0 /* AllAthletesViewModel.swift in Sources */,
 				A72FDB0321495E03000311B0 /* Service.swift in Sources */,
+				A77E55F4219929B100C68C73 /* TreatmentPickerViewController.swift in Sources */,
 				A7595D96214D3A27007EDE67 /* UIViewExtensions.swift in Sources */,
 				A72FDAE021495E03000311B0 /* NegatedCondition.swift in Sources */,
 				A72FDADC21495E03000311B0 /* NSLock+Operations.swift in Sources */,
@@ -936,6 +951,7 @@
 				A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */,
 				A72FDAE221495E03000311B0 /* NoCancelledDependencies.swift in Sources */,
 				A7BB24B1214FE4150088A4C8 /* EditProfileViewController.swift in Sources */,
+				A77E55F1219920E100C68C73 /* TreatmentDetailViewController.swift in Sources */,
 				A7595D7D21498100007EDE67 /* Palette.swift in Sources */,
 				A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */,
 				A7BB24B3214FE8160088A4C8 /* Sports.swift in Sources */,

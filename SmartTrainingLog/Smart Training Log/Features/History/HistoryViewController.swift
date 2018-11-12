@@ -2,9 +2,6 @@
 //  HistoryViewController.swift
 //  Smart Training Log
 //
-//  Created by Alice Lew on 11/11/18.
-//  Copyright © 2018 CS4261. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -15,8 +12,10 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel = AllTreatmentsViewModel()
+    var viewModel = PastTreatmentsViewModel()
     var disposeBag: Disposal = []
+
+    var selectedTreatment: TreatmentModel?
     
     let treatmentInfoCellID = "AllTreatmentsTableViewCell"
 
@@ -27,6 +26,17 @@ class HistoryViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }).add(to: &disposeBag)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.update()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? TreatmentDetailsViewController {
+            detailVC.treatment = selectedTreatment
+        }
     }
 }
 
@@ -52,5 +62,15 @@ extension HistoryViewController: UITableViewDataSource {
         
         cell.configure(with: treatment, athlete: athlete)
         return cell
+    }
+}
+
+extension HistoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let treatment = viewModel.treatment(atIndexPath: indexPath) {
+            selectedTreatment = treatment
+            performSegue(withIdentifier: "ToTreatmentDetail", sender: self)
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

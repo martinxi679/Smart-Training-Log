@@ -10,7 +10,7 @@ import Observable
 
 class TreatmentsViewController: UIViewController {
 
-    var viewModel = AllTreatmentsViewModel()
+    var viewModel = UpcomingTreatmentsViewModel()
     var disposeBag: Disposal = []
 
     let treatmentInfoCellID = "AllTreatmentsTableViewCell"
@@ -24,6 +24,11 @@ class TreatmentsViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }).add(to: &disposeBag)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.update()
     }
 }
 
@@ -49,5 +54,14 @@ extension TreatmentsViewController: UITableViewDataSource {
 
         cell.configure(with: treatment, athlete: athlete)
         return cell
+    }
+}
+
+extension TreatmentsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let treatment = viewModel.treatment(atIndexPath: indexPath) {
+            // go to detail view
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

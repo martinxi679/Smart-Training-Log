@@ -36,6 +36,9 @@ class StartupManager {
 
         Container.register(CloudStorageManager.self) { _ in CloudStorageManager() }
         Container.register(DatabaseManager.self) { _ in DatabaseManager() }
+
+        // Register shared athlete view model
+        //Container.register(AllAthletesViewModel.self) { _ in AllAthletesViewModel() }
     }
     
     private func setupFirebase() {
