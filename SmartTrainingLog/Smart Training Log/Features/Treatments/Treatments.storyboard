@@ -296,7 +296,7 @@
         <scene sceneID="m1h-Yl-eIZ">
             <objects>
                 <navigationController title="Upcoming" automaticallyAdjustsScrollViewInsets="NO" id="OaM-bJ-UVY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Treatments" id="7YO-53-j26"/>
+                    <tabBarItem key="tabBarItem" title="Treatments" image="scheduleIcon" id="7YO-53-j26"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l2a-IE-7Kp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -375,4 +375,7 @@
             <point key="canvasLocation" x="2846" y="517"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="scheduleIcon" width="64" height="64"/>
+    </resources>
 </document>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fe-gl-BYr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fe-gl-BYr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +33,7 @@
         <scene sceneID="Uom-2H-4ht">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="2gJ-Ra-jfK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="0Wq-Oq-dVD">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" selectedImage="scheduleIcon" id="0Wq-Oq-dVD">
                         <color key="badgeColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -45,7 +45,7 @@
         <scene sceneID="UQ6-cX-gdk">
             <objects>
                 <viewControllerPlaceholder storyboardName="Treatments" id="6Ck-r1-an4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Treatments" id="Qr6-y3-sS2">
+                    <tabBarItem key="tabBarItem" title="Treatments" image="scheduleIcon" id="Qr6-y3-sS2">
                         <color key="badgeColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -57,11 +57,16 @@
         <scene sceneID="XhE-9Q-W74">
             <objects>
                 <viewControllerPlaceholder storyboardName="History" id="jrc-7q-1Kd" userLabel="History" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="Pav-ek-m2i" userLabel="History"/>
+                    <tabBarItem key="tabBarItem" title="History" image="historyIcon" id="Pav-ek-m2i" userLabel="History"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-1M-WW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7" y="101"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="historyIcon" width="64" height="64"/>
+        <image name="profileIcon" width="64" height="64"/>
+        <image name="scheduleIcon" width="64" height="64"/>
+    </resources>
 </document>
