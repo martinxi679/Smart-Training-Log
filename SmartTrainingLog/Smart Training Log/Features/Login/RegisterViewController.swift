@@ -90,6 +90,7 @@ class RegisterViewController: UIViewController {
                     var userModel = UserFlyweight(id: user.uid)
                     userModel.entitlement = Entitlement.student
                     userModel.name = self?.nameField.text
+                    userModel.deviceToken = (try? Container.resolve(APNServiceManager.self))?.messagingToken
                     database.updateUser(userModel)
                     authStore.currentUser = userModel
                     self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)

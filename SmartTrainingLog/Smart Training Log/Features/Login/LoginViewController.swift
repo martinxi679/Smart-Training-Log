@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
             emailField.text = email
             passwordField.text = password
             updateValidFields()
+            login()
         }
 
     }
@@ -81,6 +82,7 @@ class LoginViewController: UIViewController {
                 if let databaseManager = try? Container.resolve(DatabaseManager.self) {
                     databaseManager.getUser(id: user.uid, completion: { [weak self] (userFlyweight) in
                         authStore.currentUser = userFlyweight
+                        (try? Container.resolve(APNServiceManager.self))?.getUpdatedMessagingToken(completion: {_ in })
                         self?.performSegue(withIdentifier: Identifiers.Segue.toMain.rawValue, sender: self)
                     })
                 }

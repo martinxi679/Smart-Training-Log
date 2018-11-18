@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1003574395184-k1k155sfll3cu75da46vj9ubjh30lpqc.apps.googleusercontent.com</string>
+	<string>1003574395184-iek7po7vsr6k27o4lkk2s5vd5donih61.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1003574395184-k1k155sfll3cu75da46vj9ubjh30lpqc</string>
+	<string>com.googleusercontent.apps.1003574395184-iek7po7vsr6k27o4lkk2s5vd5donih61</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAJZDrMuG_bZM8Yd0ivtW5oZ2LGSTTY-C4</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>cs4261.Smart-Training-Log</string>
+	<string>JIE.Smart-Training-Log</string>
 	<key>PROJECT_ID</key>
 	<string>smart-training-log-2a77d</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1003574395184:ios:3b08a2bfc25a4406</string>
+	<string>1:1003574395184:ios:10b9d0459a915454</string>
 	<key>DATABASE_URL</key>
 	<string>https://smart-training-log-2a77d.firebaseio.com</string>
 </dict>

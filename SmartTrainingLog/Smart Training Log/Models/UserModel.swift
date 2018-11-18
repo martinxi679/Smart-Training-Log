@@ -10,6 +10,7 @@ protocol UserModel {
 
     var name: String? { get set }
     var id: String? { get set }
+    var deviceToken: String? { get set }
     var authUser: User? { get set }
     var entitlement: Entitlement? { get set }
 }
@@ -43,6 +44,7 @@ extension UserModel {
     mutating func update(with model: UserModel) {
         self.name = model.name ?? self.name
         self.id = model.id ?? self.id
+        self.deviceToken = model.deviceToken ?? self.deviceToken
         self.authUser = model.authUser ?? self.authUser
         self.entitlement = model.entitlement ?? self.entitlement
     }

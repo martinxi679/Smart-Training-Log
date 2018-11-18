@@ -12,9 +12,9 @@ class StartupManager {
     // MARK: - Public
     
     func setup() {
-    
-        setupHoratio()
+
         setupFirebase()
+        setupHoratio()
         configureNavBar()
     }
     
@@ -36,6 +36,8 @@ class StartupManager {
 
         Container.register(CloudStorageManager.self) { _ in CloudStorageManager() }
         Container.register(DatabaseManager.self) { _ in DatabaseManager() }
+
+        Container.register(APNServiceManager.self) { _ in APNServiceManager() }
 
         // Register shared athlete view model
         //Container.register(AllAthletesViewModel.self) { _ in AllAthletesViewModel() }

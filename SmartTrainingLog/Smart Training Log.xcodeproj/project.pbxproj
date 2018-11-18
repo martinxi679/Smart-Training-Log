@@ -73,7 +73,7 @@
 		A72FDB0A21495E03000311B0 /* ServiceRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACB21495E03000311B0 /* ServiceRequestOperation.swift */; };
 		A72FDB0B21495E03000311B0 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */; };
 		A72FDB0C21495E03000311B0 /* ServiceEndpointPathTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */; };
-		A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */; };
+		A73F9D1021A1D1E900D7DCAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A73F9D0F21A1D1E900D7DCAA /* GoogleService-Info.plist */; };
 		A7595D6D214978E3007EDE67 /* StartupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D6C214978E3007EDE67 /* StartupManager.swift */; };
 		A7595D6F214979C9007EDE67 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7595D6E214979C9007EDE67 /* PersistenceManager.swift */; };
 		A7595D7721497C90007EDE67 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7595D7621497C90007EDE67 /* Login.storyboard */; };
@@ -114,6 +114,7 @@
 		A7CAE546215B3B9400A62719 /* TreatmentFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAE545215B3B9400A62719 /* TreatmentFlyweight.swift */; };
 		A7DBBECC2193569500DCE373 /* TrainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBBECB2193569500DCE373 /* TrainerModel.swift */; };
 		A7EDDF322198991200B3B57F /* AllTreatmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDDF312198991200B3B57F /* AllTreatmentsViewModel.swift */; };
+		A7FFB85421A1D8A700CBCEB2 /* APNServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFB85321A1D8A700CBCEB2 /* APNServiceManager.swift */; };
 		CADD31F8216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */; };
 		CADD31FB216D9CE700B6D0E0 /* AthleteInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */; };
 		CADD31FF216DA6D600B6D0E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FE216DA6D600B6D0E0 /* UserModel.swift */; };
@@ -216,7 +217,7 @@
 		A72FDACC21495E03000311B0 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
 		A72FDACD21495E03000311B0 /* ServiceEndpointPathTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpointPathTransformer.swift; sourceTree = "<group>"; };
 		A72FDACE21495E03000311B0 /* Horatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horatio.h; sourceTree = "<group>"; };
-		A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A73F9D0F21A1D1E900D7DCAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7595D6C214978E3007EDE67 /* StartupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupManager.swift; sourceTree = "<group>"; };
 		A7595D6E214979C9007EDE67 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		A7595D7621497C90007EDE67 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -258,6 +259,8 @@
 		A7DBBECB2193569500DCE373 /* TrainerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerModel.swift; sourceTree = "<group>"; };
 		A7EDDF312198991200B3B57F /* AllTreatmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTreatmentsViewModel.swift; sourceTree = "<group>"; };
 		A7EDDF3321989C8600B3B57F /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		A7FFB85321A1D8A700CBCEB2 /* APNServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNServiceManager.swift; sourceTree = "<group>"; };
+		A7FFB85521A1F01C00CBCEB2 /* Smart Training Log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smart Training Log.entitlements"; sourceTree = "<group>"; };
 		CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AthleteInfoDetailView.xib; sourceTree = "<group>"; };
 		CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteInfoDetailView.swift; sourceTree = "<group>"; };
 		CADD31FE216DA6D600B6D0E0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -313,7 +316,7 @@
 		A72FDA4D21495D8B000311B0 = {
 			isa = PBXGroup;
 			children = (
-				A72FDB0F2149648E000311B0 /* GoogleService-Info.plist */,
+				A73F9D0F21A1D1E900D7DCAA /* GoogleService-Info.plist */,
 				A72FDA7C21495DB5000311B0 /* Third Party */,
 				A72FDA5821495D8B000311B0 /* Smart Training Log */,
 				A72FDA7021495D8C000311B0 /* Smart Training LogTests */,
@@ -335,6 +338,7 @@
 		A72FDA5821495D8B000311B0 /* Smart Training Log */ = {
 			isa = PBXGroup;
 			children = (
+				A7FFB85521A1F01C00CBCEB2 /* Smart Training Log.entitlements */,
 				A7595D79214980B3007EDE67 /* STLKit */,
 				A7595D6B214978CA007EDE67 /* Assets */,
 				A7595D6A2149786F007EDE67 /* Models */,
@@ -495,6 +499,7 @@
 				A7595D8D214C3A07007EDE67 /* AuthenticationStore.swift */,
 				A7702F7121504EB30007484A /* CloudStorageManager.swift */,
 				A7702F73215071930007484A /* DatabaseManager.swift */,
+				A7FFB85321A1D8A700CBCEB2 /* APNServiceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -770,6 +775,11 @@
 				TargetAttributes = {
 					A72FDA5521495D8B000311B0 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A72FDA6C21495D8C000311B0 = {
 						CreatedOnToolsVersion = 9.3;
@@ -809,8 +819,8 @@
 				A7595D9C214D7F43007EDE67 /* Profile.storyboard in Resources */,
 				CADD320B216E6A3A00B6D0E0 /* AthletePickerTableViewCell.xib in Resources */,
 				A7595D7721497C90007EDE67 /* Login.storyboard in Resources */,
-				A72FDB102149648E000311B0 /* GoogleService-Info.plist in Resources */,
 				A72FDA6421495D8C000311B0 /* Assets.xcassets in Resources */,
+				A73F9D1021A1D1E900D7DCAA /* GoogleService-Info.plist in Resources */,
 				A7818EAE216167C600836B6E /* Treatments.storyboard in Resources */,
 				CADD3211216E7BBD00B6D0E0 /* AllTreatmentsTableViewCell.xib in Resources */,
 				A72FDA5F21495D8C000311B0 /* Main.storyboard in Resources */,
@@ -993,6 +1003,7 @@
 				A72FDA5A21495D8B000311B0 /* AppDelegate.swift in Sources */,
 				A7CAE544215B378300A62719 /* TreatmentModel.swift in Sources */,
 				A7EDDF322198991200B3B57F /* AllTreatmentsViewModel.swift in Sources */,
+				A7FFB85421A1D8A700CBCEB2 /* APNServiceManager.swift in Sources */,
 				A7BB24AF214FDF370088A4C8 /* CircleImageView.swift in Sources */,
 				A72FDB0721495E03000311B0 /* ServiceRequestStatus.swift in Sources */,
 				A7CAE546215B3B9400A62719 /* TreatmentFlyweight.swift in Sources */,
@@ -1177,6 +1188,7 @@
 			baseConfigurationReference = 59584B79FE0F4A3E77532D78 /* Pods-Smart Training Log.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Smart Training Log/Smart Training Log.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XK7JHWX2X;
@@ -1186,7 +1198,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-Log";
+				PRODUCT_BUNDLE_IDENTIFIER = "JIE.Smart-Training-Log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart Training Log/BridgingHeader.h";
@@ -1200,6 +1212,7 @@
 			baseConfigurationReference = 5F200C7318446E8B8D5AECEC /* Pods-Smart Training Log.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Smart Training Log/Smart Training Log.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XK7JHWX2X;
@@ -1209,7 +1222,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cs4261.Smart-Training-Log";
+				PRODUCT_BUNDLE_IDENTIFIER = "JIE.Smart-Training-Log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart Training Log/BridgingHeader.h";
