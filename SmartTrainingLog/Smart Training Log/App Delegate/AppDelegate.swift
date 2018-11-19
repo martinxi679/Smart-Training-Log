@@ -48,6 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         persistenceManager.saveContext()
     }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+        if let apnService = try? Container.resolve(APNServiceManager.self) {
+            apnService.getUpdatedMessagingToken(completion: {_ in })
+        }
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        handleNotification(withUserInfo: userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
     
     // MARK: - Private
     
@@ -60,5 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         startupManager.setup()
     }
 
+    private func handleNotification(withUserInfo: [AnyHashable: Any]) {
+        // TODO: Handle notificaiton
+        // Deeplink here?
+    }
 }
 

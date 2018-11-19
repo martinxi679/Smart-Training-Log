@@ -24,9 +24,11 @@ struct UserFlyweight: StudentModel & TrainerModel, Codable {
     var entitlement: Entitlement?
     var name: String?
     var id: String?
+    var deviceToken: String?
 
     enum CodingKeys: String, CodingKey {
         case id
+        case deviceID
         case name
         case sport
         case entitlement
@@ -44,6 +46,7 @@ struct UserFlyweight: StudentModel & TrainerModel, Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(String.self, forKey: .id)
+        deviceToken = try container.decodeIfPresent(String.self, forKey: .deviceID)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         if let sportStr = try container.decodeIfPresent(String.self, forKey: .sport) {
             sport = Sport(rawValue: sportStr)
@@ -87,6 +90,7 @@ struct UserFlyweight: StudentModel & TrainerModel, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id!, forKey: .id)
+        try container.encodeIfPresent(deviceToken, forKey: .deviceID)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(sport?.rawValue, forKey: .sport)
         try container.encodeIfPresent(entitlement?.rawValue, forKey: .entitlement)
