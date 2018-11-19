@@ -115,6 +115,8 @@
 		A7DBBECC2193569500DCE373 /* TrainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBBECB2193569500DCE373 /* TrainerModel.swift */; };
 		A7EDDF322198991200B3B57F /* AllTreatmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDDF312198991200B3B57F /* AllTreatmentsViewModel.swift */; };
 		A7FFB85421A1D8A700CBCEB2 /* APNServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFB85321A1D8A700CBCEB2 /* APNServiceManager.swift */; };
+		A7FFB85721A24EB600CBCEB2 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFB85621A24EB600CBCEB2 /* MoreViewController.swift */; };
+		A7FFB85921A2560200CBCEB2 /* RequestTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFB85821A2560200CBCEB2 /* RequestTeamViewController.swift */; };
 		CADD31F8216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */; };
 		CADD31FB216D9CE700B6D0E0 /* AthleteInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */; };
 		CADD31FF216DA6D600B6D0E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD31FE216DA6D600B6D0E0 /* UserModel.swift */; };
@@ -261,6 +263,8 @@
 		A7EDDF3321989C8600B3B57F /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		A7FFB85321A1D8A700CBCEB2 /* APNServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNServiceManager.swift; sourceTree = "<group>"; };
 		A7FFB85521A1F01C00CBCEB2 /* Smart Training Log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smart Training Log.entitlements"; sourceTree = "<group>"; };
+		A7FFB85621A24EB600CBCEB2 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		A7FFB85821A2560200CBCEB2 /* RequestTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTeamViewController.swift; sourceTree = "<group>"; };
 		CADD31F7216D9CBA00B6D0E0 /* AthleteInfoDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AthleteInfoDetailView.xib; sourceTree = "<group>"; };
 		CADD31FA216D9CE700B6D0E0 /* AthleteInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteInfoDetailView.swift; sourceTree = "<group>"; };
 		CADD31FE216DA6D600B6D0E0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 				A71B4801214E98B000700340 /* ProfileViewController.swift */,
 				A71B4803214E9DF200700340 /* ProfileViewModel.swift */,
 				A7BB24B0214FE4150088A4C8 /* EditProfileViewController.swift */,
+				A7FFB85821A2560200CBCEB2 /* RequestTeamViewController.swift */,
 			);
 			name = Profile;
 			path = Register;
@@ -651,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				A7595DA1214D8269007EDE67 /* More.storyboard */,
+				A7FFB85621A24EB600CBCEB2 /* MoreViewController.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -956,6 +962,8 @@
 				A7595D8421499B27007EDE67 /* UnderlineTextField.swift in Sources */,
 				A7818EAA2159558100836B6E /* Entitlements.swift in Sources */,
 				A72FDB0121495E03000311B0 /* JSONServiceResponseProcessor.swift in Sources */,
+				A7FFB85721A24EB600CBCEB2 /* MoreViewController.swift in Sources */,
+				A7FFB85921A2560200CBCEB2 /* RequestTeamViewController.swift in Sources */,
 				A72FDAE821495E03000311B0 /* HealthCondition.swift in Sources */,
 				A7818EB2216173A200836B6E /* AddTreatmentViewController.swift in Sources */,
 				A72FDAFA21495E03000311B0 /* CalendarCondition.swift in Sources */,

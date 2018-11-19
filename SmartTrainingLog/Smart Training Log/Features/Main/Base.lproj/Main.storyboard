@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fe-gl-BYr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fe-gl-BYr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +23,7 @@
                         <segue destination="2gJ-Ra-jfK" kind="relationship" relationship="viewControllers" id="MoA-1M-rCO"/>
                         <segue destination="6Ck-r1-an4" kind="relationship" relationship="viewControllers" id="2fF-9R-JEu"/>
                         <segue destination="jrc-7q-1Kd" kind="relationship" relationship="viewControllers" id="lNr-co-aWb"/>
+                        <segue destination="TdR-vY-s1I" kind="relationship" relationship="viewControllers" id="Qn2-sQ-VrK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHP-S9-op4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,11 +62,22 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-1M-WW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="101"/>
+            <point key="canvasLocation" x="9" y="103"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="0dY-Jv-GeT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="More" id="TdR-vY-s1I" userLabel="More" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="More" image="moreIcon" id="BLZ-fS-R9P" userLabel="More"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMo-Ja-hhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2" y="175"/>
         </scene>
     </scenes>
     <resources>
         <image name="historyIcon" width="64" height="64"/>
+        <image name="moreIcon" width="64" height="64"/>
         <image name="profileIcon" width="64" height="64"/>
         <image name="scheduleIcon" width="64" height="64"/>
     </resources>

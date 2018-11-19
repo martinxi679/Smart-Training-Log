@@ -21,11 +21,26 @@ class AuthenticationStore {
         NotificationCenter.default.addObserver(self, selector: #selector(updateUser), name: .MessagingTokenDidChange, object: nil)
     }
 
+    func logout() {
+        try? Auth.auth().signOut()
+        currentUser = nil
+        cachedProfilePicture.value = nil
+
+        clearKeychain()
+    }
+
     public func store(user: User?, with password: String?) {
         let keychain = KeychainSwift()
         guard let email = user?.email, let pass = password else { return }
         keychain.set(email, forKey: AuthenticationStore.USER_EMAIL_KEY)
         keychain.set(pass, forKey: AuthenticationStore.USER_PASSWORD_KEY)
+    }
+
+    private func clearKeychain() {
+        let keychain = KeychainSwift()
+
+        keychain.delete(AuthenticationStore.USER_EMAIL_KEY)
+        keychain.delete(AuthenticationStore.USER_PASSWORD_KEY)
     }
 
     @objc

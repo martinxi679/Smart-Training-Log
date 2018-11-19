@@ -13,6 +13,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var sportPickerView: UIPickerView!
+    @IBOutlet weak var selectSportLabel: UILabel!
 
     var imagePickerVC = UIImagePickerController()
     var viewModel = ProfileViewModel()
@@ -32,6 +33,12 @@ class EditProfileViewController: UIViewController {
                 mediaOptions.append(contentsOf: media)
             }
         }
+
+        // Hide sport picker options for trainers who don't need them
+        selectSportLabel.isHidden = viewModel.user?.isTrainer ?? false
+        sportPickerView.isHidden = viewModel.user?.isTrainer ?? false
+
+
         imagePickerVC.mediaTypes = mediaOptions
         imagePickerVC.delegate = self
 

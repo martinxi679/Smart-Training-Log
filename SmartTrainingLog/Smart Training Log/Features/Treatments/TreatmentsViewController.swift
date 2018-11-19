@@ -16,6 +16,8 @@ class TreatmentsViewController: UIViewController {
     let treatmentInfoCellID = "AllTreatmentsTableViewCell"
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addTreatmentItem: UIBarButtonItem!
+
 
     override func viewDidLoad() {
         tableView.register(UINib(nibName: treatmentInfoCellID, bundle: nil), forCellReuseIdentifier: treatmentInfoCellID)
@@ -24,6 +26,12 @@ class TreatmentsViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }).add(to: &disposeBag)
+
+        if let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser {
+            if !user.isTrainer {
+                navigationItem.rightBarButtonItems?.removeAll()
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
