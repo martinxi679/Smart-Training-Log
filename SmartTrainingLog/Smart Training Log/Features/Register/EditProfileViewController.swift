@@ -87,9 +87,12 @@ class EditProfileViewController: UIViewController {
             let storageManager = try? Container.resolve(CloudStorageManager.self),
             var user = viewModel.user as? UserFlyweight {
 
-            // Update user sport and name
-            user.sport = sport
+            if user.isAthlete {
+                // Update user sport
+                user.sport = sport
+            }
 
+            // Update user name
             if let name = nameField.text {
                 user.name = name
             }
