@@ -17,10 +17,17 @@ protocol UserModel {
 
 extension UserModel {
 
+    var isAdmin: Bool {
+        get {
+            guard let type = entitlement else { return false }
+            return type == .admin
+        }
+    }
+
     var isTrainer: Bool {
         get {
             guard let type = entitlement else { return false }
-            return type == .trainer
+            return type == .trainer || type == .admin
         }
     }
 

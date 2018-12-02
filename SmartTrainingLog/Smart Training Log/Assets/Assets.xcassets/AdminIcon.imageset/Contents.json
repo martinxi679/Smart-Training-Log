@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "45799755_2146159958972235_2099365398511091712_n.png",
+      "filename" : "shield-half.svg%403x-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "45799755_2146159958972235_2099365398511091712_n-2.png",
+      "filename" : "shield-half.svg%403x-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "45799755_2146159958972235_2099365398511091712_n-1.png",
+      "filename" : "shield-half.svg%403x.png",
       "scale" : "3x"
     }
   ],

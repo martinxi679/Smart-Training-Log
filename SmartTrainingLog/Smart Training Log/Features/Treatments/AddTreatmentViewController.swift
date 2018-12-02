@@ -10,6 +10,11 @@ import FirebaseDatabase
 
 class AddTreatmentViewController: UIViewController {
 
+    enum TreatmentType {
+        case add
+        case update
+    }
+
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var treatmentNameLabel: UILabel!
     @IBOutlet weak var athleteDetailView: AthleteInfoDetailView!
@@ -21,8 +26,45 @@ class AddTreatmentViewController: UIViewController {
         case treatmentPickerSegue
     }
 
+    var treatmentVCType: TreatmentType = .add {
+        didSet {
+            guard isViewLoaded else { return }
+            switch treatmentVCType {
+            case .add:
+                addButton.setTitle("Add Treatment", for: UIControlState())
+            case .update:
+                addButton.setTitle("Save", for: UIControlState())
+            }
+        }
+    }
+
     var trainer: UserModel?
-    var selectedAthlete: UserModel?
+    var selectedAthlete: UserModel? {
+        didSet {
+            if isViewLoaded {
+                athleteDetailView.reset()
+                if let athlete = selectedAthlete as? StudentModel {
+                    athleteDetailView.configure(with: athlete)
+                    athleteDetailView.isHidden = false
+                } else {
+                    athleteDetailView.isHidden = true
+                }
+            }
+        }
+    }
+    var treatment: TreatmentFlywieght? {
+        didSet {
+            if treatmentVCType == .update && isViewLoaded {
+                treatmentNameLabel.text = treatment?.treatment
+                treatmentNameLabel.isHidden = false
+                if let date = treatment?.date {
+                    datePicker.setDate(date, animated: true)
+                }
+                addButton.setTitle("Update", for: UIControlState())
+                infoTextField.text = treatment?.info
+            }
+        }
+    }
 
     override func viewDidLoad() {
         treatmentNameLabel.isHidden = true
@@ -36,6 +78,23 @@ class AddTreatmentViewController: UIViewController {
         if let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser,
             user.isTrainer {
             trainer = user
+        }
+
+        if treatmentVCType == .update {
+            treatmentNameLabel.text = treatment?.treatment
+            treatmentNameLabel.isHidden = false
+            if let date = treatment?.date {
+                datePicker.setDate(date, animated: true)
+            }
+            addButton.setTitle("Update", for: UIControlState())
+
+            athleteDetailView.reset()
+            if let athlete = selectedAthlete as? StudentModel {
+                athleteDetailView.configure(with: athlete)
+                athleteDetailView.isHidden = false
+            }
+
+            infoTextField.text = treatment?.info
         }
     }
     
@@ -51,15 +110,35 @@ class AddTreatmentViewController: UIViewController {
             return
         }
 
-        var newTreatment = TreatmentFlywieght()
-        newTreatment.athleteID = athlete.name?.sha256()
-        newTreatment.trainerID = trainer?.id
-        newTreatment.info = infoTextField.text
-        newTreatment.treatment = treatmentNameLabel.text
-        newTreatment.date = datePicker.date
-
         guard let dbManager = try? Container.resolve(DatabaseManager.self) else { return }
-        dbManager.addTreatment(treatment: &newTreatment)
+
+        switch treatmentVCType {
+        case .add:
+            var newTreatment = TreatmentFlywieght()
+            newTreatment.athleteID = athlete.id?.sha256()
+            newTreatment.trainerID = trainer?.id
+            newTreatment.info = infoTextField.text
+            newTreatment.treatment = treatmentNameLabel.text
+            newTreatment.date = datePicker.date
+
+            dbManager.addTreatment(treatment: &newTreatment, athlete: athlete)
+
+        case .update:
+            let athleteID = athlete.id?.sha256()
+            let info = infoTextField.text
+            let date = datePicker.date
+            let treatmentStr = treatmentNameLabel.text
+
+            treatment?.athleteID = athleteID
+            treatment?.info = info
+            treatment?.date = date
+            treatment?.treatment = treatmentStr
+
+            if treatment != nil {
+                dbManager.updateTreatment(treatment: treatment!)
+            }
+        }
+
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -86,9 +165,6 @@ class AddTreatmentViewController: UIViewController {
 extension AddTreatmentViewController: AthletePickerDelegate {
     func athletePicker(didFinishSelectingWith athlete: UserModel) {
         guard let athlete = athlete as? StudentModel else { return }
-        athleteDetailView.reset()
-        athleteDetailView.configure(with: athlete)
-        athleteDetailView.isHidden = false
         selectedAthlete = athlete
     }
 

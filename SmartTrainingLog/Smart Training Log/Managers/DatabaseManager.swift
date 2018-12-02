@@ -79,13 +79,20 @@ class DatabaseManager {
     }
 }
 
+// MARK: - Users
+
 extension DatabaseManager {
 
     func getUser(id: String, completion: @escaping (UserFlyweight?) -> Void) {
         let ref = rootRef.child(Root.Users.name).child(id)
         ref.observeSingleEvent(of: .value) { [weak self] (snapshot) in
             guard let value = snapshot.value else { completion(nil); return }
-            let user = try? self?.decoder.decode(UserFlyweight.self, from: value)
+            var user = try? self?.decoder.decode(UserFlyweight.self, from: value)
+            if let current = (try? Container.resolve(AuthenticationStore.self))?.currentUser {
+                if user??.id == current.id {
+                    user??.authUser = current.authUser
+                }
+            }
             completion(user ?? nil)
         }
     }
@@ -98,6 +105,24 @@ extension DatabaseManager {
         }
         if let authStore = try? Container.resolve(AuthenticationStore.self) {
             authStore.currentUser = user
+        }
+
+        if user.isAthlete, let id = user.id {
+            // Update firestore instance
+            for team in user.teams {
+                let collection = db.collection(team)
+                let query = collection.whereField("id", isEqualTo: id)
+                query.getDocuments(completion: { (snapshot, error) in
+                    guard error == nil else { return }
+                    guard let doc = snapshot?.documents.first else { return }
+
+                    if let name = user.name,
+                        let sport = user.sport?.rawValue {
+                        collection.document(doc.documentID).setData(["name": name, "sport": sport, "id": id])
+
+                    }
+                })
+            }
         }
     }
 
@@ -117,8 +142,7 @@ extension DatabaseManager {
             }
             var athletes: [StudentModel] = []
             for document in snapshot.documents {
-                if var athlete = try? strongSelf.firestoreDecoder.decode(UserFlyweight.self, from: document.data()) {
-                    athlete.id = athlete.name?.sha256()
+                if let athlete = try? strongSelf.firestoreDecoder.decode(UserFlyweight.self, from: document.data()) {
                     athletes.append(athlete)
                 }
             }
@@ -127,15 +151,148 @@ extension DatabaseManager {
     }
 }
 
-// MARK: - Treatments
-
+// MARK: - Teams
 extension DatabaseManager {
 
-    func addTreatment(treatment: inout TreatmentFlywieght) {
+    func createTeam(_ team: String, admin: inout UserFlyweight) {
+        guard let id = admin.id else { return }
+        guard let email = Auth.auth().currentUser?.email else { return }
+
+        var ref = rootRef.child("teams").child(team).child("admin")
+        ref.setValue(id)
+        ref = rootRef.child("teams").child(team).child("adminEmail")
+        ref.setValue(email)
+
+        addUser(&admin, toTeam: team)
+    }
+
+    func requestTeam(user: UserFlyweight, team: String) {
+        guard let id = user.id else { return }
+
+        let ref = rootRef.child("teams").child(team).child("pending")
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard let strongSelf = self else { return }
+
+            guard let value = snapshot.value else {
+                if let newVal = try? strongSelf.encoder.encode([id]) {
+                    ref.setValue(newVal)
+                }
+                return
+            }
+
+            var currentPending = (try? strongSelf.decoder.decode([String].self, from: value)) ?? []
+
+            guard !currentPending.contains(id) else {
+                return
+            }
+            currentPending.append(id)
+
+            if let newPending = try? strongSelf.encoder.encode(currentPending) {
+                ref.setValue(newPending)
+            }
+        })
+    }
+
+    func getAdminStatus(_ admin: UserModel, forTeam team: String, completion: @escaping (Bool) -> Void) {
+        let ref = rootRef.child("teams").child(team).child("admin")
+
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? String else { return }
+            completion(value == admin.id)
+        })
+    }
+
+    func updateTeamEmail(_ newEmail: String, forTeam team: String) {
+        let ref = rootRef.child("teams").child(team).child("adminEmail")
+        ref.setValue(newEmail)
+    }
+
+    func getTeamEmail(_ team: String, completion: @escaping (String) -> Void) {
+        let ref = rootRef.child("teams").child(team).child("adminEmail")
+
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            guard let email = snapshot.value as? String else { return }
+            completion(email)
+        })
+    }
+
+    func getPendingUsers(onTeam team: String, completion: @escaping ([String]) -> Void) {
+        let ref = rootRef.child("teams").child(team).child("pending")
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard let strongSelf = self else { return }
+
+            guard let value = snapshot.value else {
+                completion([])
+                return
+            }
+
+            let pending = (try? strongSelf.decoder.decode([String].self, from: value)) ?? []
+
+            completion(pending)
+        })
+    }
+
+    func removePendingUser(_ user: UserFlyweight, fromTeam team: String, sendNotification: Bool = true) {
+        guard let id = user.id else { return }
+
+        let ref = rootRef.child("teams").child(team).child("pending")
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard let strongSelf = self else { return }
+            guard let value = snapshot.value else { return }
+
+            var currentPending = (try? strongSelf.decoder.decode([String].self, from: value)) ?? []
+
+            guard currentPending.contains(id) else {
+                return
+            }
+            if let index = currentPending.firstIndex(where: { $0 == id }) {
+                currentPending.remove(at: index)
+            }
+
+            if let newPending = try? strongSelf.encoder.encode(currentPending) {
+                ref.setValue(newPending)
+            }
+
+            if sendNotification {
+                // TODO- send notification to user that they were denied!
+            }
+        })
+    }
+
+    func addUser(_ user: inout UserFlyweight, toTeam team: String) {
+        removePendingUser(user, fromTeam: team, sendNotification: false)
+
+        user.teams.append(team)
+        updateUser(user)
+
+        let ref = db.collection(team)
+
+        if user.isAthlete,
+            let name = user.name,
+            let sport = user.sport?.rawValue,
+            let id = user.id {
+            ref.addDocument(data: ["name": name, "sport": sport, "id": id])
+        }
+
+        //TODO- Send notification to user that they were added!
+    }
+}
+
+// MARK: - Treatments
+extension DatabaseManager {
+
+    func addTreatment(treatment: inout TreatmentFlywieght, athlete: UserModel) {
         guard let athleteID = treatment.athleteID else { return }
         if let id = rootRef.child(Root.Treatments.name).child(athleteID).childByAutoId().key {
             treatment.id = id
             updateTreatment(treatment: treatment)
+
+            guard let uid = athlete.id else { return }
+
+            let ref = rootRef.child(Root.Treatments.name).child(athleteID).child(id)
+            ref.observeSingleEvent(of: .value, with: { snapshot in
+                SMLRestfulAPI.common.sendAddTreatmentNotification(userHashID: athleteID, treatmentID: id, uid: uid)
+            })
         }
     }
 

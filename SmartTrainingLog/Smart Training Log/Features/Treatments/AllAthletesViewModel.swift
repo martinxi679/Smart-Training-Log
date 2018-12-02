@@ -34,6 +34,13 @@ class AllAthletesViewModel: NSObject {
                     }
                 })
             }
+        } else {
+            if let student = user as? UserFlyweight,
+                let team = student.teams.first {
+                self.queue.sync {
+                    athletes[team] = [student]
+                }
+            }
         }
     }
 

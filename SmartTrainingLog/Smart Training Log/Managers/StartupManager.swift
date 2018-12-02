@@ -39,6 +39,8 @@ class StartupManager {
 
         Container.register(APNServiceManager.self) { _ in APNServiceManager() }
 
+        Container.register(SMLRestfulAPI.self) { _ in SMLRestfulAPI() }
+
         // Register shared athlete view model
         //Container.register(AllAthletesViewModel.self) { _ in AllAthletesViewModel() }
     }
