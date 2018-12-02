@@ -12,6 +12,8 @@ class AddCommentViewController: UIViewController {
     
     var treatment: TreatmentModel?
 
+    weak var delegate: TreatmentUpdatableDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,7 @@ class AddCommentViewController: UIViewController {
         guard let dbManager = try? Container.resolve(DatabaseManager.self) else { return }
         dbManager.addComment(comment: newComment, toTreatment: currentTreatment)
         treatment?.comments.append(newComment)
+        delegate?.didUpdateTreatment(treatment as! TreatmentFlywieght)
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -14,8 +14,19 @@ class AllTreatmentsViewModel: NSObject {
 
     var disposeBag: Disposal = []
     var athleteViewModel = AllAthletesViewModel()
+    var athlete: UserFlyweight? {
+        didSet {
+            update()
+        }
+    }
 
     let queue = DispatchQueue(label: "treatments arr queue")
+
+    init(athlete: UserFlyweight) {
+        super.init()
+        self.athlete = athlete
+        update()
+    }
 
     override init() {
         super.init()
@@ -26,23 +37,33 @@ class AllTreatmentsViewModel: NSObject {
         update()
     }
 
-    func update() {
+    func update(resetCache: Bool = false) {
+        if resetCache {
+            queue.sync {
+                treatments.removeAll()
+            }
+        }
+
         guard let dataManager = try? Container.resolve(DatabaseManager.self) else { return }
-        let athletes = athleteViewModel.allAthletes()
+        var athletes = athleteViewModel.allAthletes()
+
+        if self.athlete != nil {
+            athletes = [self.athlete!]
+        }
 
         for athlete in athletes {
-            if let id = athlete.id {
-                queue.sync {
-                    dataManager.getTreatments(forUserID: id, completionHandler: {[weak self] (models) in
-                        guard let strongSelf = self else { return }
-                        for model in models {
+            if let id = athlete.id?.sha256() {
+                dataManager.getTreatments(forUserID: id, completionHandler: {[weak self] (models) in
+                    guard let strongSelf = self else { return }
+                    for model in models {
+                        strongSelf.queue.sync {
                             if !strongSelf.treatments.contains(where: {$0.id == model.id }) {
                                 strongSelf.treatments.append(model)
                             }
                         }
-                        strongSelf.refreshed.value = true
-                    })
-                }
+                    }
+                    strongSelf.refreshed.value = true
+                })
             }
         }
     }
@@ -80,7 +101,7 @@ class AllTreatmentsViewModel: NSObject {
     }
 
     func athleteForID(id: String) -> StudentModel? {
-        return athleteViewModel.allAthletes().first(where: { $0.id == id })
+        return athleteViewModel.allAthletes().first(where: { $0.id?.sha256() == id })
     }
 
     func numberOfSections() -> Int {

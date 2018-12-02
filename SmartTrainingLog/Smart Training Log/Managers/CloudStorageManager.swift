@@ -37,7 +37,9 @@ class CloudStorageManager {
     func getProfilePicture(url: URL, handler: @escaping (UIImage?) -> Void = {(_) in}) {
 
         if let authStore = try? Container.resolve(AuthenticationStore.self),
-            let image = authStore.cachedProfilePicture.value {
+            let image = authStore.cachedProfilePicture.value,
+            let user = authStore.currentUser,
+            getProfileImageURL(user: user)?.absoluteString == url.absoluteString {
             handler(image)
         } else {
             getResource(url: url, handler: { (data) in

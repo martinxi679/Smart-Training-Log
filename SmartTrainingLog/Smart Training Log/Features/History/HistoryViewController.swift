@@ -19,24 +19,38 @@ class HistoryViewController: UIViewController {
     
     let treatmentInfoCellID = "AllTreatmentsTableViewCell"
 
+    var refreshControl: UIRefreshControl?
+
     override func viewDidLoad() {
+        if refreshControl == nil {
+            refreshControl = UIRefreshControl()
+            refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+
+            tableView.addSubview(refreshControl!)
+        }
         tableView.register(UINib(nibName: treatmentInfoCellID, bundle: nil), forCellReuseIdentifier: treatmentInfoCellID)
         viewModel.refreshed.observe({ [weak self] (refreshed, _) in
             if refreshed {
                 self?.tableView.reloadData()
+                self?.refreshControl?.endRefreshing()
             }
         }).add(to: &disposeBag)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.update()
+        viewModel.update(resetCache: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? TreatmentDetailsViewController {
             detailVC.treatment = selectedTreatment
         }
+    }
+
+    @objc
+    func refresh() {
+        viewModel.update(resetCache: true)
     }
 }
 

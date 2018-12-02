@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordField: UnderlineTextField!
     @IBOutlet weak var confirmPasswordField: UnderlineTextField!
     @IBOutlet weak var registerButton: RoundRectButton!
+    @IBOutlet weak var userTypeSegmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         registerButton.isEnabled = false
@@ -88,7 +89,11 @@ class RegisterViewController: UIViewController {
                 authStore.store(user: user, with: pass)
                 if let database = try? Container.resolve(DatabaseManager.self) {
                     var userModel = UserFlyweight(id: user.uid)
-                    userModel.entitlement = Entitlement.student
+                    if self?.userTypeSegmentedControl.selectedSegmentIndex == 0 {
+                        userModel.entitlement = Entitlement.student
+                    } else {
+                        userModel.entitlement = Entitlement.trainer
+                    }
                     userModel.name = self?.nameField.text
                     userModel.deviceToken = (try? Container.resolve(APNServiceManager.self))?.messagingToken
                     database.updateUser(userModel)

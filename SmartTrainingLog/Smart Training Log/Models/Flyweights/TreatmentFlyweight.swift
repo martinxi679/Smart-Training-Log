@@ -45,7 +45,7 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
         complete = try container.decodeIfPresent(Bool.self, forKey: .complete)
         if let commentsArr = try container.decodeIfPresent([CommentFlyweight].self, forKey: .comments) {
             comments = commentsArr
-        } else if let commentsDict = try container.decodeIfPresent([String:CommentFlyweight].self, forKey: .comments) {
+        } else if let commentsDict = try container.decodeIfPresent([String: CommentFlyweight].self, forKey: .comments) {
             comments = commentsDict.map({return $1})
         } else if let comment = try container.decodeIfPresent(CommentFlyweight.self, forKey: .comments) {
             comments = [comment]

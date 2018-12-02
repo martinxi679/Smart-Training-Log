@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ea-kC-dvL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ea-kC-dvL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -204,8 +204,8 @@
                                             <constraint firstAttribute="height" constant="100" id="oXc-Dr-3Z1"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-PX-pYl">
-                                        <rect key="frame" x="20" y="170" width="335" height="310"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-PX-pYl">
+                                        <rect key="frame" x="20" y="170" width="335" height="288"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qzH-uE-Spu" customClass="UnderlineTextField" customModule="Smart_Training_Log" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -219,8 +219,27 @@
                                                     <action selector="textFieldDidChange:" destination="nqu-zQ-ALi" eventType="editingChanged" id="SEs-zy-Dck"/>
                                                 </connections>
                                             </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-Dp-IjB">
+                                                <rect key="frame" x="0.0" y="65" width="175" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-eP-qkq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Xg-Ls-3QE">
+                                                        <rect key="frame" x="50" y="0.0" width="125" height="29"/>
+                                                        <segments>
+                                                            <segment title="Student"/>
+                                                            <segment title="Trainer"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RTi-Jd-UUL" customClass="UnderlineTextField" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="65" width="335" height="40"/>
+                                                <rect key="frame" x="0.0" y="118" width="335" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Qdr-ID-eLk"/>
                                                 </constraints>
@@ -232,7 +251,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ech-kV-5fh" customClass="UnderlineTextField" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="130" width="335" height="40"/>
+                                                <rect key="frame" x="0.0" y="183" width="335" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="oOL-4Y-Yi6"/>
                                                 </constraints>
@@ -244,7 +263,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeK-oZ-XPz" customClass="UnderlineTextField" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="195" width="335" height="40"/>
+                                                <rect key="frame" x="0.0" y="248" width="335" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="5FL-XQ-0tp"/>
                                                 </constraints>
@@ -255,41 +274,6 @@
                                                     <action selector="textFieldDidChange:" destination="nqu-zQ-ALi" eventType="editingChanged" id="a72-pg-hPC"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n2-hv-CEg" customClass="RoundRectButton" customModule="Smart_Training_Log" customModuleProvider="target">
-                                                <rect key="frame" x="42.5" y="260" width="250" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="G1V-RY-Y5U"/>
-                                                    <constraint firstAttribute="width" constant="250" id="wPP-E9-cTo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <state key="normal" title="Register">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <state key="disabled" title="Register">
-                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
-                                                        <color key="value" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
-                                                        <color key="value" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="defaultOutlineWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="disabledOutlineWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
-                                                        <color key="value" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="registerPressed:" destination="nqu-zQ-ALi" eventType="touchUpInside" id="8zx-yF-kKk"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="qzH-uE-Spu" secondAttribute="trailing" id="AJ2-gM-paT"/>
@@ -302,11 +286,49 @@
                                             <constraint firstItem="FeK-oZ-XPz" firstAttribute="leading" secondItem="Q81-PX-pYl" secondAttribute="leading" id="q5h-PU-kgD"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n2-hv-CEg" customClass="RoundRectButton" customModule="Smart_Training_Log" customModuleProvider="target">
+                                        <rect key="frame" x="62.5" y="483" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="G1V-RY-Y5U"/>
+                                            <constraint firstAttribute="width" constant="250" id="wPP-E9-cTo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="wSw-Y2-9bQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled" title="Register">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                                <color key="value" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                                <color key="value" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="defaultOutlineWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="disabledOutlineWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
+                                                <color key="value" red="0.0" green="0.1843137255" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="nqu-zQ-ALi" eventType="touchUpInside" id="8zx-yF-kKk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="5n2-hv-CEg" firstAttribute="top" secondItem="Q81-PX-pYl" secondAttribute="bottom" constant="25" id="8m1-Qg-Q9U"/>
                                     <constraint firstAttribute="trailing" secondItem="gnr-Wk-xqS" secondAttribute="trailing" constant="20" id="AiC-s3-fd4"/>
                                     <constraint firstItem="Q81-PX-pYl" firstAttribute="top" secondItem="gnr-Wk-xqS" secondAttribute="bottom" constant="50" id="HEy-C2-m7t"/>
-                                    <constraint firstAttribute="bottom" secondItem="Q81-PX-pYl" secondAttribute="bottom" constant="48" id="b9D-cX-1zZ"/>
+                                    <constraint firstItem="5n2-hv-CEg" firstAttribute="centerX" secondItem="bdK-UB-s3z" secondAttribute="centerX" id="JU7-cm-OPO"/>
+                                    <constraint firstAttribute="bottom" secondItem="5n2-hv-CEg" secondAttribute="bottom" constant="15" id="Vy2-x8-RQQ"/>
                                     <constraint firstItem="gnr-Wk-xqS" firstAttribute="leading" secondItem="bdK-UB-s3z" secondAttribute="leading" constant="20" id="dec-sZ-F2k"/>
                                     <constraint firstItem="gnr-Wk-xqS" firstAttribute="top" secondItem="bdK-UB-s3z" secondAttribute="top" constant="20" id="tOs-nt-sbT"/>
                                 </constraints>
@@ -333,6 +355,7 @@
                         <outlet property="nameField" destination="qzH-uE-Spu" id="7as-Cf-BdT"/>
                         <outlet property="passwordField" destination="ech-kV-5fh" id="JH0-TH-y94"/>
                         <outlet property="registerButton" destination="5n2-hv-CEg" id="CiV-lE-4AH"/>
+                        <outlet property="userTypeSegmentedControl" destination="7Xg-Ls-3QE" id="zOn-rc-Ts8"/>
                         <segue destination="der-Ld-m6k" kind="custom" identifier="registerToMain" customClass="NavigationTransistionSegue" customModule="Smart_Training_Log" customModuleProvider="target" id="O3W-bh-JTy"/>
                     </connections>
                 </viewController>
@@ -342,7 +365,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="169" height="44"/>
+        <image name="Logo" width="254.25" height="66.75"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O3W-bh-JTy"/>

@@ -31,7 +31,10 @@ class RequestTeamViewController: UIViewController {
     }
 
     private func requestTeam() {
-        // TODO - implement team request
+        if let team = requestTeamTextField.text,
+            let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser as? UserFlyweight {
+            (try? Container.resolve(DatabaseManager.self))?.requestTeam(user: user, team: team)
+        }
 
         self.navigationController?.popViewController(animated: true)
     }

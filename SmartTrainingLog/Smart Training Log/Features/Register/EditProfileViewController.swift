@@ -15,8 +15,15 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var sportPickerView: UIPickerView!
     @IBOutlet weak var selectSportLabel: UILabel!
 
+    @IBOutlet weak var teamDisplayStackView: UIStackView!
+    @IBOutlet weak var teamIDLabel: UILabel!
+    @IBOutlet weak var changeTeamButton: UIButton!
+
+
     var imagePickerVC = UIImagePickerController()
     var viewModel = ProfileViewModel()
+
+    let noTeamLabel = "No current team"
 
     var disposeBag: Disposal = []
     // MARK: - Lifecycle
@@ -34,10 +41,7 @@ class EditProfileViewController: UIViewController {
             }
         }
 
-        // Hide sport picker options for trainers who don't need them
-        selectSportLabel.isHidden = viewModel.user?.isTrainer ?? false
-        sportPickerView.isHidden = viewModel.user?.isTrainer ?? false
-
+        configure()
 
         imagePickerVC.mediaTypes = mediaOptions
         imagePickerVC.delegate = self
@@ -63,6 +67,13 @@ class EditProfileViewController: UIViewController {
         }.add(to: &disposeBag)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.update()
+        configure()
+    }
+
     // MARK: - Actions
 
     @IBAction func pickProfileImage(_ sender: Any) {
@@ -79,13 +90,34 @@ class EditProfileViewController: UIViewController {
 
     // MARK: - Private
 
+    private func configure() {
+        // Hide sport picker options for trainers who don't need them
+        selectSportLabel.isHidden = viewModel.user.value?.isTrainer ?? false
+        sportPickerView.isHidden = viewModel.user.value?.isTrainer ?? false
+
+        // Hide team info label for trainers who don't need them
+        teamDisplayStackView.isHidden = viewModel.user.value?.isTrainer ?? false
+
+        if let user = viewModel.user.value as? UserFlyweight {
+            teamIDLabel.text = user.teams.first ?? noTeamLabel
+        } else {
+            teamIDLabel.text = noTeamLabel
+        }
+
+        if teamIDLabel.text == noTeamLabel {
+            changeTeamButton.setTitle("Request", for: UIControlState())
+        } else {
+            changeTeamButton.setTitle("Change", for: UIControlState())
+        }
+    }
+
     @objc
     private func updateAndSave() {
         let sport = Sport.allCases[sportPickerView.selectedRow(inComponent: 0)]
 
         if
             let storageManager = try? Container.resolve(CloudStorageManager.self),
-            var user = viewModel.user as? UserFlyweight {
+            var user = viewModel.user.value as? UserFlyweight {
 
             if user.isAthlete {
                 // Update user sport
