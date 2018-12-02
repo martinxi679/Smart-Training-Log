@@ -23,10 +23,72 @@
 
 # Release Notes
 
-# Version 0.1
+Version 0.1
+
+New Software Features:
+- Users are able to register themselves to the application as students.
+- Users are able to log-in to the application using their username and password information. 
+- Profile page with information such as name and sports team is provided for each registered user.
+
+Bug Fixes:
+- None since this is the first release
+
+Defects/Bugs:
+-  Currently no way to register as a trainer. 
 
 
+Version 0.2
 
+New Software Features:
+- Treatments page is now implemented and shows a user's upcoming treatments.
+- Users are now able to add a treatment to the treatments page using the Add Treatment Form. 
+
+Bug Fixes: 
+- Added a toggle on the registration page so now users can register as either a student or a trainer.
+- Improved Register Page UI to make it less confusing. 
+
+Defects/Bugs: 
+- Both students and trainers can add treatments but we only want trainers to be able to do so. 
+- We want trainers to be able to select treatments from a drop down list but that does not exist yet.
+
+
+Version 0.3
+
+New Software Featuers: 
+- History page is added where users can view their past treatments.
+- Users are now able to add comments to a past treatment as a way of communication between trainer and athlete. 
+
+Bug Fixes: 
+- Only trainers can add treatments now. 
+
+Defects/Bugs:
+- Currently no UI to show comments which have been added to past trainings. 
+
+
+Version 0.4
+
+New Software Features: 
+-  None since this is the release after a debug sprint. 
+
+Bug Fixes: 
+- Changed data base structure into something more comprehensive for our team. 
+- Cleaned and organized Firebase API code into it's own folder. 
+- Made some slight improvements to the UI in the Add Treatments Form and the Treatments and History pages. 
+
+Defects/Bugs: 
+- Users have no way to add a profile picture to their profile.
+
+Version 1.0
+
+New Software Features:
+- Push notification is sent to trainer when a student checks into their scheduled training to let the trainer know the student is here. 
+- Push notification is sent to student whent trainer creates a new treatment for them. This will give the student information on the training, such as when it is.
+
+Bug Fixes: 
+- Users can now add their profile pictures. 
+
+Defects/Bugs: 
+- No way to schedule training between trainer and student on the app. Scheduling must be done externally and then the trainer can create the upcoming treatment for the student. 
 
 # Installation Guide
 
