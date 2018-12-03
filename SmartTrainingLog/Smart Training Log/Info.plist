@@ -19,9 +19,17 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>STL accesses calendar data to help plan and schedule appointments</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>STL accesses health information to provide that information to the user</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>STL accesses health information to provide that information to the user</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>STL accesses photos to allow users to pick profile pictures</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -43,13 +51,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCalendarsUsageDescription</key>
-	<string>STL accesses calendar data to help plan and schedule appointments</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>STL accesses photos to allow users to pick profile pictures</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>STL accesses health information to provide that information to the user</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>STL accesses health information to provide that information to the user</string>
 </dict>
 </plist>
