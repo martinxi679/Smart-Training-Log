@@ -235,6 +235,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QDz-CD-fst">
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Q2-6V-Sam" id="hgd-Ok-hPj"/>
+                                    <outlet property="delegate" destination="4Q2-6V-Sam" id="TUc-PJ-0E1"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-vK-Pgg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
@@ -277,7 +281,7 @@
         <scene sceneID="m1h-Yl-eIZ">
             <objects>
                 <navigationController title="Upcoming" automaticallyAdjustsScrollViewInsets="NO" id="OaM-bJ-UVY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Treatments" image="scheduleIcon" id="7YO-53-j26"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Treatments" image="scheduleIcon" id="7YO-53-j26"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l2a-IE-7Kp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

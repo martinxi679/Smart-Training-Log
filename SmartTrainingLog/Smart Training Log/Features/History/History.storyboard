@@ -155,7 +155,7 @@
         <scene sceneID="hwk-CZ-Yjh">
             <objects>
                 <navigationController title="History" automaticallyAdjustsScrollViewInsets="NO" id="swM-cM-4gy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="historyIcon" id="xBo-zP-rVR"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="History" image="historyIcon" id="xBo-zP-rVR"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cHO-He-zvT">

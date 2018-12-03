@@ -11,7 +11,7 @@ class AllTreatmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var treatmentLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-
+    @IBOutlet weak var checkedInView: UIStackView!
 
     func configure(with treatment: TreatmentModel, athlete: UserModel) {
         let formatter = DateFormatter()
@@ -22,6 +22,12 @@ class AllTreatmentsTableViewCell: UITableViewCell {
         infoLabel.text = treatment.info
         if let date = treatment.date {
             dateLabel.text = formatter.string(from: date)
+        }
+
+        if treatment.checkin ?? false {
+            checkedInView.isHidden = false
+        } else {
+            checkedInView.isHidden = true
         }
     }
 

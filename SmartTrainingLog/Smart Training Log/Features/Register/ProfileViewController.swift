@@ -89,6 +89,14 @@ class ProfileViewController: UIViewController {
         }
     }
 
+    func handleDeeplink(_ deeplink: Deeplink) {
+        if deeplink == Deeplink.editProfile {
+            let segueID = Identifiers.Segue.toEditProfile.rawValue
+            performSegue(withIdentifier: segueID, sender: deeplink)
+        }
+        // TODO - handle other deeplinks
+    }
+
     @objc
     func refresh() {
         viewModel.update()

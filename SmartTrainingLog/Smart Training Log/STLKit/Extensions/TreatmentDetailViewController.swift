@@ -27,7 +27,7 @@ class TreatmentDetailViewController: UIViewController {
         }
     }
 
-    var athleteViewModel = AllAthletesViewModel()
+    var athleteViewModel = (try? Container.resolve(AllAthletesViewModel.self)) ?? AllAthletesViewModel()
 
     var disposeBag: Disposal = []
 
@@ -43,6 +43,8 @@ class TreatmentDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        athleteViewModel.update()
 
         athleteViewModel.refreshed.observe({ [weak self] (_,_) in
             if let id = self?.treatment?.athleteID {

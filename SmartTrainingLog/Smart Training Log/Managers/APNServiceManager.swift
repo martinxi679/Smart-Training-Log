@@ -66,6 +66,32 @@ extension AppDelegate: MessagingDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Handle user action on notification
+        let notification = response.notification
+        let userInfo = notification.request.content.userInfo
+
+        if let type = userInfo["aps"] as? [AnyHashable: Any] {
+            if let category = type["category"] as? String {
+                if category == "NEW_TREATMENT" {
+                    if let id = userInfo["treatmentID"] as? String,
+                        let athleteID = userInfo["athleteID"] as? String {
+                        NotificationCenter.default.post(name: .NewTreatmentRecieved, object: nil, userInfo: ["tid": id, "athleteID": athleteID])
+
+                        if let deeplinkRouter = try? Container.resolve(DeeplinkRouter.self) {
+                            deeplinkRouter.handle(Deeplink.viewTreatment(id))
+                        }
+                    }
+                } else if category == "TREATMENT_CHECKIN" {
+                    if let id = userInfo["treatmentID"] as? String,
+                        let athleteID = userInfo["athleteID"] as? String {
+                        NotificationCenter.default.post(name: .TreatmentCheckinRecieved, object: nil, userInfo: ["tid": id, "athleteID": athleteID])
+                        if let deeplinkRouter = try? Container.resolve(DeeplinkRouter.self) {
+                            deeplinkRouter.handle(Deeplink.viewTreatment(id))
+                        }
+                    }
+                }
+            }
+        }
+
         completionHandler()
     }
 
@@ -74,12 +100,29 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let content = notification.request.content
 
         let userInfo = content.userInfo
-        //let notificationID = userInfo[gcmMessageIDKey]
-        // Present notification
-        completionHandler(.badge)
+
+        if let type = userInfo["aps"] as? [AnyHashable: Any] {
+            if let category = type["category"] as? String {
+                if category == "NEW_TREATMENT" {
+                    if let id = userInfo["treatmentID"] as? String,
+                        let athleteID = userInfo["athleteID"] as? String {
+                        NotificationCenter.default.post(name: .NewTreatmentRecieved, object: nil, userInfo: ["tid": id, "athleteID": athleteID])
+                    }
+                } else if category == "TREATMENT_CHECKIN" {
+                    if let id = userInfo["treatmentID"] as? String,
+                        let athleteID = userInfo["athleteID"] as? String {
+                        NotificationCenter.default.post(name: .TreatmentCheckinRecieved, object: nil, userInfo: ["tid": id, "athleteID": athleteID])
+                    }
+                }
+            }
+        }
+        completionHandler([])
     }
 }
 
 extension NSNotification.Name {
     static let MessagingTokenDidChange = NSNotification.Name(rawValue: "MessagingTokenDidChange")
+
+    static let NewTreatmentRecieved = NSNotification.Name(rawValue: "NewTreatmentRecieved")
+    static let TreatmentCheckinRecieved = NSNotification.Name(rawValue: "TreatmentCheckinRecieved")
 }

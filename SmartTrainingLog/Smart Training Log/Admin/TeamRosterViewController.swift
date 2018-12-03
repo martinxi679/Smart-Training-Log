@@ -192,10 +192,7 @@ extension TeamRosterViewController: PendingUserTableViewCellDelegate {
             }
         }
 
-        guard let userIndex = index else { return }
-        inviteTableView.beginUpdates()
-        inviteTableView.deleteRows(at: [IndexPath(row: userIndex, section: 0)], with: .top)
-        inviteTableView.endUpdates()
+        inviteTableView.reloadData()
     }
 
 }

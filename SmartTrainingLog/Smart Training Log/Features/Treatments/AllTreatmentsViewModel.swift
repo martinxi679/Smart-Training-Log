@@ -13,7 +13,7 @@ class AllTreatmentsViewModel: NSObject {
     var treatments: [TreatmentModel] = []
 
     var disposeBag: Disposal = []
-    var athleteViewModel = AllAthletesViewModel()
+    var athleteViewModel = (try? Container.resolve(AllAthletesViewModel.self)) ?? AllAthletesViewModel()
     var athlete: UserFlyweight? {
         didSet {
             update()
@@ -24,13 +24,14 @@ class AllTreatmentsViewModel: NSObject {
 
     init(athlete: UserFlyweight) {
         super.init()
+        athleteViewModel.update()
         self.athlete = athlete
         update()
     }
 
     override init() {
         super.init()
-
+        athleteViewModel.update()
         athleteViewModel.refreshed.observe({ [weak self] (_,_) in
             self?.update()
         }).add(to: &disposeBag)
