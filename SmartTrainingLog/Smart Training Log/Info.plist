@@ -43,5 +43,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>STL accesses calendar data to help plan and schedule appointments</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>STL accesses photos to allow users to pick profile pictures</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>STL accesses health information to provide that information to the user</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>STL accesses health information to provide that information to the user</string>
 </dict>
 </plist>

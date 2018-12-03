@@ -309,6 +309,19 @@ extension DatabaseManager {
         }
     }
 
+    func getTreatment(_ id: String, athleteID: String, completion: @escaping (TreatmentModel) -> Void) {
+        let ref = rootRef.child(Root.Treatments.path).child(athleteID).child(id)
+
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            guard let strongSelf = self else { return }
+            guard let val = snapshot.value else { return }
+
+            if let treatment = try? strongSelf.decoder.decode(TreatmentFlywieght.self, from: val) {
+                completion(treatment)
+            }
+        })
+    }
+
     func getTreatments(forUserID: String, completionHandler: @escaping ([TreatmentModel]) -> Void) {
 
         var treatments: [TreatmentModel] = []
@@ -326,6 +339,19 @@ extension DatabaseManager {
             }
             completionHandler(treatments)
         }
+    }
+
+    func checkin(user: UserModel, treatment: inout TreatmentModel) {
+        guard var flyweight = treatment as? TreatmentFlywieght else { return }
+        guard let athleteID = treatment.athleteID else { return }
+        guard let id = treatment.id else { return }
+        guard let name = user.name else { return }
+
+        flyweight.checkin = true
+        updateTreatment(treatment: flyweight)
+
+        // Send notification to trainer
+        SMLRestfulAPI.common.sendUserCheckinNotification(userHashID: athleteID, treatmentID: id, name: name)
     }
 
     func addComment(comment: CommentFlyweight, toTreatment treatment: TreatmentFlywieght) {

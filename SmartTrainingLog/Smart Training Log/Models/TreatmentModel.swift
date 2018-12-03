@@ -14,6 +14,7 @@ protocol TreatmentModel {
     var treatment: String? {get set}
     var info: String? {get set}
     var complete: Bool? { get set }
+    var checkin: Bool? { get set }
     var comments: [CommentModel] { get set }
 
 }

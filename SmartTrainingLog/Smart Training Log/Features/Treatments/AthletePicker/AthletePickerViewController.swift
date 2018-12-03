@@ -16,11 +16,11 @@ protocol AthletePickerDelegate: class {
     func athletePickerDidCancel()
 }
 
-let athleteViewModel = AllAthletesViewModel()
-
 class AthletePickerViewController: UIViewController {
 
     weak var delegate: AthletePickerDelegate?
+
+    let athleteViewModel = (try? Container.resolve(AllAthletesViewModel.self)) ?? AllAthletesViewModel()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -28,12 +28,22 @@ class AthletePickerViewController: UIViewController {
 
     var disposeBag: Disposal =  []
 
+    var refreshControl: UIRefreshControl?
+
     override func viewDidLoad() {
         tableView.register(UINib(nibName: athleteCellID, bundle: nil), forCellReuseIdentifier: athleteCellID)
         tableView.delegate = self
         tableView.dataSource = self
+
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl!)
+
+        athleteViewModel.update()
+
         athleteViewModel.refreshed.observe({[weak self] (_,_) in
             self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
         }).add(to: &disposeBag)
     }
 
@@ -42,6 +52,9 @@ class AthletePickerViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @objc private func refresh() {
+        athleteViewModel.update()
+    }
 }
 
 extension AthletePickerViewController: UITableViewDelegate {

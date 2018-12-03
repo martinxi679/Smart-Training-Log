@@ -287,7 +287,7 @@
         <scene sceneID="dQu-Rc-lzS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ffe-jX-EW7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Admin" image="AdminIcon" id="bXs-D1-pSo"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Admin" image="AdminIcon" id="bXs-D1-pSo"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ceB-Zt-fhr">

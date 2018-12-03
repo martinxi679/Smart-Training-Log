@@ -7,9 +7,22 @@ import Foundation
 
 extension Date {
     func isWithinSeconds(_ seconds: Int) -> Bool {
-        let epoch = self.timeIntervalSince1970
-        let future = self.addingTimeInterval(Double(seconds)).timeIntervalSince1970
+        let startDate = Date()
+        let endDate = self
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+        let sec = dateComponents.second!
+        return sec <= seconds && sec >= 0
+    }
+}
 
-        return self.timeIntervalSinceNow > epoch && self.timeIntervalSinceNow <= future
+extension Date {
+    func minutesTill() -> Int {
+        let startDate = Date()
+        let endDate = self
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
+        let min = dateComponents.minute!
+        return min
     }
 }

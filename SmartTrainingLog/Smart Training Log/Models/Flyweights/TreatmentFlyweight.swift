@@ -13,7 +13,8 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
     var date: Date?
     var treatment: String?
     var info: String?
-    var complete: Bool?
+    var complete: Bool? = false
+    var checkin: Bool? = false
     var comments: [CommentModel] = []
 
     enum CodingKeys: String, CodingKey {
@@ -24,6 +25,7 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
         case treatment
         case info
         case complete
+        case checkin
         case comments
     }
 
@@ -42,7 +44,8 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
         }
         treatment = try container.decodeIfPresent(String.self, forKey: .treatment)
         info = try container.decodeIfPresent(String.self, forKey: .info)
-        complete = try container.decodeIfPresent(Bool.self, forKey: .complete)
+        complete = (try container.decodeIfPresent(Bool.self, forKey: .complete)) ?? false
+        checkin = (try container.decodeIfPresent(Bool.self, forKey: .checkin)) ?? false
         if let commentsArr = try container.decodeIfPresent([CommentFlyweight].self, forKey: .comments) {
             comments = commentsArr
         } else if let commentsDict = try container.decodeIfPresent([String: CommentFlyweight].self, forKey: .comments) {
@@ -61,6 +64,7 @@ struct TreatmentFlywieght: TreatmentModel, Codable {
         try container.encodeIfPresent(treatment, forKey: .treatment)
         try container.encodeIfPresent(info, forKey: .info)
         try container.encodeIfPresent(complete, forKey: .complete)
+        try container.encodeIfPresent(checkin, forKey: .checkin)
         try container.encodeIfPresent(comments as? [CommentFlyweight], forKey: .comments)
     }
 }

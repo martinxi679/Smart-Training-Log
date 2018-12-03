@@ -33,6 +33,10 @@ class TreatmentsViewController: UIViewController {
             }
         }).add(to: &disposeBag)
 
+        NotificationCenter.default.addObserver(forName: Notification.Name.NewTreatmentRecieved, object: nil, queue: nil, using: { [weak self] _ in
+            self?.viewModel.update(resetCache: true)
+        })
+
         if let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser {
             if !user.isTrainer {
                 navigationItem.rightBarButtonItems?.removeAll()
@@ -43,6 +47,34 @@ class TreatmentsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.update(resetCache: true)
+    }
+
+    func handleDeeplink(_ deeplink: Deeplink) {
+        switch deeplink {
+        case .viewTreatment(let tid):
+            for section in 0..<viewModel.numberOfSections() {
+                for row in 0..<viewModel.numberOfTreatments(in: section) {
+                    let indexPath = IndexPath(row: row, section: section)
+                    let treatment = viewModel.treatment(atIndexPath: indexPath)
+                    if treatment?.id == tid {
+                        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
+                    }
+                }
+            }
+        case .editTreatment(let tid):
+            for section in 0..<viewModel.numberOfSections() {
+                for row in 0..<viewModel.numberOfTreatments(in: section) {
+                    let indexPath = IndexPath(row: row, section: section)
+                    let treatment = viewModel.treatment(atIndexPath: indexPath)
+                    if treatment?.id == tid {
+                        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
+                        self.tableView(tableView, didSelectRowAt: indexPath)
+                    }
+                }
+            }
+        default:
+            return
+        }
     }
 
     @objc
@@ -82,6 +114,12 @@ extension TreatmentsViewController: UITableViewDelegate {
             let athleteID = treatment.athleteID,
             let athlete = viewModel.athleteForID(id: athleteID ) {
             // go to detail view
+
+            guard let currentUser = (try? Container.resolve(AuthenticationStore.self))?.currentUser,
+                !currentUser.isAthlete
+            else {
+                return
+            }
             let storyboard = UIStoryboard(name: "Treatments", bundle: nil)
             if let updateVC = storyboard.instantiateViewController(withIdentifier: "AddTreatmentViewController") as? AddTreatmentViewController {
                 updateVC.treatment = treatment as? TreatmentFlywieght

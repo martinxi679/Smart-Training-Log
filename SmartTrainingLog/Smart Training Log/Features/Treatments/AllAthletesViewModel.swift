@@ -16,6 +16,10 @@ class AllAthletesViewModel: NSObject {
     override init() {
         super.init()
 
+        update()
+    }
+
+    func update() {
         guard let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser else { return }
         guard let dataManager = try? Container.resolve(DatabaseManager.self) else {
             return
@@ -26,6 +30,8 @@ class AllAthletesViewModel: NSObject {
             for team in trainer.teams {
                 dataManager.getAthletes(team: team, trainer: trainer as! UserFlyweight, completion: { [weak self] (students) in
                     guard let strongSelf = self else { return }
+                    guard students.count > 0 else { return }
+
                     strongSelf.queue.sync {
                         strongSelf.athletes[team] = students
                     }
@@ -48,6 +54,10 @@ class AllAthletesViewModel: NSObject {
         return allAthletes().first(where: {$0.id == id})
     }
 
+    func athleteByHashID(_ hashID: String) -> StudentModel? {
+        return allAthletes().first(where: {$0.id?.sha256() == hashID })
+    }
+
     func numberOfAthletes(_ team: String) -> Int {
         var num = 0
         queue.sync {
@@ -60,7 +70,7 @@ class AllAthletesViewModel: NSObject {
         var team: String = ""
         guard !athletes.keys.isEmpty else { return ""}
         queue.sync {
-            team = athletes.keys[athletes.keys.index(athletes.startIndex, offsetBy: section)]
+            team = athletes.keys[athletes.keys.index(athletes.keys.startIndex, offsetBy: section)]
         }
         return team
     }

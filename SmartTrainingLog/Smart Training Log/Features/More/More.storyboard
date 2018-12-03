@@ -81,7 +81,7 @@
         <scene sceneID="kms-BZ-gFo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFa-JX-tah" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="moreIcon" id="7o3-lN-6gD"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="More" image="moreIcon" id="7o3-lN-6gD"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dsV-LW-DDd">
@@ -99,6 +99,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="moreIcon" width="64" height="64"/>
+        <image name="moreIcon" width="50" height="50"/>
     </resources>
 </document>

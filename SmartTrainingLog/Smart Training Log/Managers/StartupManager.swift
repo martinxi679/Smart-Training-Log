@@ -42,7 +42,7 @@ class StartupManager {
         Container.register(SMLRestfulAPI.self) { _ in SMLRestfulAPI() }
 
         // Register shared athlete view model
-        //Container.register(AllAthletesViewModel.self) { _ in AllAthletesViewModel() }
+        Container.register(AllAthletesViewModel.self) { _ in AllAthletesViewModel() }
     }
     
     private func setupFirebase() {
