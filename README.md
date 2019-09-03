@@ -93,7 +93,7 @@ Defects/Bugs:
 # Installation Guide
 
 # Pre-Requisites
-Preparing Hardware
+# Preparing Hardware
 In order to be able to successfully run the application on a computer, you must have access to a macOS system 
 
 # Preparing Software
