@@ -1,5 +1,8 @@
 # SmartTrainingLogiOS
 
+# Note
+This app was designed for the Georgia Tech Athletic Association and I have taken it for the purpose of the first programming assignment of Mobile Applications and Services. I have added all instructions and necessary dependencies in this README file, so please read carefully to run this application.
+
 # Overview
 	This mobile iOS application was designed for the Georgia Tech Athletic Association’s physical therapy department to help
 	them streamline the process of creating treatments, checking into scheduled treatments and providing feedback on the
