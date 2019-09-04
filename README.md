@@ -91,15 +91,15 @@ CocoaPods will also be necessary. Please install by following the directions at 
 All of the dependencies required will be listed in the a file called the ‘Podfile.’ These are necessary third-party softwares needed to run our application. Instructions to install these dependencies will be listed in steps 2 and 3 of the ‘Download Instructions’ section below. 
 
 # Here is a list of the dependencies included in the Podfile: 
-Firebase
-Firebase Core
-Firebase Auth
-Firebase Storage
-Firebase Database
-Firebase Firestore
-Firebase Messaging
-Observable
-Keychain
+Firebase <br />
+Firebase Core <br />
+Firebase Auth <br />
+Firebase Storage <br />
+Firebase Database <br />
+Firebase Firestore <br />
+Firebase Messaging <br />
+Observable <br />
+Keychain <br />
 Codable Firebase Interaction
 
 # Download Instructions
