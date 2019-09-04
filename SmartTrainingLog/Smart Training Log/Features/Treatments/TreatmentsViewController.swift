@@ -39,6 +39,7 @@ class TreatmentsViewController: UIViewController {
 
         if let user = (try? Container.resolve(AuthenticationStore.self))?.currentUser {
             if !user.isTrainer {
+                // Remove all buttons for trainers only
                 navigationItem.rightBarButtonItems?.removeAll()
             }
         }
