@@ -1,25 +1,10 @@
 # SmartTrainingLogiOS
 
+# Note
+This app was designed for the Georgia Tech Athletic Association and I have taken it for the purpose of the first programming assignment of Mobile Applications and Services. I have added all instructions and necessary dependencies in this README file, so please read carefully to run this application.
+
 # Overview
-	This mobile iOS application was designed for the Georgia Tech Athletic Association’s physical therapy department to help
-	them streamline the process of creating treatments, checking into scheduled treatments and providing feedback on the
-	treatments. As a response to the department’s current check-in system which consists of a single kiosk, our system
-	addresses several of the existing issues we identified. First of all, upgrading to our application will allow the
-	department to avoid a bottleneck at check-in during times of high traffic. Since all athletes will be able to access and
-	check-in to their scheduled training on their own mobile devices, no one will need to wait in line for their turn at the 
-	kiosk. In addition, trainers are immediately notified on their own device after the student athlete has checked in on their 
-	app. Once the session begins, the trainer will be able to list the details of the training on the application and when the
-	session is over, the athlete will be able to see that training on their own app. Afterwards, athletes and trainers are also 
-	able to add comments to that training. For example, if a trainer recommended a certain exercise for the athlete to do at 
-	home, and that exercise causes pain to the athlete, then they can go onto the app and add a comment to the training to tell 
-	the trainer what happened. This system of commenting back and forth provides a channel of constant communication between 
-	the student athlete and the trainer. Thus, students do not need to wait until their next visit to the Athletic Association
-	to let their trainer know about any issues that they came across and vice versa. 
-	Our application was created using XCode and the native development language, Swift. In addition, our team is utilizing 
-	Firebase database to enable data storage and retrieval. Through this relatively simple technology stack, we were able to
-	create an application that addresses the initial issues we identified with the physical therapy department’s current 
-	system. 
-	
+Using this app, students who belong to the Georgia Tech Athletic Association are free to log in using their athletic accounts and report to their treatments. All trainers have the rights to schedule new treatments and check if specific athletes show up to their treatments. This app saves time for the sign-in process and provides a record for trainers to keep track of. At the same time, it allows athletes to provide feedback after each treatment. This app was designed for the GT Athletic Association only, so if you are interested in using this app, please contact us in person.
 
 # Release Notes
 
@@ -93,7 +78,7 @@ Defects/Bugs:
 # Installation Guide
 
 # Pre-Requisites
-Preparing Hardware
+# Preparing Hardware
 In order to be able to successfully run the application on a computer, you must have access to a macOS system 
 
 # Preparing Software
