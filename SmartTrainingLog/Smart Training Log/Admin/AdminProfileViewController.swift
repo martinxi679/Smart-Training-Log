@@ -1,7 +1,7 @@
 //
 //  AdminProfileViewController.swift
 //  Smart Training Log
-//
+//  Admin profile view: load Email, Email text edit, Button pressed
 
 import UIKit
 
