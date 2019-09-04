@@ -1,7 +1,7 @@
 //
 //  LoginViewController.swift
 //  Smart Training Log
-//
+//  Authentication through firebaseAuth
 
 import UIKit
 import FirebaseAuth
