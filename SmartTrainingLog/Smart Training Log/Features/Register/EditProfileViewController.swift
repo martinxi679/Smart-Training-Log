@@ -120,13 +120,15 @@ class EditProfileViewController: UIViewController {
             var user = viewModel.user.value as? UserFlyweight {
 
             if user.isAthlete {
-                // Update user sport
+                // Update user sport and name
                 user.sport = sport
+                user.name = name
             }
 
-            // Update user name
+            // Update user sport name
             if let name = nameField.text {
                 user.name = name
+                user.sport = sport
             }
 
             // Upload profile picture
