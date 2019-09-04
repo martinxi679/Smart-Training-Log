@@ -38,7 +38,7 @@ class APNServiceManager: NSObject {
     func getUpdatedMessagingToken(completion: @escaping (String?) -> Void) {
         InstanceID.instanceID().instanceID { [weak self] (result, error) in
             guard
-                let strongSelf = self,
+                let sureSelf = self,
                 let result = result,
                 error == nil
             else {
@@ -46,7 +46,7 @@ class APNServiceManager: NSObject {
                 return
             }
 
-            strongSelf.messagingToken = result.token
+            sureSelf.messagingToken = result.token
             completion(result.token)
         }
     }
