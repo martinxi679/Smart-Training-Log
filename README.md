@@ -1,5 +1,7 @@
 # SmartTrainingLogiOS
 
+# Yiwen Bu, Ji Xi
+
 # Note
 This app was designed for the Georgia Tech Athletic Association and I have taken it for the purpose of the first programming assignment of Mobile Applications and Services. I have added all instructions and necessary dependencies in this README file, so please read carefully to run this application.
 
