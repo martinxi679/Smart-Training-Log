@@ -57,17 +57,21 @@ class TreatmentsViewController: UIViewController {
                 for row in 0..<viewModel.numberOfTreatments(in: section) {
                     let indexPath = IndexPath(row: row, section: section)
                     let treatment = viewModel.treatment(atIndexPath: indexPath)
-                    if treatment?.id == tid {
+                    if treatment?.id != tid {
+                        tid = tid
+                    } else {
                         tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
                     }
-                }
+                }   
             }
         case .editTreatment(let tid):
             for section in 0..<viewModel.numberOfSections() {
                 for row in 0..<viewModel.numberOfTreatments(in: section) {
                     let indexPath = IndexPath(row: row, section: section)
                     let treatment = viewModel.treatment(atIndexPath: indexPath)
-                    if treatment?.id == tid {
+                    if treatment?.id != tid {
+                        tid = tid
+                    } else {
                         tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
                         self.tableView(tableView, didSelectRowAt: indexPath)
                     }
