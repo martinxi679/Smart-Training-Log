@@ -112,8 +112,7 @@ Once you are inside the SmartTrainingLog directory, please run ‘pod install’
 
 # Build Instructions
 Once you have followed the ‘Download Instructions’ above, you are ready to spin up the application on your local machine. 
-
-All you need to do to run the application is click on the play button in the top left corner of your XCode screen. This button should kick off a build! After the application successfully builds, an iPhone screen will appear and you can click through the application there. 
+Open SmartTrainingLog/Smart Training Log.xcodeproj with Xcode. All you need to do to run the application is click on the play button in the top left corner of your XCode screen. This button should kick off a build! After the application successfully builds, an iPhone screen will appear and you can click through the application there. 
 
 # Use Instructions 
 Once the application is built and running on your machine, there are few simple steps you must follow to start your experience: 
