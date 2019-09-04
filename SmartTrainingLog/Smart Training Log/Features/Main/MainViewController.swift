@@ -46,13 +46,13 @@ class MainViewController: UITabBarController {
 
     var trainerCheckInVC: UIAlertController?
 
-    var timer: Timer!
+    var myTimer: Timer!
     var updateTimer: Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true, block: { [weak self] _ in
+        myTimer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true, block: { [weak self] _ in
             guard let strongSelf = self else { return }
 
             var current: TreatmentModel?
